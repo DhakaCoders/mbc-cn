@@ -5,18 +5,20 @@ h1,h2,h3,h4,h5,h6{
 	line-height: 1;	
 	margin-top: 0;
 	margin-bottom: 20px;
+	color: #000000;
+	text-transform: uppercase;
 }
 h1,.fl-h1{
-	font-size: 35px;
+	font-size: 60px;
 }
 h2,.fl-h2{
-	font-size: 30px;
+	font-size: 50px;
 }
 h3,.fl-h3{
-	font-size: 28px;
+	font-size: 45px;
 }
 h4,.fl-h4{
-	font-size: 24px;
+	font-size: 25px;
 }
 h5,.fl-h5{
 	font-size: 20px;
