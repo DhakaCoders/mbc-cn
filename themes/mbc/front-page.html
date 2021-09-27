@@ -39,7 +39,15 @@
 
 
       <!-- start of Noyon -->
+      <symbol id="mail-icon" xmlns="http://www.w3.org/2000/svg" width="19" height="15" viewBox="0 0 19 15">
+        <g id="new_post" transform="translate(0.266 0.114)">
+          <path id="Shape" d="M17.1,15H1.9A1.889,1.889,0,0,1,0,13.127V1.876A1.89,1.89,0,0,1,1.9,0H17.1A1.89,1.89,0,0,1,19,1.876V13.127A1.889,1.889,0,0,1,17.1,15ZM1.9,4.689h0v8.438H17.1V4.689L9.5,9.375,1.9,4.689Zm0-2.813v.938L9.5,7.5l7.6-4.687V1.876Z" transform="translate(-0.266 -0.114)"/>
+        </g>
+      </symbol>
 
+      <symbol id="phone-icon" xmlns="http://www.w3.org/2000/svg" width="16.186" height="16.186" viewBox="0 0 16.186 16.186">
+        <path id="Path" d="M11.465,10.656,9.181,12.931A13.827,13.827,0,0,1,5.766,10.42,13.827,13.827,0,0,1,3.255,7.005L5.53,4.721,4.957,0H0V.9A15.448,15.448,0,0,0,4.466,11.721a15.448,15.448,0,0,0,10.821,4.466h.9V11.23Z"/>
+      </symbol>
 
 
 
@@ -59,7 +67,7 @@
 <div class="page-body-cntlr">
   <div class="bdoverlay"></div>
   <header class="header">
-  <div class="container">
+    <div class="container">
       <div class="row">
         <div class="col-md-12">
           <div class="header-inr clearfix">
@@ -69,23 +77,48 @@
               </div>
             </div>
             <div class="hdr-rgt">
-              <nav class="main-nav">
-                <ul class="clearfix reset-list">
-                  <li><a href="#"></a></li>
-                  <li><a href="#"></a></li>
-                  <li><a href="#"></a></li>
-                  <li><a href="#"></a></li>
-                  <li><a href="#"></a></li>
-                  <li><a href="#"></a></li>
-                  <li><a href="#"></a></li>
-                </ul>
-              </nav>
+              <div class="hdr-topbar">
+                <div class="hdr-details-cntlr hide-sm">
+                  <div class="hdr-details ">
+                    <div class="hdr-mail">
+                      <a href="mailto:hello@postatoakgate.com.au">
+                        <i><svg class="mail-icon" width="19" height="15" viewBox="0 0 19 15" fill="#fff">
+                          <use xlink:href="#mail-icon"></use></svg>
+                        </i>
+                      </a>
+                    </div>
+                    <div class="hdr-tel">
+                      <a href="tel:(02)49939876">
+                        <span>(02) 4993 9876</span>
+                        <i><svg class="phone-icon" width="16.186" height="16.186" viewBox="0 0 16.186 16.186" fill="#fff">
+                          <use xlink:href="#phone-icon"></use></svg>
+                        </i>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="hdr-menu">
+                <nav class="main-nav">
+                  <ul class="clearfix reset-list">
+                    <li class="current-menu-item"><a href="#"></a></li>
+                    <li class="menu-item-has-children">
+                      <a href="#"></a>
+                    </li>
+                    <li><a href="#"></a></li>
+                    <li><a href="#"></a></li>
+                    <li><a href="#"></a></li>
+                    <li><a href="#"></a></li>
+                    <li><a href="#"></a></li>
+                  </ul>
+                </nav>
+              </div>
             </div>
           </div>
         </div>
       </div>
-  </div>
-</header>
+    </div>
+  </header>
 
 <section class="main-content">
   <div class="container">

@@ -28,3 +28,77 @@ nav.main-nav > ul > li.menu-item-has-children > a{
 nav.main-nav > ul > li.menu-item-has-children ul.sub-menu{
 	
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.hdr-details{
+	display: flex;
+	align-items: center;
+	flex-wrap: wrap;
+	margin: 0 -11px;
+}
+.hdr-mail{
+	padding: 0 11px;
+}
+.hdr-mail a{
+	display: inline-block;
+}
+.hdr-tel a:hover,
+.hdr-mail a:hover{
+	color: #6c6b69;
+}
+.hdr-mail a i svg{
+	fill: #48484A;
+}
+.hdr-mail a:hover i svg{
+	fill: #48484A;
+}
+.hdr-tel{
+	padding: 0 11px;
+}
+.hdr-tel a{
+	display: inline-block;
+	position: relative;
+	padding-left: 29px;
+	font-size: 18px;
+}
+.hdr-tel a i{
+	display: inline-block;
+	position: absolute;
+	top: 50%;
+	left: 0;
+	transform: translateY(-50%);
+	-ms-transform: translateY(-50%);
+	-webkit-transform: translateY(-50%);
+	-o-transform: translateY(-50%);
+	transition: all 0.5s;
+	-ms-transition: all 0.5s;
+	-webkit-transition: all 0.5s;
+}
+.hdr-tel a i svg{
+	fill: #6c6b69;
+}
+.hdr-tel a:hover i svg{
+	fill: #48484A;
+}
