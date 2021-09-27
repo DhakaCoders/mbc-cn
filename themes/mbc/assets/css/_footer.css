@@ -46,11 +46,15 @@
 .ftr-col-cntlr{
 	display: flex;
 	flex-wrap: wrap;
+	padding-bottom: 130px;
 }
 .ftr-col{
 	width: 100%;
 	padding-right: 10px;
 	margin-bottom: 30px;
+}
+.ftr-col:last-of-type{
+	padding-right: 0;
 }
 .ftr-col-01{
 	max-width:  19.2%;
@@ -82,6 +86,18 @@
 	line-height: 1;
 	font-size: 17px;
 	font-family: 'Museo-Sans-300';
+}
+.ftr-details{
+	margin: -2px 0;
+}
+.ftr-details-row{
+	display: inline-block;
+	line-height: 1;
+	font-size: 16px;
+	padding: 2px 0;
+}
+.ftr-addr a{
+	line-height: 1.8;
 }
 .ftr-btm-cntlr{
 	padding: 15px 0;
