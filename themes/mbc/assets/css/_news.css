@@ -42,7 +42,7 @@
     display: block;
 }
 .news-landing-grid-title a {
-    color: #48484A;
+    color: #000000;
 }
 .news-landing-grid-title a:hover{
 	opacity: 0.7;
