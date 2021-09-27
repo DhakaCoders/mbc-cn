@@ -16,15 +16,28 @@ a, a:hover, a:focus, button:hover, button:focus{
 }
 
 body {
-    background: #f8f8f8;
+    background: #ffffff;
     color: #000000;
-    font-size: 18px;
-    line-height: 24px;
-     font-family: 'Candara';
+    font-size: 20px;
+    line-height: 30px;
+    font-family: 'Museo-Sans-100';
 }
 p{
-	line-height: 1.2;
+	line-height: 1.5;
 	margin-bottom: 15px;
+}
+
+a{
+	color: #EC1218;
+}
+a:hover{
+	color: #000;
+}
+strong,b{
+	font-family: 'Museo-Sans-700';
+}
+em,i{
+	font-style: italic;
 }
 
 input[type=text],
@@ -103,10 +116,10 @@ Containers
 	
 }
 .container-lg{
-
+	max-width: 1590px;
 }
 .container{
-	max-width: 1200px;
+	max-width: 1300px;
 	width: 100%;
 }
 .container-md{
