@@ -227,4 +227,21 @@ google.maps.event.addDomListener(window, 'load', initialize);
 
     new WOW().init();
 
+
+
+
+
+
+    /*start of noyon*/
+
+
+
+
+     /*start of shariful*/
+
+
+
+
+      /*start of keshob*/
+
 })(jQuery);
