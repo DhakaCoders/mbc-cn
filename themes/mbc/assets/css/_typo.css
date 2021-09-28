@@ -2,12 +2,11 @@
 All heading
 */
 h1,h2,h3,h4,h5,h6{
-	line-height: 1;	
+	line-height: 1.2;	
 	margin-top: 0;
 	margin-bottom: 20px;
 	color: #000000;
 	font-family: 'Museo-Sans-300';
-	text-transform: uppercase;
 }
 h1,.fl-h1{
 	font-size: 60px;
@@ -20,7 +19,7 @@ h3,.fl-h3{
 }
 h4,.fl-h4{
 	font-size: 25px;
-	font-family: 'Museo-Sans-900';
+	/*font-family: 'Museo-Sans-900';*/
 }
 h5,.fl-h5{
 	font-size: 20px;

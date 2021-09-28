@@ -11,7 +11,7 @@
 }
 
 .mbc-text-slider-inr{
-	max-width: 900px;
+	max-width: 1150px;
 	width: 100%;
 	margin-left: auto;
 	margin-right: auto;
@@ -98,11 +98,9 @@
 }
 
 .mbc-des-accordion-gray-bg{
-	background: #A7A7A7;
+	background: #E5E5E5;
 }
-.mbc-des-accordion-gray-bg .mbc-grid-item-inr p{
-	color: #fff;
-}
+
 
 .mbc-des-accordion-gray-bg .mbc-accordion-title{
 	border-color: #E5E5E5;
