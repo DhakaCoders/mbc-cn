@@ -18,9 +18,115 @@
 
 
 /*hm banner*/
-
+.home-body-cntlr{
+    position: relative;
+}
+.hm-body-cntlr-bg-img{
+    position: absolute;
+    top: 15px;
+    right: 0;
+    left: 0;
+    text-align: center;
+    z-index: 4;
+    /*padding: 0 14%;*/
+}
+.hm-body-cntlr-bg-img img{
+    display: inline-block;
+    max-width: 1373px;
+    width: 100%;
+    height: auto;
+}
+.hm-body-cntlr-bg-img.hm-banner-v1{
+    display: block;
+}
 .hm-banner {
     position: relative;
+}
+.hm-bnr-logo-cntlr{
+    position: absolute;
+    width: 503px;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 8;
+    background: #000000;
+    padding: 0 56px;
+    padding-bottom: 165px;
+    display: flex;
+}
+.hm-bnr-logo{
+    margin-top: auto;
+    margin-left: auto;
+}
+.hm-bnr-logo ul{
+    margin: -35px 0;
+}
+.hm-bnr-logo ul li{
+    padding: 35px 0;
+    text-align: right;
+}
+.hm-bnr-logo ul li a{
+    display: inline-block;
+    text-align: right;
+}
+.hm-bnr-logo-btn{
+    
+    position: absolute;
+    transform: rotate(-90deg);
+    -ms-transform: rotate(-90deg);
+    -webkit-transform: rotate(-90deg);
+    -o-transform: rotate(-90deg);
+}
+
+.hm-bnr-logo-btn-close .hm-bnr-logo-btn-title-open{
+    display: none;
+}
+.hm-bnr-logo-btn-title-close{
+    display: none;
+}
+.hm-bnr-logo-btn-close .hm-bnr-logo-btn-title-close{
+    display: block;
+}
+.hm-bnr-logo-btn-title{
+    font-family: 'Museo-Sans-900';
+    font-size: 20px;
+    margin-bottom: 0;
+    line-height: 1;
+    text-transform: uppercase;
+    color: #fff;
+    letter-spacing: 1px;
+}
+.hm-banner-bg-color{
+    background: #B0ACAC;
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    z-index: 2;
+}
+.hm-bnr-btm-bg{
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    height: 498px;
+    z-index: 3;
+}
+.bnr-vdo {
+    overflow: hidden;
+}
+.bnr-vdo video {
+    min-height: 100%;
+    min-width: 100%;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    -webkit-transform: translateY(-50%);
+    z-index: 4;
 }
 .hm-banner-bg-black {
     position: absolute;
@@ -37,5 +143,42 @@
     right: 0;
     bottom: 0;
     left: 0;
-    z-index: 2;
+    z-index: 3;
+}
+.hm-banner-play-btn{
+    position: absolute;
+    margin-top: 70px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    -ms-transform: translate(-50%,-50%);
+    -webkit-transform: translate(-50%,-50%);
+    -o-transform: translate(-50%,-50%);
+    z-index: 10;
+    /*cursor: pointer;*/
+    background: transparent;
+    text-align: center;
+}
+.hm-banner-play-icon{
+    margin-bottom: 83px;
+}
+.hm-banner-play-icon a{
+    display: inline-block;
+}
+.fl-h4.hm-banner-play-title{
+    color: #fff;
+    text-transform: uppercase;
+    line-height: 1;
+    font-family: 'Museo-Sans-900';
+    margin-bottom: 0;
+}
+.hm-bnr-cntlr{
+    position: relative;
+    z-index: 5;
+    padding: 160px 0;
+    height: 1233px;
+}
+.fl-h1.hm-bnr-title{
+    margin-bottom: 30px;
+    color: #fff;
 }
