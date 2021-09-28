@@ -1,0 +1,19 @@
+.mbc-position-available-con-sec{
+	padding: 160px 0 100px;
+}
+
+.pa-des-title{
+	text-transform: uppercase;
+	margin-bottom: 40px;
+	font-family: 'Museo-Sans-500';
+}
+
+
+.mbc-position-available-con-sec .default-page-con ul li, 
+.mbc-position-available-con-sec ul li{
+	padding-left: 22px;
+}
+.mbc-position-available-con-sec .default-page-con ul li::before, 
+.mbc-position-available-con-sec ul li::before{
+	color: #000000;
+}
