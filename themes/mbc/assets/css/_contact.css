@@ -200,7 +200,8 @@ textarea {
     position: absolute;
     top: -28px;
     right: 33px;
-    color: #D61D1D;
+    /*color: #D61D1D;*/
+    color: #ed1c24;
     margin-bottom: 0;
     margin-top: 5px;
     text-transform: inherit;

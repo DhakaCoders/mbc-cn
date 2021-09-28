@@ -271,9 +271,9 @@ if( $('.wpforms-error').length ){
   });
 }
 
-var windowWidth = $(window).width();
+
 var containerWidth = $('.container').width();
-var containerOffset = (windowWidth_1920 - containerWidth);
+var containerOffset = (windowWidth - containerWidth);
 
 var containerRgtOffset = ((containerOffset / 2)+2);
 $('.contact-form-rgt-bg').css('width', containerRgtOffset);
@@ -282,7 +282,7 @@ $('.contact-form-rgt-bg').css('width', containerRgtOffset);
 $(window).resize(function(){
   var windowWidth = $(window).width();
   var containerWidth = $('.container').width();
-  var containerOffset = (windowWidth_1920 - containerWidth);
+  var containerOffset = (windowWidth - containerWidth);
 
   var containerRgtOffset = ((containerOffset / 2)+2);
   $('.contact-form-rgt-bg').css('width', containerRgtOffset);
