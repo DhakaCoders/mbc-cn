@@ -1,3 +1,46 @@
+.header{
+
+}
+.header-inr{
+	display: flex;
+	align-items: center;
+	flex-wrap: wrap;
+}
+.hdr-lft{
+
+}
+.logo{
+
+}
+.logo a{
+	display: inline-block;
+}
+.hdr-rgt{
+	margin-left: auto;
+}
+.hdr-topbar{
+
+}
+.hdr-details{
+	display: flex;
+	align-items: center;
+	flex-wrap: wrap;
+	margin: 0 -16px;
+}
+.hdr-details-col{
+	padding: 0 16px;
+	position: relative;
+}
+.hdr-details-col:before{
+	position: absolute;
+	right: 0;
+	top: 50%;
+	height: 13px;
+	width: 1px;
+	background: #716A6A;
+}
+
+
 nav.main-nav ul{
 
 }
