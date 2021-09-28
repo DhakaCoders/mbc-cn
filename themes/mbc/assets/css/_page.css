@@ -256,3 +256,101 @@ ol li::before {
 	font-size: 16px;
 	font-family: 'Epilogue', sans-serif;
 }
+
+
+
+
+/*page banner*/
+.page-banner{
+	position: relative;
+}
+.page-banner-bg-black{
+	position: absolute;
+	top: 0;
+	right: 0;
+	left: 0;
+	bottom: 0;
+	z-index: 1;
+	background: #000;
+}
+.page-bnr-bg{
+	position: absolute;
+	top: 0;
+	right: 0;
+	left: 0;
+	bottom: 0;
+	z-index: 2;
+}
+.page-bnr-cntlr{
+	position: relative;
+	z-index: 3;
+	text-align: center;
+	padding-top: 20px;
+	height: 540px;
+	padding-bottom: 20px;
+	display: flex;
+	align-items: center;
+}
+.fl-h1.page-bnr-title{
+	color: #fff;
+}
+
+
+/**/
+/*bredcumb*/
+.breadcrumb-sec {
+    padding: 33px 0 24px;
+    border-bottom: 2px solid #b7b7b7;
+}
+.breadcrumb-sec-inr ul {
+    display: flex;
+    align-items: center;
+    margin: 0 -8px;
+}
+.breadcrumb-sec-inr ul li {
+    padding: 0 8px;
+    position: relative;
+    line-height: 0!important;
+}
+.breadcrumb-sec-inr ul li.home a, 
+.breadcrumb-sec-inr ul li:first-child a {
+    padding-left: 0;
+}
+.breadcrumb-sec-inr ul li a, 
+.breadcrumb-sec-inr ul li span, 
+.breadcrumb-sec-inr ul li a span {
+    display: inline-block;
+    vertical-align: baseline;
+    font-size: 16px;
+    line-height: 1;
+    color: #716A6A;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-family: 'Museo-Sans-300';
+    transition: all 0.5s;
+    -webkit-transition: all 0.5s;
+    -ms-transition: all 0.5s;
+}
+.breadcrumb-sec-inr ul li.active span,
+.breadcrumb-sec-inr ul li.active a,
+.breadcrumb-sec-inr ul li a span:hover,
+.breadcrumb-sec-inr ul li a:hover{
+	color: #EC1218;
+}
+.breadcrumb-sec-inr ul li:after {
+    position: absolute;
+    content: "";
+    right: 0;
+    top: 50%;
+    transform: translate(50%,-50%);
+    -ms-transform: translate(50%,-50%);
+    -webkit-transform: translate(50%,-50%);
+    -o-transform: translate(50%,-50%);
+    background-image: url('../images/breadcrumb-img.png');
+    background-repeat: no-repeat!important;
+    height: 13px;
+    width: 7px;
+}
+.breadcrumb-sec-inr ul li:last-child:after{
+	display: none;
+}

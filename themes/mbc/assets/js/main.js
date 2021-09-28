@@ -250,19 +250,55 @@ google.maps.event.addDomListener(window, 'load', initialize);
 
      /*start of shariful*/
      if( $('.mbcOpbSlider').length ){
-    $('.mbcOpbSlider').slick({
-      dots: false,
-      arrows: true,
-      infinite: false,
-      autoplay: false,
-      autoplaySpeed: 4000,
-      speed: 700,
-      slidesToShow: 1,
-      slidesToScroll: 1,
-      prevArrow: $('.mbc-option-break-option-break-slider-ctlr .mbc-slider-prev-nxt .mbc-prev'),
-      nextArrow: $('.mbc-option-break-option-break-slider-ctlr .mbc-slider-prev-nxt .mbc-nxt'),
+      $('.mbcOpbSlider').slick({
+        dots: false,
+        arrows: true,
+        infinite: false,
+        autoplay: false,
+        autoplaySpeed: 4000,
+        speed: 700,
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        prevArrow: $('.mbc-option-break-option-break-slider-ctlr .mbc-slider-prev-nxt .mbc-prev'),
+        nextArrow: $('.mbc-option-break-option-break-slider-ctlr .mbc-slider-prev-nxt .mbc-nxt'),
+      });
+    }
+
+    if( $('.mbcTextSlider').length ){
+      $('.mbcTextSlider').slick({
+        dots: false,
+        arrows: true,
+        infinite: false,
+        autoplay: false,
+        autoplaySpeed: 4000,
+        speed: 700,
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        prevArrow: $('.mbc-text-slider .mbc-slider-prev-nxt .mbc-prev'),
+        nextArrow: $('.mbc-text-slider .mbc-slider-prev-nxt .mbc-nxt'),
+      });
+    }
+    if( $('.mbcTeamSlider').length ){
+      $('.mbcTeamSlider').slick({
+        dots: false,
+        arrows: true,
+        infinite: false,
+        autoplay: false,
+        autoplaySpeed: 4000,
+        speed: 700,
+        slidesToShow: 4,
+        slidesToScroll: 1,
+        prevArrow: $('.mbc-team-slider-ctlr .mbc-slider-prev-nxt .mbc-prev'),
+        nextArrow: $('.mbc-team-slider-ctlr .mbc-slider-prev-nxt .mbc-nxt'),
+      });
+    }
+
+    $('.mbc-accordion-title').on('click', function(){
+      $(this).toggleClass('active');
+      $(this).parents('.mbc-accordion-menu').siblings().find('.mbc-accordion-title').removeClass('active');
+      $(this).parents('.mbc-accordion-menu').find('.mbc-accordion-des').slideToggle(300);
+      $(this).parents('.mbc-accordion-menu').siblings().find('.mbc-accordion-des').slideUp(300);
     });
-}
 
 
 
