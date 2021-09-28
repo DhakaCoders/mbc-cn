@@ -234,11 +234,35 @@ google.maps.event.addDomListener(window, 'load', initialize);
 
     /*start of noyon*/
 
-
+    if( $('.hamburger-cntlr').length ){
+      $('.hamburger-cntlr').click(function(){
+        $('body').toggleClass('allWork');
+      });
+    }
+    if( $('li.menu-item-has-children a').length ){
+      $('li.menu-item-has-children a').click(function(e){
+       event.preventDefault();
+       $(this).next().slideToggle(300);
+       $(this).parent().toggleClass('this-sub-menu-active');
+     });
+    }
 
 
      /*start of shariful*/
-
+     if( $('.mbcOpbSlider').length ){
+    $('.mbcOpbSlider').slick({
+      dots: false,
+      arrows: true,
+      infinite: false,
+      autoplay: false,
+      autoplaySpeed: 4000,
+      speed: 700,
+      slidesToShow: 1,
+      slidesToScroll: 1,
+      prevArrow: $('.mbc-option-break-option-break-slider-ctlr .mbc-slider-prev-nxt .mbc-prev'),
+      nextArrow: $('.mbc-option-break-option-break-slider-ctlr .mbc-slider-prev-nxt .mbc-nxt'),
+    });
+}
 
 
 

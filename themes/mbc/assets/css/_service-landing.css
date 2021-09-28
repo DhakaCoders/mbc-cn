@@ -87,3 +87,50 @@
 .mbc-service-btn{
 	text-align: center;
 }
+
+
+
+.mbc-project-count-sec{
+	padding: 150px 0 100px;
+	background: #eaeaea;
+}
+
+.mbc-project-count-grds{
+	display: flex;
+	align-items: center;
+	flex-wrap: wrap;
+	margin-left: -15px;
+	margin-right: -15px;
+}
+.mbc-project-count-grd-item{
+	width: 33.3333%;
+	padding-left: 15px;
+	padding-right: 15px;
+	padding-bottom: 30px;
+}
+
+.mbc-project-count-number{
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	margin-bottom: 40px;
+}
+.mbc-project-count-number i{
+	display: inline-block;
+	vertical-align: baseline;
+	margin-right: 20px;
+}
+.mbc-project-count-number span{
+	display: inline-block;
+	vertical-align: baseline;
+	color: #cbcbcb;
+	font-size: 80px;
+	line-height: 1;
+}
+.mbc-project-count-des{
+	text-align: center;
+}
+.mbc-project-count-des-title{
+	text-transform: uppercase;
+	margin-bottom: 25px;
+}
