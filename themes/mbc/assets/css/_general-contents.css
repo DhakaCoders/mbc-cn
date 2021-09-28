@@ -495,6 +495,9 @@ Gallery design
 .mbc-opb-slider-title{
 	color: #fff;
 }
+.mbc-opb-slider-grd-item-des{
+	text-align: center;
+}
 
 .mbcOpbSlider .mbc-opb-slider-grd-item{
 	display: none;
