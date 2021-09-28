@@ -97,6 +97,7 @@
 
 .careers-grid-sec {
     padding-top: 166px;
+    padding-bottom: 110px;
 }
 .news-grids-btn{
     text-align: center;
@@ -104,6 +105,15 @@
     padding-bottom: 20px;
 }
 
+.careers-text-slider-ctlr{
+    padding-bottom: 224px;
+}
+.careers-text-slider-ctlr .mbc-text-slider-wrap{
+    padding-top: 193px;
+}
+.careers-text-slider-ctlr .mbc-text-slider-wrap .mbc-text-slider .mbc-text-slider-inr .mbc-text-slider-item .mbc-text-slider-title{
+    margin-bottom: 80px;
+}
 
 
 
