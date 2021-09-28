@@ -238,7 +238,20 @@ google.maps.event.addDomListener(window, 'load', initialize);
 
 
      /*start of shariful*/
-
+     if( $('.mbcOpbSlider').length ){
+    $('.mbcOpbSlider').slick({
+      dots: false,
+      arrows: true,
+      infinite: false,
+      autoplay: true,
+      autoplaySpeed: 4000,
+      speed: 700,
+      slidesToShow: 1,
+      slidesToScroll: 1,
+      prevArrow: $('.mbc-option-break-option-break-slider-ctlr .mbc-slider-prev-nxt .mbc-prev'),
+      nextArrow: $('.mbc-option-break-option-break-slider-ctlr .mbc-slider-prev-nxt .mbc-nxt'),
+    });
+}
 
 
 
