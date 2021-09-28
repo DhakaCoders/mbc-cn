@@ -12,9 +12,6 @@
 }
 
 @media(max-width: 1399px){
-	.container { 
-		max-width: 1100px;
-	}
 	.block-1440{
 		max-width: 1140px;
 	}
