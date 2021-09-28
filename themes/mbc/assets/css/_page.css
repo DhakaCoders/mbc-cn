@@ -47,126 +47,126 @@
 }
 
 /*custom grid*/
-.pt-grids-sec-cntlr{
+.mbc-grids-sec-cntlr{
 	padding-top: 90px;
 	padding-bottom: 90px;
 }
-.pt-columns{
+.mbc-columns{
 	display: flex;
 	flex-wrap: wrap;
 	margin: 0 -15px;
 }
-.pt-columns-2{
+.mbc-columns-2{
 
 }
-.pt-columns-3{
+.mbc-columns-3{
 	
 }
-.pt-columns-4{
+.mbc-columns-4{
 	
 }
-.pt-columns-2L{
+.mbc-columns-2L{
 	
 }
-.pt-columns-2R{
+.mbc-columns-2R{
 	
 }
-.pt-grid-item{
+.mbc-grid-item{
 	padding: 0 15px;
 	margin-bottom: 30px;
 }
-.pt-grid-item > p:last-of-type{
+.mbc-grid-item > p:last-of-type{
 	margin-bottom: 0;
 }
-.pt-columns-2 .pt-grid-item{
+.mbc-columns-2 .mbc-grid-item{
 	width: 50%;
 }
-.pt-columns-2.lftimg-rgtdes .pt-grid-item:first-of-type{
+.mbc-columns-2.lftimg-rgtdes .mbc-grid-item:first-of-type{
 	order: 2;
 }
-.pt-columns-3 .pt-grid-item{
+.mbc-columns-3 .mbc-grid-item{
 	width: 33.33%;
 }
-.pt-columns-4 .pt-grid-item{
+.mbc-columns-4 .mbc-grid-item{
 	width: 25%;
 }
-.pt-columns-2L .pt-grid-item{
+.mbc-columns-2L .mbc-grid-item{
 	width: 70%;
 }
-.pt-columns-2L .pt-grid-item:first-of-type{
+.mbc-columns-2L .mbc-grid-item:first-of-type{
 	width: 30%;
 }
-.pt-columns-2R .pt-grid-item{
+.mbc-columns-2R .mbc-grid-item{
 	width: 30%;
 }
-.pt-columns-2R .pt-grid-item:first-of-type{
+.mbc-columns-2R .mbc-grid-item:first-of-type{
 	width: 70%;
 }
-.pt-columns-2R.lftimg-rgtdes .pt-grid-item{
+.mbc-columns-2R.lftimg-rgtdes .mbc-grid-item{
 	width: 70%;
 }
-.pt-columns-2R.lftimg-rgtdes .pt-grid-item:first-of-type{
+.mbc-columns-2R.lftimg-rgtdes .mbc-grid-item:first-of-type{
 	order: 2;
 	width: 30%;
 }
-.pt-grids-sec-entry-hdr{
+.mbc-grids-sec-entry-hdr{
 	padding-bottom: 1px;
 }
-.pt-grids-sec-entry-hdr-title{
+.mbc-grids-sec-entry-hdr-title{
 	margin-bottom: 40px!important;
 	font-weight: 300!important;
 }
-.pt-grids-col-entry-hdr-title{
+.mbc-grids-col-entry-hdr-title{
 	margin-bottom: 40px!important;
 }
-.pt-grids-col-entry-hdr{
+.mbc-grids-col-entry-hdr{
 	padding-top: 10px;
 }
-.pt-fullwidth-txt-module{
+.mbc-fullwidth-txt-module{
 	padding-top: 85px;
 	padding-bottom: 85px;
 }
-.pt-fullwidth-txt-module h2{
+.mbc-fullwidth-txt-module h2{
 	margin-bottom: 40px!important;
 }
-.pt-fullwidth-txt-module p:last-of-type{
+.mbc-fullwidth-txt-module p:last-of-type{
 	margin-bottom: 0;
 
 }
 
 
-.pt-fullwidth-txt-module-white-black{
+.mbc-fullwidth-txt-module-white-black{
 	background: #010203;
 }
-.pt-fullwidth-txt-module-white-green{
+.mbc-fullwidth-txt-module-white-green{
 	background: #808368;
 }
-.pt-fullwidth-txt-module-light-gray-bg{
+.mbc-fullwidth-txt-module-light-gray-bg{
 	background: #EAEBEC;
 }
-.pt-fullwidth-txt-module-white-mint-bg{
+.mbc-fullwidth-txt-module-white-mint-bg{
 	background: #D3E3CE;
 }
-.pt-fullwidth-txt-module-white-black,
-.pt-fullwidth-txt-module-white-green,
-.pt-fullwidth-txt-module-white-black h1,
-.pt-fullwidth-txt-module-white-black h2,
-.pt-fullwidth-txt-module-white-black h3,
-.pt-fullwidth-txt-module-white-black h4,
-.pt-fullwidth-txt-module-white-black h5,
-.pt-fullwidth-txt-module-white-black h6,
-.pt-fullwidth-txt-module-white-green h1,
-.pt-fullwidth-txt-module-white-green h2,
-.pt-fullwidth-txt-module-white-green h3,
-.pt-fullwidth-txt-module-white-green h4,
-.pt-fullwidth-txt-module-white-green h5,
-.pt-fullwidth-txt-module-white-green h6,
-.pt-fullwidth-txt-module-white-mint-bg h1,
-.pt-fullwidth-txt-module-white-mint-bg h2,
-.pt-fullwidth-txt-module-white-mint-bg h3,
-.pt-fullwidth-txt-module-white-mint-bg h4,
-.pt-fullwidth-txt-module-white-mint-bg h5,
-.pt-fullwidth-txt-module-white-mint-bg h6{
+.mbc-fullwidth-txt-module-white-black,
+.mbc-fullwidth-txt-module-white-green,
+.mbc-fullwidth-txt-module-white-black h1,
+.mbc-fullwidth-txt-module-white-black h2,
+.mbc-fullwidth-txt-module-white-black h3,
+.mbc-fullwidth-txt-module-white-black h4,
+.mbc-fullwidth-txt-module-white-black h5,
+.mbc-fullwidth-txt-module-white-black h6,
+.mbc-fullwidth-txt-module-white-green h1,
+.mbc-fullwidth-txt-module-white-green h2,
+.mbc-fullwidth-txt-module-white-green h3,
+.mbc-fullwidth-txt-module-white-green h4,
+.mbc-fullwidth-txt-module-white-green h5,
+.mbc-fullwidth-txt-module-white-green h6,
+.mbc-fullwidth-txt-module-white-mint-bg h1,
+.mbc-fullwidth-txt-module-white-mint-bg h2,
+.mbc-fullwidth-txt-module-white-mint-bg h3,
+.mbc-fullwidth-txt-module-white-mint-bg h4,
+.mbc-fullwidth-txt-module-white-mint-bg h5,
+.mbc-fullwidth-txt-module-white-mint-bg h6{
 	color: #fff;
 }
 
