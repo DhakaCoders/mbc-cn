@@ -1,0 +1,89 @@
+.mbc-service-sec{
+	padding: 195px 0;
+}
+
+
+.sec-entry-hdr{
+	text-align: center;
+	padding-bottom: 50px;
+}
+
+.mbc-sec-entry-hdr-subtitle{
+	margin-bottom: 30px;
+}
+.mbc-sec-entry-hdr-title{
+	color: #CBCBCB;
+	font-family: 'Museo-Sans-300';
+}
+
+.mbc-service-sec .mbc-sec-entry-hdr-title{
+	color: #000;
+	font-family: 'Museo-Sans-500';
+}
+
+
+
+
+.mbc-service-grds{
+	padding-bottom: 45px;
+}
+.mbc-service-grds ul{
+	display: flex;
+	align-items: center;
+	flex-wrap: wrap;
+	margin-left: -10px;
+	margin-right: -10px;
+}
+.mbc-service-grds ul li{
+	width: 25%;
+	padding-left: 10px;
+	padding-right: 10px;
+	padding-bottom: 20px;
+}
+.mbc-service-grd-item{
+	position: relative;
+}
+
+.mbc-service-grd-item-img-ctlr{
+	position: relative;
+	overflow: hidden;
+}
+.mbc-service-grd-item-img{
+	height: 275px;
+	-webkit-transition: all 0.5s;
+	-ms-transition: all 0.5s;
+	transition: all 0.5s;
+}
+.mbc-service-grd-item-img img{
+	display: none;
+}
+
+.mbc-service-grd-item-des{
+	padding: 20px 20px 1px;
+	background: #000000;
+	text-align: center;
+	position: relative;
+	z-index: 11;
+}
+
+.mbc-service-grd-des-title{
+	color: #fff;
+	margin-bottom: 12px;
+	text-transform: uppercase;
+	letter-spacing: 1px;
+}
+.mbc-service-grd-des-title a{
+	color: #fff;
+}
+.mbc-service-grd-des-title a:hover{
+	color: #EC1218;
+}
+.mbc-service-grd-item:hover .mbc-service-grd-item-img{
+	transform: scale(1.1);
+	-webkit-transform: scale(1.1);
+	-ms-transform: scale(1.1);
+}
+
+.mbc-service-btn{
+	text-align: center;
+}
