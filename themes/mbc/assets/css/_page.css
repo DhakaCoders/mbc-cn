@@ -48,8 +48,8 @@
 
 /*custom grid*/
 .mbc-grids-sec-cntlr{
-	padding-top: 90px;
-	padding-bottom: 90px;
+	padding-top: 60px;
+	padding-bottom:60px;
 }
 .mbc-columns{
 	display: flex;
@@ -123,10 +123,15 @@
 	padding-top: 10px;
 }
 .mbc-fullwidth-txt-module{
-	padding-top: 85px;
-	padding-bottom: 85px;
+	padding-top: 60px;
+	padding-bottom: 60px;
 }
-.mbc-fullwidth-txt-module h2{
+.mbc-fullwidth-txt-module h1,
+.mbc-fullwidth-txt-module h2,
+.mbc-fullwidth-txt-module h3,
+.mbc-fullwidth-txt-module h4,
+.mbc-fullwidth-txt-module h5,
+.mbc-fullwidth-txt-module h6{
 	margin-bottom: 40px!important;
 }
 .mbc-fullwidth-txt-module p:last-of-type{
