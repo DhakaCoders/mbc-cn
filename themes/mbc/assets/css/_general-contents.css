@@ -17,6 +17,10 @@
 	margin-right: auto;
 }
 
+.mbc-text-slider-title{
+	color: #405D6F;
+}
+
 /*.mbc-text-slider .mbc-prev{
 	background: url('../images/mbc-ts-prev.png');
 	left: -15px!important;
@@ -56,13 +60,15 @@
     cursor: pointer;
     position: relative;
     padding: 20px 50px 25px 20px;
-    border: 1px solid #cacccb;
-    background: #EAEBEC;
+    border: 1px solid #FFFFFF;
+    background: #e5e5e5;
     line-height: 1.3;
     border-bottom-width: 0;
 }
 .mbc-accordion-title.active{
 	border-bottom-width: 1px;
+	border-color: #000000;
+	background: #000000;
 }
 .mbc-accordion-menu:last-child .mbc-accordion-title{
 	border-bottom-width: 1px;
@@ -430,7 +436,34 @@ Gallery design
 
 
 
+.mbc-option-break-slider-sec{
+	padding-top: 170px;
+	padding-bottom: 200px;
+}
+.mbc-opb-slider-grds{
+	max-width: 1150px;
+	width: 100%;
+	margin-left: auto;
+	margin-right: auto;
+}
 
+.mbc-opb-slider-grd-item{
+	padding-bottom: 20px;
+}
+.mbc-opb-slider-title{
+	color: #fff;
+}
+
+
+.mbc-content-sec{
+	padding-top: 160px;
+	padding-bottom: 130px;
+}
+
+
+
+
+/*responsive*/
 
 @media(max-width: 1699px){
 	.mbc-fea-sec {
