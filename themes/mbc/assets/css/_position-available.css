@@ -1,0 +1,118 @@
+.mbc-position-available-con-sec{
+	padding: 160px 0 100px;
+}
+
+.pa-des-title{
+	text-transform: uppercase;
+	margin-bottom: 40px;
+	font-family: 'Museo-Sans-500';
+}
+
+
+.mbc-position-available-con-sec .default-page-con ul li, 
+.mbc-position-available-con-sec ul li{
+	padding-left: 22px;
+}
+.mbc-position-available-con-sec .default-page-con ul li::before, 
+.mbc-position-available-con-sec ul li::before{
+	color: #000000;
+}
+
+
+.mbc-pa-form{
+	padding: 40px 40px 50px;
+	background: #B0ACAC;
+}
+.mbc-pa-form form h5{
+	color: #fff;
+}
+.input-field-row{
+	padding-bottom: 14px;
+}
+.input-field-row input[type="text"],
+.input-field-row input[type="email"],
+.input-field-row input[type="telephone"]{
+	width: 100%;
+	height: 62px;
+	padding-left: 18px;
+	border: 1px solid #fff;
+	background: #fff;
+	color: #CBCBCB;
+	font-family: 'Museo-Sans-300';
+	border-radius: 30px;
+}
+
+.input-field-row input[type="submit"]{
+	display: inline-block;
+	vertical-align: baseline;
+	padding: 20px 25px;
+	min-width: 220px;
+	text-align: center;
+	font-size: 18px;
+	font-family: 'Museo-Sans-500';
+	line-height: 1;
+	color: #fff;
+	background: transparent;
+	text-transform: uppercase;
+	border: 1px solid #fff;
+	border-radius: 30px;
+}
+
+.input-field-row input[type="text"]::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+  color: #CBCBCB;
+  opacity: 1;
+}
+.input-field-row input[type="text"]::-moz-placeholder { /* Firefox 19+ */
+  color: #CBCBCB;
+  opacity: 1;
+}
+.input-field-row input[type="text"]:-ms-input-placeholder { /* IE 10+ */
+  color: #CBCBCB;
+  opacity: 1;
+}
+.input-field-row input[type="text"]:-moz-placeholder { /* Firefox 18- */
+  color: #CBCBCB;
+  opacity: 1;
+}
+
+
+.input-field-row input[type="email"]::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+  color: #CBCBCB;
+  opacity: 1;
+}
+.input-field-row input[type="email"]::-moz-placeholder { /* Firefox 19+ */
+  color: #CBCBCB;
+  opacity: 1;
+}
+.input-field-row input[type="email"]:-ms-input-placeholder { /* IE 10+ */
+  color: #CBCBCB;
+  opacity: 1;
+}
+.input-field-row input[type="email"]:-moz-placeholder { /* Firefox 18- */
+  color: #CBCBCB;
+  opacity: 1;
+}
+
+
+.input-field-row input[type="telephone"]::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+  color: #CBCBCB;
+  opacity: 1;
+}
+.input-field-row input[type="telephone"]::-moz-placeholder { /* Firefox 19+ */
+  color: #CBCBCB;
+  opacity: 1;
+}
+.input-field-row input[type="telephone"]:-ms-input-placeholder { /* IE 10+ */
+  color: #CBCBCB;
+  opacity: 1;
+}
+.input-field-row input[type="telephone"]:-moz-placeholder { /* Firefox 18- */
+  color: #CBCBCB;
+  opacity: 1;
+}
+
+.input-field-row input[type="text"]:focus,
+.input-field-row input[type="email"]:focus,
+.input-field-row input[type="telephone"]:focus{
+	border-color: #000;
+}
