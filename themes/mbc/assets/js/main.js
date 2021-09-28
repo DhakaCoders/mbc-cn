@@ -278,6 +278,20 @@ google.maps.event.addDomListener(window, 'load', initialize);
         nextArrow: $('.mbc-text-slider .mbc-slider-prev-nxt .mbc-nxt'),
       });
     }
+    if( $('.mbcTeamSlider').length ){
+      $('.mbcTeamSlider').slick({
+        dots: false,
+        arrows: true,
+        infinite: false,
+        autoplay: false,
+        autoplaySpeed: 4000,
+        speed: 700,
+        slidesToShow: 4,
+        slidesToScroll: 1,
+        prevArrow: $('.mbc-team-slider-ctlr .mbc-slider-prev-nxt .mbc-prev'),
+        nextArrow: $('.mbc-team-slider-ctlr .mbc-slider-prev-nxt .mbc-nxt'),
+      });
+    }
 
     $('.mbc-accordion-title').on('click', function(){
       $(this).toggleClass('active');
