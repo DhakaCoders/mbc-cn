@@ -138,14 +138,14 @@
 .mbc-fullwidth-txt-module-white-black{
 	background: #010203;
 }
-.mbc-fullwidth-txt-module-white-green{
-	background: #808368;
+.mbc-fullwidth-txt-module-white-blue{
+	background: #405D6F;
 }
 .mbc-fullwidth-txt-module-light-gray-bg{
 	background: #EAEBEC;
 }
-.mbc-fullwidth-txt-module-white-mint-bg{
-	background: #D3E3CE;
+.mbc-fullwidth-txt-module-white-dark-gray-bg{
+	background: #716A6A;
 }
 .mbc-fullwidth-txt-module-white-black,
 .mbc-fullwidth-txt-module-white-green,
@@ -161,12 +161,20 @@
 .mbc-fullwidth-txt-module-white-green h4,
 .mbc-fullwidth-txt-module-white-green h5,
 .mbc-fullwidth-txt-module-white-green h6,
-.mbc-fullwidth-txt-module-white-mint-bg h1,
-.mbc-fullwidth-txt-module-white-mint-bg h2,
-.mbc-fullwidth-txt-module-white-mint-bg h3,
-.mbc-fullwidth-txt-module-white-mint-bg h4,
-.mbc-fullwidth-txt-module-white-mint-bg h5,
-.mbc-fullwidth-txt-module-white-mint-bg h6{
+.mbc-fullwidth-txt-module-white-dark-gray-bg,
+.mbc-fullwidth-txt-module-white-dark-gray-bg h1,
+.mbc-fullwidth-txt-module-white-dark-gray-bg h2,
+.mbc-fullwidth-txt-module-white-dark-gray-bg h3,
+.mbc-fullwidth-txt-module-white-dark-gray-bg h4,
+.mbc-fullwidth-txt-module-white-dark-gray-bg h5,
+.mbc-fullwidth-txt-module-white-dark-gray-bg h6,
+.mbc-fullwidth-txt-module-white-blue,
+.mbc-fullwidth-txt-module-white-blue h1,
+.mbc-fullwidth-txt-module-white-blue h2,
+.mbc-fullwidth-txt-module-white-blue h3,
+.mbc-fullwidth-txt-module-white-blue h4,
+.mbc-fullwidth-txt-module-white-blue h5,
+.mbc-fullwidth-txt-module-white-blue h6{
 	color: #fff;
 }
 
