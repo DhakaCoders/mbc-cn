@@ -462,6 +462,53 @@ Gallery design
 
 
 
+.mbc-btn-sec{
+	padding-top: 80px;
+	padding-bottom: 80px;
+	background: #CBCBCB;
+}
+.mbc-btn-sec-inr{
+	display: flex;
+	align-items: center;
+}
+.mbc-prev-nxt-ctlr{
+	margin-left: auto;
+}
+.mbc-btn ul{
+	display: flex;
+	align-items: center;
+	margin-left: -20px;
+	margin-right: -20px;
+}
+.mbc-btn ul li{
+	padding-left: 20px;
+	padding-right: 20px;
+}
+
+.mbc-prev-nxt{
+	display: flex;
+	align-items: center;
+	
+}
+.mbc-prev,
+.mbc-nxt{
+	margin-left: 10px;
+	margin-right: 10px;
+}
+
+.mbc-white-prev-nxt .mbc-prev,
+.mbc-white-prev-nxt .mbc-nxt{
+	width: 60px;
+	height: 60px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	background: #fff;
+	border-radius: 100%;
+}
+
+
+
 
 /*responsive*/
 

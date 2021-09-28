@@ -39,6 +39,9 @@ strong,b{
 em,i{
 	font-style: italic;
 }
+u{
+	text-decoration: underline;
+}
 
 input[type=text],
 input[type=email],
@@ -297,6 +300,90 @@ body.login-register.hide-account-title .select2-container--open .select2-dropdow
 .select2-container--default .select2-results__option--highlighted[data-selected] {
     background-color: #FFA800!important;
     color: #fff!important;
+}
+
+
+
+
+/*common button*/
+
+.mbc-transparent-btn{
+	display: inline-block;
+	vertical-align: baseline;
+	padding: 20px 25px;
+	min-width: 220px;
+	text-align: center;
+	font-size: 18px;
+	line-height: 1;
+	color: #716A6A;
+	background: transparent;
+	text-transform: uppercase;
+	border: 1px solid #716A6A;
+	border-radius: 30px;
+}
+.mbc-transparent-btn:hover{
+	background: #716A6A;
+	color: #fff;
+}
+
+.mbc-white-btn{
+	display: inline-block;
+	vertical-align: baseline;
+	padding: 20px 25px;
+	min-width: 220px;
+	text-align: center;
+	font-size: 18px;
+	line-height: 1;
+	color: #000000;
+	background: #fff;
+	text-transform: uppercase;
+	border: 1px solid #fff;
+	border-radius: 30px;
+}
+.mbc-white-btn:hover{
+	background: #000;
+	border-color: #000;
+	color: #fff;
+}
+
+.mbc-white-transparent-btn{
+	display: inline-block;
+	vertical-align: baseline;
+	padding: 20px 25px;
+	min-width: 220px;
+	text-align: center;
+	font-size: 18px;
+	line-height: 1;
+	color: #fff;
+	background: transparent;
+	text-transform: uppercase;
+	border: 1px solid #fff;
+	border-radius: 30px;
+}
+.mbc-white-transparent-btn:hover{
+	background: #000;
+	border-color: #000;
+	color: #fff;
+}
+
+.mbc-black-transparent-btn{
+	display: inline-block;
+	vertical-align: baseline;
+	padding: 20px 25px;
+	min-width: 220px;
+	text-align: center;
+	font-size: 18px;
+	line-height: 1;
+	color: #000000;
+	background: transparent;
+	text-transform: uppercase;
+	border: 1px solid #fff;
+	border-radius: 30px;
+}
+.mbc-black-transparent-btn:hover{
+	color: #fff;
+	background: #000;
+	border-color: #000;
 }
 
 
