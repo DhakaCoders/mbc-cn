@@ -32,6 +32,7 @@
 }
 .news-grid-des {
     padding-top: 30px;
+    padding-bottom: 25px;
     background: #E5E5E5;
 }
 .news-lod-post-date span {
@@ -46,6 +47,8 @@
 }
 .news-grid-title{
 	padding-bottom: 23px;
+	padding-right: 20px;
+    padding-left: 20px;
 	margin-bottom: 0;
 	border-bottom: 1px solid #FFFFFF;
 }
@@ -57,19 +60,41 @@
 .news-grid-des-title{
 	text-align: center;
 }
+.news-grid-des-title {
+    padding-bottom: 27px;
+}
 .news-grid-btn a{
 	display: inline-block;
 	font-size: 20px;
 	font-weight: 900;
 	color: #000000;	
-	padding-top: 27px;
-	padding-bottom: 25px;
 	position: relative;
+	padding-right: 18px;
 }
-.news-landing-grids-cntlr {
-    padding-bottom: 23px;
+.news-grid-btn a:after{
+	position: absolute;
+	content: ">";
+	/*background: url(../assets/images/news-btn-arow.png);
+	background-repeat: no-repeat;
+	background-size: 100% auto;
+	width: 11px;
+	height: 10px;*/
+	right: 0;
+	top: 50%;
+    margin-top: 2px;
+    transition: all 0.5s;
+    -ms-transition: all 0.5s;
+    -webkit-transition: all 0.5s;
+    transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    -webkit-transform: translateY(-50%);
+
+    
 }
-.news-landing-grid-sec {
+.news-grid-btn a:hover:after{
+	right: -5px;
+}
+.news-grid-sec {
     padding-top: 148px;
     padding-bottom: 233px;
 }
@@ -138,19 +163,16 @@ button.close i {
 
 /*responsive-start*/
 
-/*@media (max-width: 1699px){
-	.news-landing-grids-cntlr ul li {
+@media (max-width: 1699px){
+	.news-grids-cntlr ul li {
     	padding: 0 10px;
     	padding-bottom: 40px;
 	}
-	.news-landing-grids-cntlr ul{
+	.news-grids-cntlr ul{
 		margin: 0 -10px;
 	}
 	.news-landing-grid-des{
 		padding-left: 25px;
-	}
-	.news-landing-grids-cntlr {
-    	padding-bottom: 20px;
 	}
 	.news-landing-sec-entry-hdr{
 		padding-bottom: 45px;
@@ -161,13 +183,13 @@ button.close i {
 	}
 }
 @media (max-width: 1399px){
-	.news-landing-grid-sec {
+	.news-grid-sec {
     	padding-top: 100px;
     	padding-bottom: 170px;
 	}
 }
 @media (max-width: 1299px){
-	.news-landing-grid-sec {
+	.news-grid-sec {
     	padding-bottom: 160px;
 	}
 	.news-landing-sec-entry-hdr{
@@ -175,37 +197,31 @@ button.close i {
 	}
 }
 @media (max-width: 1199px){
-	.news-landing-grid-sec {
+	.news-grid-sec {
     	padding-top: 80px;
     	padding-bottom: 140px;
 	}
-	.news-landing-grid-img-cntlr.has-inline-bg div{
+	.news-grid-img-cntlr.has-inline-bg div{
 		height: 280px;
 	}
-	.news-landing-grid-des{
+	/*.news-landing-grid-des{
 		padding-left: 20px;
 		padding-top: 25px;
 		padding-bottom: 20px;
-	}
-	.news-lod-post-date span{
-		padding-bottom: 18px;
-	}
+	}*/
 	.news-landing-sec-entry-hdr {
     	padding-bottom: 30px;
 	}
-	.news-landing-grids-cntlr {
-    	padding-bottom: 18px;
-	}
 }
 @media (max-width: 991px){
-	.news-landing-grid-sec {
+	.news-grid-sec {
     	padding-top: 70px;
     	padding-bottom: 120px;
 	}
-	.news-landing-grids-cntlr ul{
+	.news-grids-cntlr ul{
 		justify-content: center;
 	}
-	.news-landing-grids-cntlr ul li {
+	.news-grids-cntlr ul li {
 		width: 50%;
 	}
 	.news-landing-sec-entry-hdr {
@@ -213,26 +229,23 @@ button.close i {
 	}
 }
 @media (max-width: 767px){
-	.news-landing-grid-sec {
+	.news-grid-sec {
     	padding-top: 60px;
     	padding-bottom: 100px;
 	}
-	.news-landing-grids-cntlr ul{
+	.news-grids-cntlr ul{
 		margin: 0 -8px;
 	}
-	.news-landing-grids-cntlr ul li {
+	.news-grids-cntlr ul li {
     	padding: 0 8px;
     	padding-bottom: 35px;
 	}
-	.news-landing-grid-img-cntlr.has-inline-bg div {
+	.news-grid-img-cntlr.has-inline-bg div {
     	height: 260px;
 	}
 	.news-landing-grid-des {
     	padding-left: 20px;
     	padding-top: 20px;
-	}
-	.news-lod-post-date span {
-    	padding-bottom: 16px;
 	}
 	.news-landing-grid-title {
     	margin-bottom: 18px;
@@ -266,22 +279,22 @@ button.close i {
 
 }
 @media (max-width: 639px){
-	.news-landing-grids-cntlr ul{
+	.news-grids-cntlr ul{
 		margin: 0;
 	}
-	.news-landing-grids-cntlr ul li {
+	.news-grids-cntlr ul li {
     	padding: 0;
     	padding-bottom: 35px;
     	width: 100%;
 	}
-	.news-landing-grid-item {
+	.news-grid-item {
     	max-width: 350px;
     	width: 100%;
     	margin: 0 auto;
 	}
 }
 @media (max-width: 575px){
-	.news-landing-grid-sec {
+	.news-grid-sec {
     	padding-top: 50px;
     	padding-bottom: 80px;
 	}
@@ -327,4 +340,4 @@ button.close i {
     	right: 5px;
     	top: 6px;
 	}
-}*/
+}

@@ -244,7 +244,37 @@ google.maps.event.addDomListener(window, 'load', initialize);
 
       /*start of keshob*/
 
+if( $('.contact-form-wrp').length ){
+  $('.contact-form-wrp .wpforms-container .wpforms-form .wpforms-submit-container button').on('click', function(){
+    $('.wpforms-field input[required],.wpforms-field select[required]').parents('.wpforms-field').addClass('wpforms-has-error');
+    $('.wpforms-field input[required],.wpforms-field select[required]').addClass('wpforms-error');
+  });
+}
 
+
+if( $('.wpforms-error').length ){
+  $('.wpforms-error').on('click', function(){
+    $(this).parents('.wpforms-field').removeClass('wpforms-has-error');
+  });
+}
+
+var windowWidth = $(window).width();
+var containerWidth = $('.container').width();
+var containerOffset = (windowWidth_1920 - containerWidth);
+
+var containerRgtOffset = ((containerOffset / 2)+2);
+$('.contact-form-rgt-bg').css('width', containerRgtOffset);
+
+
+$(window).resize(function(){
+  var windowWidth = $(window).width();
+  var containerWidth = $('.container').width();
+  var containerOffset = (windowWidth_1920 - containerWidth);
+
+  var containerRgtOffset = ((containerOffset / 2)+2);
+  $('.contact-form-rgt-bg').css('width', containerRgtOffset);
+
+});
       
 
 })(jQuery);
