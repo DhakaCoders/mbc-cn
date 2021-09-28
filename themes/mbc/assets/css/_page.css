@@ -256,3 +256,41 @@ ol li::before {
 	font-size: 16px;
 	font-family: 'Epilogue', sans-serif;
 }
+
+
+
+
+/*page banner*/
+.page-banner{
+	position: relative;
+}
+.page-banner-bg-black{
+	position: absolute;
+	top: 0;
+	right: 0;
+	left: 0;
+	bottom: 0;
+	z-index: 1;
+	background: #000;
+}
+.page-bnr-bg{
+	position: absolute;
+	top: 0;
+	right: 0;
+	left: 0;
+	bottom: 0;
+	z-index: 2;
+}
+.page-bnr-cntlr{
+	position: relative;
+	z-index: 3;
+	text-align: center;
+	padding-top: 20px;
+	height: 540px;
+	padding-bottom: 20px;
+	display: flex;
+	align-items: center;
+}
+.fl-h1.page-bnr-title{
+	color: #fff;
+}
