@@ -205,6 +205,22 @@
 
 
 
+
+
+.home-body-cntlr .careers-grid-sec{
+    padding-top: 190px;
+    padding-bottom: 178px;
+}
+.home-body-cntlr .mbc-service-sec{
+    padding-top: 207px;
+    padding-bottom: 211px;
+}
+.home-body-cntlr .mbc-project-count-sec{
+    padding-top: 163px;
+    padding-bottom: 150px;
+}
+
+
 /*responsive*/
 @media(max-width: 1699px){
     .hm-bnr-cntlr{
@@ -228,9 +244,34 @@
         width: 75px!important;
         height: auto!important;
     }
+    .home-body-cntlr .careers-grid-sec {
+        padding-top: 150px;
+        padding-bottom: 150px;
+    }
+    .home-body-cntlr .mbc-service-sec {
+        padding-top: 150px;
+        padding-bottom: 150px;
+    }
+    .home-body-cntlr .mbc-project-count-sec{
+        padding-top: 140px;
+        padding-bottom: 120px;
+    }
 }
 
-
+@media(max-width: 1399px){
+    .home-body-cntlr .careers-grid-sec {
+        padding-top: 130px;
+        padding-bottom: 130px;
+    }
+    .home-body-cntlr .mbc-service-sec {
+        padding-top: 130px;
+        padding-bottom: 130px;
+    }
+    .home-body-cntlr .mbc-project-count-sec {
+        padding-top: 120px;
+        padding-bottom: 100px;
+    }
+}
 @media(max-width: 1199px){
     .hm-bnr-cntlr{
         height: 700px;
@@ -257,6 +298,18 @@
     .fl-h4.hm-banner-play-title{
         font-size: 20px;
     }
+    .home-body-cntlr .careers-grid-sec {
+        padding-top: 110px;
+        padding-bottom: 110px;
+    }
+    .home-body-cntlr .mbc-service-sec {
+        padding-top: 110px;
+        padding-bottom: 110px;
+    }
+    .home-body-cntlr .mbc-project-count-sec {
+        padding-top: 100px;
+        padding-bottom: 80px;
+    }
 }
 @media(max-width: 991px){
     .hm-banner-play-icon{
@@ -265,12 +318,46 @@
     .fl-h4.hm-banner-play-title{
         font-size: 18px;
     }
+    .home-body-cntlr .careers-grid-sec {
+        padding-top: 90px;
+        padding-bottom: 90px;
+    }
+    .home-body-cntlr .mbc-service-sec {
+        padding-top: 90px;
+        padding-bottom: 90px;
+    }
+    .home-body-cntlr .mbc-project-count-sec {
+        padding-top: 75px;
+        padding-bottom: 60px;
+    }
 }
 @media(max-width: 767px){
     .hm-banner-play-icon{
         margin-bottom: 25px;
     }
+    .home-body-cntlr .careers-grid-sec {
+        padding-top: 70px;
+        padding-bottom: 70px;
+    }
+    .home-body-cntlr .mbc-service-sec {
+        padding-top: 70px;
+        padding-bottom: 70px;
+    }
+    .home-body-cntlr .mbc-project-count-sec{
+        padding-bottom: 50px;
+    }
 }
 @media(max-width: 575px){
-    
+    .home-body-cntlr .careers-grid-sec {
+        padding-top: 50px;
+        padding-bottom: 50px;
+    }
+    .home-body-cntlr .mbc-service-sec {
+        padding-top: 50px;
+        padding-bottom: 50px;
+    }
+    .home-body-cntlr .mbc-project-count-sec {
+        padding-top: 55px;
+        padding-bottom: 35px;
+    }
 }
