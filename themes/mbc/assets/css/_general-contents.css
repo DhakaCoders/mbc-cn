@@ -597,9 +597,14 @@ Gallery design
 .mbc-client-grds{
 	display: flex;
 	align-items: flex-end;
+	flex-wrap: wrap;
+	justify-content: center;
+	margin-left: -50px;
+	margin-right: -50px;
 }
 
 .mbc-client-grd-item{
+	width: 20%;
 	padding-left: 50px;
 	padding-right: 50px;
 	padding-bottom: 100px;
@@ -620,13 +625,13 @@ Gallery design
 		padding-top: 160px;
 	}
 	.mbc-text-slider-ctlr {
-	    padding-bottom: 120px;
+	    padding-bottom: 150px;
 	}
 	.mbc-text-slider-wrap {
 	    padding-top: 120px;
 	}
 	.mbc-team-sec {
-	    padding: 150px 0 80px;
+	    padding: 130px 0 100px;
 	}
 	.mbc-team-grds {
 	    margin-left: -10px;
@@ -667,12 +672,12 @@ Gallery design
 	    padding-top: 100px;
 	}
 	.mbc-accordion-title:after{
-		height: 9px;
-    	width: 14px;
+		height: 12px;
+    	width: 13px;
 	}
 	.mbc-text-slider-inr{
-		padding-left: 50px;
-		padding-right: 50px;
+		padding-left: 30px;
+		padding-right: 30px;
 	}
 	.ptTeamSlider .fl-transparent-btn{
 		min-width: 180px;
@@ -690,6 +695,32 @@ Gallery design
 		width: 50px;
 		height: 50px;
 		margin-top: -15px;
+	}
+	.mbc-team-slider-ctlr .mbc-prev{
+		left: -40px;
+	}
+	.mbc-team-slider-ctlr .mbc-nxt{
+		right: -40px;
+	}
+	.mbc-client-sec {
+	    padding-top: 100px;
+	    padding-bottom: 80px;
+	}
+	.mbc-client-subtitle{
+		margin-bottom: 20px;
+	}
+	.mbc-client-grds{
+		margin-left: -30px;
+		margin-right: -30px;
+	}
+	.mbc-client-grd-item {
+	    padding-left: 30px;
+	    padding-right: 30px;
+	    padding-bottom: 60px;
+	}
+	.mbc-content-sec {
+	    padding-top: 120px;
+	    padding-bottom: 110px;
 	}
 	
 }
@@ -710,11 +741,17 @@ Gallery design
 	    padding-top: 100px;
 	}
 	.mbc-team-sec {
-	    padding: 120px 0 70px;
+	    padding: 100px 0 80px;
 	}
 	.mbc-team-slider-ctlr{
-		padding-left: 50px;
-		padding-right: 50px;
+		padding-left: 30px;
+		padding-right: 30px;
+	}
+	.mbc-team-slider-ctlr .mbc-prev {
+	    left: -10px;
+	}
+	.mbc-team-slider-ctlr .mbc-nxt {
+	    right: -10px;
 	}
 	.mbc-ol-ul-sec {
 	    padding-bottom: 70px;
@@ -753,6 +790,24 @@ Gallery design
 	}
 	.mbc-opb-slider-title{
 		font-size: 35px!important;
+	}
+	.mbc-text-slider {
+	    padding-left: 20px;
+	    padding-right: 20px;
+	}
+	.mbc-text-slider-title{
+		font-size: 36px!important;
+	}
+	.mbc-content-sec {
+	    padding-top: 100px;
+	    padding-bottom: 90px;
+	}
+	.mbc-client-sec {
+	    padding-top: 80px;
+	    padding-bottom: 60px;
+	}
+	.mbc-client-grd-item{
+		width: 25%;
 	}
 }
 @media(max-width: 991px){
