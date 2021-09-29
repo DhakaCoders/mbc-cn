@@ -473,6 +473,7 @@ Gallery design
 	justify-content: center;
 	background: #fff;
 	border-radius: 100%;
+	cursor: pointer;
 }
 .mbc-option-break-option-break-slider-ctlr .mbc-prev i,
 .mbc-option-break-option-break-slider-ctlr .mbc-nxt i{
@@ -494,6 +495,7 @@ Gallery design
 	justify-content: center;
 	background: #fff;
 	border-radius: 100%;
+	cursor: pointer;
 }
 
 .mbc-opb-slider-grd-item{
