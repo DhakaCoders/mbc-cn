@@ -70,9 +70,7 @@
     text-align: right;
 }
 .hm-bnr-logo-btn{
-    
     position: absolute;
-    
     transform: rotate(-90deg);
     -ms-transform: rotate(-90deg);
     -webkit-transform: rotate(-90deg);
