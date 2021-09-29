@@ -28,7 +28,7 @@
     left: 0;
     text-align: center;
     z-index: 4;
-    /*padding: 0 14%;*/
+    padding: 0 14%;
 }
 .hm-body-cntlr-bg-img img{
     display: inline-block;
@@ -233,9 +233,7 @@
     .hm-bnr-logo-cntlr{
         padding: 0 20px;
     }
-    .hm-banner-play-btn{
-        margin-top: 40px;
-    }
+    
     .hm-banner-play-icon{
         margin-bottom: 50px;
     }
@@ -289,9 +287,6 @@
     .hm-banner-play-icon{
         margin-bottom: 40px;
     }
-    .hm-banner-play-btn{
-        margin-top: 0;
-    }
     .hm-banner-play-icon a i svg{
         width: 65px!important;
     }
@@ -332,6 +327,12 @@
     }
 }
 @media(max-width: 767px){
+    .hm-bnr-cntlr{
+        padding-top: 60px;
+    }
+    .fl-h1.hm-bnr-title{
+        font-size: 34px;
+    }
     .hm-banner-play-icon{
         margin-bottom: 25px;
     }
@@ -345,6 +346,23 @@
     }
     .home-body-cntlr .mbc-project-count-sec{
         padding-bottom: 50px;
+    }
+    .hm-banner-play-btn{
+        top: initial;
+        transform: translateX(-50%);
+        -ms-transform: translateX(-50%);
+        -webkit-transform: translateX(-50%);
+        -o-transform: translateX(-50%);
+        bottom: 80px;
+    }
+    .hm-banner-play-icon {
+        margin-bottom: 20px;
+    }
+    .hm-banner-play-icon a i svg {
+        width: 55px!important;
+    }
+    .fl-h4.hm-banner-play-title {
+        font-size: 16px;
     }
 }
 @media(max-width: 575px){
