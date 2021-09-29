@@ -358,10 +358,10 @@ nav.main-nav > ul > li.menu-item-has-children ul.sub-menu li a{
 	}
 	nav.main-nav > ul{
 		padding-top: 45px;
-		margin: 0 -30px;
+		margin: 0 -20px;
 	}
 	nav.main-nav > ul > li{
-		padding: 0 30px;
+		padding: 0 20px;
 	}
 	nav.main-nav > ul > li > a{
 		padding-bottom: 45px;
