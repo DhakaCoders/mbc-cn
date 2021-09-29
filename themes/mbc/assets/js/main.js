@@ -246,6 +246,11 @@ google.maps.event.addDomListener(window, 'load', initialize);
        $(this).parent().toggleClass('this-sub-menu-active');
      });
     }
+    if( $('.hm-bnr-logo-btn-inr').length ){
+      $('.hm-bnr-logo-btn-inr').click(function(){
+        $('.hm-bnr-logo-cntlr').toggleClass('hm-bnr-logo-btn-close');
+      });
+    }
 
 
      /*start of shariful*/
