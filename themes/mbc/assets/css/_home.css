@@ -36,6 +36,9 @@
     width: 100%;
     height: auto;
 }
+.hm-banner.hm-banner-v1{
+    overflow-x: hidden;
+}
 .hm-body-cntlr-bg-img.hm-banner-v1{
     display: block;
 }
@@ -57,12 +60,17 @@
 .hm-bnr-logo{
     margin-top: auto;
     margin-left: auto;
-    padding-left: 63px;
-    padding-right: 23px;
-    display: none;
+    width: 0;
+    transition: all 0.5s;
+    -ms-transition: all 0.5s;
+    -webkit-transition: all 0.5s;
 }
 .hm-bnr-logo-btn-close .hm-bnr-logo{
-    display: block;
+    padding-left: 63px;
+    padding-right: 23px;
+}
+.hm-bnr-logo-btn-close .hm-bnr-logo{
+    width: 100%;
 }
 .hm-bnr-logo ul{
     margin: -35px 0;
@@ -232,6 +240,7 @@
     }
     .hm-bnr-logo-cntlr{
         padding: 0 20px;
+        padding-bottom: 100px;
     }
     
     .hm-banner-play-icon{
@@ -253,6 +262,15 @@
     .home-body-cntlr .mbc-project-count-sec{
         padding-top: 140px;
         padding-bottom: 120px;
+    }
+    .hm-bnr-logo-btn-title{
+        font-size: 18px;
+    }
+    .hm-bnr-logo ul{
+        margin: -20px 0;
+    }
+    .hm-bnr-logo ul li{
+        padding: 20px 0;
     }
 }
 
@@ -283,6 +301,7 @@
     }
     .hm-bnr-logo-cntlr{
         padding: 0 10px;
+        padding-bottom: 70px;
     }
     .hm-banner-play-icon{
         margin-bottom: 40px;
@@ -292,6 +311,9 @@
     }
     .fl-h4.hm-banner-play-title{
         font-size: 20px;
+    }
+    .hm-bnr-logo-btn-title{
+        font-size: 16px;
     }
     .home-body-cntlr .careers-grid-sec {
         padding-top: 110px;
@@ -307,11 +329,17 @@
     }
 }
 @media(max-width: 991px){
+    .hm-banner-v1 .hm-bnr-cntlr{
+        padding-right: 50px;
+    }
     .hm-banner-play-icon{
         margin-bottom: 30px;
     }
     .fl-h4.hm-banner-play-title{
         font-size: 18px;
+    }
+    .hm-bnr-logo-btn-title{
+        font-size: 14px;
     }
     .home-body-cntlr .careers-grid-sec {
         padding-top: 90px;
@@ -327,6 +355,9 @@
     }
 }
 @media(max-width: 767px){
+    .hm-banner-v1 .hm-bnr-cntlr {
+        padding-right: 28px;
+    }
     .hm-bnr-cntlr{
         padding-top: 60px;
     }
@@ -363,6 +394,20 @@
     }
     .fl-h4.hm-banner-play-title {
         font-size: 16px;
+    }
+    .hm-bnr-logo-btn-title{
+        font-size: 12px;
+    }
+    .hm-bnr-logo ul li a{
+        max-width: 120px;
+    }
+    .hm-bnr-logo-cntlr {
+        padding: 0 1px;
+        padding-bottom: 50px;
+    }
+    .hm-bnr-logo{
+        padding-left: 20px;
+        padding-right: 20px;
     }
 }
 @media(max-width: 575px){
