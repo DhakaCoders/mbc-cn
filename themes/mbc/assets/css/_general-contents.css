@@ -30,6 +30,13 @@
 	-ms-transform: translateY(-50%);
 	transform: translateY(-50%);
 	cursor: pointer;
+	background: url('../images/prev-red.png');
+	background-repeat: no-repeat!important;
+	height: 17px;
+	width: 15px;
+}
+.mbc-text-slider .mbc-prev:hover{
+	background: url('../images/prev-red-hover.png');
 }
 .mbc-text-slider .mbc-nxt{
 	position: absolute;
@@ -39,6 +46,13 @@
 	-ms-transform: translateY(-50%);
 	transform: translateY(-50%);
 	cursor: pointer;
+	background: url('../images/nxt-red.png');
+	background-repeat: no-repeat!important;
+	height: 17px;
+	width: 15px;
+}
+.mbc-text-slider .mbc-nxt:hover{
+	background: url('../images/nxt-red-hover.png');
 }
 
 .mbc-text-slider-title{
@@ -212,13 +226,13 @@
 	opacity: 0.7;
 }
 .mbc-team-grd-des-title a{
-	color: #48484A;
+	color: #fff;
 }
 .mbc-team-grd-item-des strong{
 	display: inline-block;
 	vertical-align: baseline;
 	margin-bottom: 25px;
-	color: #48484A;
+	color: #fff;
 }
 
 
@@ -235,6 +249,16 @@
 	-ms-transform: translateY(-50%);
 	transform: translateY(-50%);
 	cursor: pointer;
+	background: url('../images/mbc-prev-white.png');
+	background-repeat: no-repeat;
+	width: 16px;
+	height: 17px;
+	-webkit-transition: all 0.5s;
+	-ms-transition: all 0.5s;
+	transition: all 0.5s;
+}
+.mbc-team-slider-ctlr .mbc-prev:hover{
+	background: url('../images/mbc-prev-white-hover.png');
 }
 .mbc-team-slider-ctlr .mbc-nxt{
 	position: absolute;
@@ -244,6 +268,16 @@
 	-ms-transform: translateY(-50%);
 	transform: translateY(-50%);
 	cursor: pointer;
+	background: url('../images/mbc-nxt-white.png');
+	background-repeat: no-repeat;
+	width: 15px;
+	height: 16px;
+	-webkit-transition: all 0.5s;
+	-ms-transition: all 0.5s;
+	transition: all 0.5s;
+}
+.mbc-team-slider-ctlr .mbc-nxt:hover{
+	background: url('../images/mbc-nxt-white-hover.png');
 }
 
 .mbcTeamSlider .mbc-team-grd-item-ctlr{
@@ -471,15 +505,26 @@ Gallery design
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	background: #fff;
+	background-color: #fff;
 	border-radius: 100%;
+	cursor: pointer;
+	-webkit-transition: all 0.5s;
+	-ms-transition: all 0.5s;
+	transition: all 0.5s;
 }
-.mbc-option-break-option-break-slider-ctlr .mbc-prev i,
-.mbc-option-break-option-break-slider-ctlr .mbc-nxt i{
-	display: inline-block;
-	vertical-align: baseline;
-	line-height: 1;
+.mbc-option-break-option-break-slider-ctlr .mbc-prev i{
+	background-image: url('../images/mbc-prev.png');
+	background-repeat: no-repeat!important;
+	height: 16px;
+	width: 18px;
 }
+.mbc-option-break-option-break-slider-ctlr .mbc-prev:hover{
+	background: #EC1218;
+}
+.mbc-option-break-option-break-slider-ctlr .mbc-prev:hover i{
+	background-image: url('../images/mbc-prev-hover.png');
+}
+
 .mbc-option-break-option-break-slider-ctlr .mbc-nxt{
 	position: absolute;
 	top: 50%;
@@ -494,6 +539,22 @@ Gallery design
 	justify-content: center;
 	background: #fff;
 	border-radius: 100%;
+	cursor: pointer;
+	-webkit-transition: all 0.5s;
+	-ms-transition: all 0.5s;
+	transition: all 0.5s;
+}
+.mbc-option-break-option-break-slider-ctlr .mbc-nxt i{
+	background-image: url('../images/mbc-nxt.png');
+	background-repeat: no-repeat!important;
+	height: 20px;
+	width: 18px;
+}
+.mbc-option-break-option-break-slider-ctlr .mbc-nxt:hover{
+	background: #EC1218;
+}
+.mbc-option-break-option-break-slider-ctlr .mbc-nxt:hover i{
+	background-image: url('../images/mbc-nxt-hover.png');
 }
 
 .mbc-opb-slider-grd-item{
