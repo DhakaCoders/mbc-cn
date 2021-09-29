@@ -116,3 +116,10 @@
 .input-field-row input[type="telephone"]:focus{
 	border-color: #000;
 }
+
+
+
+.pa-news-grd-btn{
+	text-align: center;
+	padding-top: 20px;
+}
