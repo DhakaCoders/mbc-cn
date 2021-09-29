@@ -906,11 +906,11 @@ Gallery design
 		padding-right: 7px;
 	}
 	.mbc-text-slider .mbc-prev {
-	    left: -20px!important;
+	    left: -15px!important;
 	    margin-top: 18px;
 	}
 	.mbc-text-slider .mbc-nxt {
-	    right: -20px!important;
+	    right: -15px!important;
 	    margin-top: 18px;
 	}
 	.mbc-grds-black-bg .mbc-grid-item h1,
@@ -949,6 +949,9 @@ Gallery design
 	.mbc-option-break-option-break-slider-ctlr {
 	    padding-left: 25px;
 	    padding-right: 25px;
+	}
+	.mbc-client-grd-item {
+	    width: 50%;
 	}
 
 }
@@ -992,6 +995,16 @@ Gallery design
 	}
 	.mbc-opb-slider-title {
 	    font-size: 25px!important;
+	}
+	.mbc-client-grds {
+	    margin-left: 0;
+	    margin-right: 0;
+	}
+	.mbc-client-grd-item {
+	    width: 100%;
+	    padding-left: 0;
+	    padding-right: 0;
+	    padding-bottom: 30px;
 	}
 }
 
