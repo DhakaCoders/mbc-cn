@@ -874,6 +874,9 @@ Gallery design
 	    padding-top: 80px;
 	    padding-bottom: 70px;
 	}
+	.mbc-text-slider-title {
+	    font-size: 32px!important;
+	}
 }
 @media(max-width: 767px){
 	.mbc-text-slider-ctlr {
@@ -963,6 +966,10 @@ Gallery design
 	.mbc-client-grd-item {
 	    width: 50%;
 	}
+	.mbc-text-slider-title {
+	    font-size: 28px!important;
+	}
+
 
 }
 @media(max-width: 639px){
@@ -1015,6 +1022,9 @@ Gallery design
 	    padding-left: 0;
 	    padding-right: 0;
 	    padding-bottom: 30px;
+	}
+	.mbc-text-slider-title {
+	    font-size: 25px!important;
 	}
 }
 
