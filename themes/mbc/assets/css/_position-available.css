@@ -42,6 +42,31 @@
 	border-radius: 30px;
 }
 
+.input-field-row input[type="file"]::-webkit-file-upload-button{
+	visibility: hidden;
+}
+.input-field-row input[type="file"]:before{
+	content: 'Choose file';
+  display: inline-block;
+  vertical-align: baseline;
+  background: #000;
+  border: 1px solid #000;
+  border-radius: 5px;
+  padding: 8px 10px;
+  outline: none;
+  white-space: nowrap;
+  -webkit-user-select: none;
+  cursor: pointer;
+  color: #fff;
+  font-size: 20px;
+  font-family: 'Museo-Sans-300';
+  line-height: 1;
+  margin-right: -100px;
+}
+.input-field-row input[type="file"]{
+	color: #fff;
+}
+
 .input-field-row input[type="submit"]{
 	display: inline-block;
 	vertical-align: baseline;
@@ -56,6 +81,12 @@
 	text-transform: uppercase;
 	border: 1px solid #fff;
 	border-radius: 30px;
+	cursor: pointer;
+}
+.input-field-row input[type="submit"]:hover{
+	background: #000;
+	border-color: #000;
+	color: #fff;
 }
 
 .input-field-row input[type="text"]::-webkit-input-placeholder { /* Chrome/Opera/Safari */
