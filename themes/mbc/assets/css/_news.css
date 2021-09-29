@@ -162,7 +162,7 @@
 
 /*modal-css*/
 .modal{
-	background: #000000;
+	background: rgba(0, 0, 0, 0.7);
 }
 
 
@@ -206,7 +206,33 @@
 }
 
 
-
+/*about-start*/
+.hm-about-sec {
+    padding-top: 134px;
+    padding-bottom: 100px;
+}
+.about-con-cntlr {
+    display: flex;
+    flex-wrap: wrap;
+}
+.about-lft-des {
+    width: 66%;
+    padding-right: 50px;
+}
+.about-rgt-img {
+    width: 34%;
+}
+.about-sec-entry-hdr-ttitle{
+	text-transform: uppercase;
+	margin-bottom: 54px;
+}
+.about-lft-des p{
+	margin-bottom: 60px;
+}
+.about-sec-mgs-title {
+	color: #716A6A;
+	margin-bottom: 60px;
+}
 
 /*responsive-start*/
 
@@ -236,6 +262,22 @@
 		padding-bottom: 20px;
 		margin-bottom: 20px;
 	}
+	.hm-about-sec {
+    	padding-top: 100px;
+    	padding-bottom: 80px;
+	}
+	.about-lft-des{
+		padding-right: 40px;
+	}
+	.about-sec-entry-hdr-ttitle{
+		margin-bottom: 38px;
+	}
+	.about-lft-des p {
+    	margin-bottom: 50px;
+	}
+	.about-sec-mgs-title{
+	    margin-bottom: 50px;
+	}
 }
 @media (max-width: 1399px){
 	.news-grid-sec {
@@ -247,6 +289,22 @@
 	}
 	.news-grid-sec .sec-entry-hdr {
     	padding-bottom: 25px;
+	}
+	.hm-about-sec {
+    	padding-top: 80px;
+    	padding-bottom: 60px;
+	}
+	.about-sec-entry-hdr-ttitle {
+    	margin-bottom: 30px;
+	}
+	.about-lft-des p {
+    	margin-bottom: 40px;
+	}
+	.about-sec-mgs-title {
+    	margin-bottom: 40px;
+	}
+	.about-lft-des {
+    	padding-right: 30px;
 	}
 }
 @media (max-width: 1299px){
@@ -274,6 +332,22 @@
 		padding-right: 13px;
 	    margin-bottom: 16px;
 	}
+	.hm-about-sec {
+    	padding-top: 70px;
+    	padding-bottom: 50px;
+	}
+	.about-sec-entry-hdr-ttitle {
+    	margin-bottom: 25px;
+	}
+	.about-lft-des p {
+	    margin-bottom: 35px;
+	}
+	.about-sec-mgs-title {
+    	margin-bottom: 35px;
+	}
+	.about-lft-des {
+    	padding-right: 20px;
+	}
 }
 @media (max-width: 991px){
 	.news-grid-sec {
@@ -298,6 +372,32 @@
 	.news-landing-sec-entry-hdr {
     	padding-bottom: 25px;
 	}
+	.modal-dialog{
+		max-width: 700px;
+	}
+	.modal-body{
+		padding: 50px;
+	}
+	.modal-form-cntlr .contact-form-wrp .wpforms-container .wpforms-form .wpforms-field-container .wpforms-field.wpforms-field-textarea textarea, 
+	.modal-form-cntlr .contact-form-wrp .wpforms-container .wpforms-form .wpforms-field-container .wpforms-field input{
+		height: 52px;
+	}
+	.modal-form-cntlr .contact-form-wrp .wpforms-container .wpforms-form .wpforms-submit-container button{
+	    padding: 17px 15px!important;
+	}
+	.hm-about-sec {
+    	padding-top: 60px;
+    	padding-bottom: 45px;
+	}
+	.about-sec-entry-hdr-ttitle {
+    	margin-bottom: 22px;
+	}
+	.about-lft-des p {
+    	margin-bottom: 30px;
+	}
+	.about-sec-mgs-title {
+    	margin-bottom: 30px;
+	}
 }
 @media (max-width: 767px){
 	.news-grid-sec {
@@ -315,8 +415,32 @@
     	height: 260px;
 	}
 	.modal-body{
-	    padding-left: 30px;
-    	padding-right: 30px;
+	    padding: 40px;
+	}
+	.hm-about-sec {
+    	padding-top: 50px;
+    	padding-bottom: 40px;
+	}
+	.about-rgt-img, 
+	.about-lft-des {
+    	width: 100%;
+	}
+	.about-lft-des{
+		padding-right: 0;
+		order: 2;
+	}
+	.about-rgt-img{
+	    padding-bottom: 50px;
+	}
+	.about-img-cntlr img{
+		width: 100%;
+		height: auto;
+	}
+	.about-sec-entry-hdr-ttitle {
+    	margin-bottom: 20px;
+	}
+	.about-lft-des p {
+    	margin-bottom: 25px;
 	}
 
 }
@@ -341,27 +465,34 @@
     	padding-bottom: 45px;
 	}
 	.modal-body {
-    	padding-left: 25px;
-    	padding-right: 25px;
+    	padding: 30px;
+	}
+	.modal-form-cntlr .contact-form-wrp .wpforms-container .wpforms-form .wpforms-field-container .wpforms-field{
+		width: 100%;
+	}
+	.hm-about-sec {
+    	padding-top: 40px;
+    	padding-bottom: 35px;
+	}
+	.about-rgt-img{
+		padding-bottom: 45px;
 	}
 }
 @media (max-width: 479px){
 	.modal-body {
-    	padding-left: 20px;
-    	padding-right: 20px;
+    	padding: 20px;
+    	padding-bottom: 30px;
+	}
+	.about-sec-btn{
+		text-align: center;
 	}
 	
 }
 @media (max-width: 359px){
-	.modal-btn a{
-	    height: 35px;
-	    font-size: 12px;
+	.modal-form-cntlr .contact-form-wrp .wpforms-container .wpforms-form .wpforms-field-container .wpforms-field.wpforms-field-textarea textarea {
+    	height: 125px!important;
 	}
-	.modal-btn{
-		bottom: 20px;
-	}
-	button.close {
-    	right: 5px;
-    	top: 6px;
+	.about-rgt-img {
+    	padding-bottom: 38px;
 	}
 }
