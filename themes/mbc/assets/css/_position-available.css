@@ -25,6 +25,10 @@
 }
 .mbc-pa-form form h5{
 	color: #fff;
+	text-transform: uppercase;
+}
+.mbc-pa-form form p{
+	margin-bottom: 25px;
 }
 .input-field-row{
 	padding-bottom: 14px;
@@ -52,7 +56,7 @@
   background: #000;
   border: 1px solid #000;
   border-radius: 5px;
-  padding: 8px 10px;
+  padding: 8px 26px;
   outline: none;
   white-space: nowrap;
   -webkit-user-select: none;
@@ -153,4 +157,65 @@
 .pa-news-grd-btn{
 	text-align: center;
 	padding-top: 20px;
+}
+
+
+.postion-available-ctlr .news-grid-sec {
+    padding-top: 210px;
+    padding-bottom: 200px;
+}
+
+
+@media(max-width: 1699px){
+	.mbc-position-available-con-sec {
+    padding: 130px 0 80px;
+	}
+	.pa-des-title{
+		margin-bottom: 30px;
+	}
+	.postion-available-ctlr .news-grid-sec {
+    padding-top: 160px;
+    padding-bottom: 150px;
+	}
+}
+
+@media(max-width: 1199px){
+	.mbc-position-available-con-sec {
+    padding: 100px 0 60px;
+	}
+	.mbc-pa-form {
+    padding: 40px 30px 50px;
+	}
+	.postion-available-ctlr .news-grid-sec {
+    padding-top: 130px;
+    padding-bottom: 120px;
+	}
+}
+
+@media(max-width: 991px){
+	.mbc-position-available-con-sec {
+    padding: 90px 0 50px;
+	}
+	.input-field-row input[type="text"], 
+	.input-field-row input[type="email"], 
+	.input-field-row input[type="telephone"]{
+		height: 50px;
+	}
+	.postion-available-ctlr .news-grid-sec {
+    padding-top: 100px;
+    padding-bottom: 90px;
+	}
+}
+
+@media(max-width: 767px){
+	.mbc-position-available-con-sec {
+    padding: 70px 0 40px;
+	}
+	.mbc-pa-form {
+    padding: 30px 20px 40px;
+	}
+	.postion-available-ctlr .news-grid-sec {
+    padding-top: 80px;
+    padding-bottom: 70px;
+	}
 }
