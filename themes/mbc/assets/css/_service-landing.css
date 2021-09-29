@@ -134,3 +134,133 @@
 	text-transform: uppercase;
 	margin-bottom: 25px;
 }
+
+
+
+
+/*responsive*/
+
+@media(max-width: 1699px){
+	.mbc-service-sec {
+	    padding: 140px 0;
+	}
+	.mbc-service-grd-des-title{
+		font-size: 16px!important;
+	}
+	.mbc-service-grd-item-img{
+		height: 250px;
+	}
+	.mbc-project-count-sec {
+	    padding: 120px 0 80px;
+	}
+	.mbc-project-count-number i{
+		max-width: 55px;
+	}
+	.mbc-project-count-grd-item:nth-child(3) .mbc-project-count-number i{
+		max-width: 65px;
+	}
+	.mbc-project-count-number span{
+		font-size: 60px;
+	}
+	.mbc-project-count-number{
+		margin-bottom: 30px;
+	}
+	.mbc-project-count-des-title{
+		margin-bottom: 20px;
+	}
+	.sec-entry-hdr {
+	    padding-bottom: 30px;
+	}
+}
+
+@media(max-width: 1199px){
+	.mbc-service-sec {
+	    padding: 110px 0;
+	}
+	.sec-entry-hdr {
+	    padding-bottom: 20px;
+	}
+	.mbc-service-grds {
+	    padding-bottom: 30px;
+	}
+	.mbc-project-count-sec {
+	    padding: 100px 0 70px;
+	}
+	.mbc-project-count-number span {
+	    font-size: 50px;
+	}
+}
+
+@media(max-width: 991px){
+	.mbc-service-sec {
+	    padding: 90px 0;
+	}
+	.mbc-service-grds ul li{
+		width: 33.3333%;
+	}
+	.mbc-service-grd-des-title {
+	    font-size: 14px!important;
+	}
+	.mbc-service-btn .mbc-transparent-btn{
+		font-size: 15px;
+	}
+	.mbc-project-count-sec {
+	    padding: 80px 0 55px;
+	}
+	.mbc-project-count-number span {
+	    font-size: 40px;
+	}
+	.mbc-project-count-number i {
+	    max-width: 45px;
+	    margin-right: 15px;
+	}
+	.mbc-project-count-grd-item:nth-child(3) .mbc-project-count-number i {
+	    max-width: 55px;
+	}
+}
+
+@media(max-width: 767px){
+	.mbc-service-sec {
+	    padding: 70px 0;
+	}
+	.mbc-service-grds ul li {
+	    width: 50%;
+	}
+	.mbc-project-count-sec {
+	    padding: 70px 0 40px;
+	}
+	.mbc-project-count-grds {
+	    margin-left: 0;
+	    margin-right: 0;
+	}
+	.mbc-project-count-grd-item {
+	    width: 100%;
+	    padding-left: 0;
+	    padding-right: 0;
+	    padding-bottom: 20px;
+	}
+	.mbc-project-count-grd-item-inr{
+		max-width: 400px;
+		width: 100%;
+		margin-left: auto;
+		margin-right: auto;
+	}
+}
+
+@media(max-width: 575px){
+	.mbc-service-grds ul {
+	    margin-left: 0;
+	    margin-right: 0;
+	}
+	.mbc-service-grds ul li{
+		width: 100%;
+		padding-left: 0;
+		padding-right: 0;
+	}
+	.mbc-service-grd-item{
+		max-width: 350px;
+		width: 100%;
+		margin-left: auto;
+		margin-right: auto;
+	}
+}
