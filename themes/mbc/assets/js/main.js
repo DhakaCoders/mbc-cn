@@ -281,14 +281,14 @@ if( $('.responsive-slider').length ){
     });
 
 
-     if($('.count').length){
+/*     if($('.count').length){
       $('.count').counterUp({
           delay: 10,
           time: 3000
       });
-     }
+     }*/
 
-
+$('.counter').counterUp();
 
       /*start of keshob*/
 
