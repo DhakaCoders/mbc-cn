@@ -541,10 +541,12 @@ Gallery design
 	align-items: center;
 	margin-left: -20px;
 	margin-right: -20px;
+	flex-wrap: wrap;
 }
 .mbc-btn ul li{
 	padding-left: 20px;
 	padding-right: 20px;
+	padding-bottom: 30px;
 }
 
 .mbc-prev-nxt{
@@ -725,6 +727,10 @@ Gallery design
 	    padding-top: 120px;
 	    padding-bottom: 110px;
 	}
+	.mbc-btn-sec {
+	    padding-top: 70px;
+	    padding-bottom: 70px;
+	}
 	
 }
 @media(max-width: 1399px){
@@ -813,6 +819,12 @@ Gallery design
 	.mbc-client-grd-item{
 		width: 25%;
 	}
+	.mbc-btn-sec-inr {
+	    display: block;
+	}
+	.mbc-btn{
+		padding-bottom: 30px;
+	}
 }
 @media(max-width: 991px){
 	.mbc-text-slider-ctlr {
@@ -878,6 +890,7 @@ Gallery design
 	.mbc-text-slider-title {
 	    font-size: 32px!important;
 	}
+
 }
 @media(max-width: 767px){
 	.mbc-text-slider-ctlr {

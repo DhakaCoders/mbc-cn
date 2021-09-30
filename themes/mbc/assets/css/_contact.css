@@ -21,6 +21,7 @@
 }
 .contact-form-info-title {
     margin-bottom: 52px;
+    text-transform: uppercase;
 }
 .contact-form-title-cntlr{
     text-align: center;
@@ -162,7 +163,7 @@
     align-items: center;
     margin-left: auto;
     letter-spacing: 1px;
-    font-family: 'Museo-Sans-300';
+    font-family: 'Museo-Sans-500';
 }
 .contact-form-wrp .wpforms-container .wpforms-form .wpforms-submit-container button:hover {
     background: #ffffff!important;
