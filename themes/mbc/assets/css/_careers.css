@@ -86,7 +86,7 @@
 }
 
 .careers-text-slider-ctlr{
-    padding-bottom: 224px;
+    padding-bottom: 200px;
 }
 .careers-text-slider-ctlr .mbc-text-slider-wrap{
     padding-top: 193px;
@@ -134,6 +134,15 @@
     .careers-grid-sec .sec-entry-hdr {
         padding-bottom: 30px;
     }
+    .careers-text-slider-ctlr {
+        padding-bottom: 165px;
+    }
+    .careers-text-slider-ctlr .mbc-text-slider-wrap {
+        padding-top: 170px;
+    }
+    .careers-text-slider-ctlr .mbc-text-slider-wrap .mbc-text-slider .mbc-text-slider-inr .mbc-text-slider-item .mbc-text-slider-title {
+        margin-bottom: 70px;
+    }
 
 }
 @media (max-width: 1499px){
@@ -172,6 +181,15 @@
     .careers-grid-sec .sec-entry-hdr {
         padding-bottom: 25px;
     }
+    .careers-text-slider-ctlr {
+        padding-bottom: 145px;
+    }
+    .careers-text-slider-ctlr .mbc-text-slider-wrap {
+        padding-top: 150px;
+    }
+    .careers-text-slider-ctlr .mbc-text-slider-wrap .mbc-text-slider .mbc-text-slider-inr .mbc-text-slider-item .mbc-text-slider-title {
+        margin-bottom: 60px;
+    }
 }
 @media (max-width: 1199px){
     .full-width-des-innr {
@@ -196,6 +214,15 @@
     .careers-grid-sec .sec-entry-hdr {
         padding-bottom: 20px;
     }
+    .careers-text-slider-ctlr {
+        padding-bottom: 125px;
+    }
+    .careers-text-slider-ctlr .mbc-text-slider-wrap {
+        padding-top: 130px;
+    }
+    .careers-text-slider-ctlr .mbc-text-slider-wrap .mbc-text-slider .mbc-text-slider-inr .mbc-text-slider-item .mbc-text-slider-title {
+        margin-bottom: 50px;
+    }
 }
 @media (max-width: 991px){
     .full-width-des-innr {
@@ -219,6 +246,15 @@
     }
     .careers-grid-sec .sec-entry-hdr {
         padding-bottom: 16px;
+    }
+    .careers-text-slider-ctlr {
+        padding-bottom: 110px;
+    }
+    .careers-text-slider-ctlr .mbc-text-slider-wrap {
+        padding-top: 100px;
+    }
+    .careers-text-slider-ctlr .mbc-text-slider-wrap .mbc-text-slider .mbc-text-slider-inr .mbc-text-slider-item .mbc-text-slider-title {
+        margin-bottom: 40px;
     }
 }
 @media (max-width: 767px){
@@ -263,7 +299,29 @@
         padding-top: 50px;
         padding-bottom: 30px;
     }
+    .careers-text-slider-ctlr {
+        padding-bottom: 80px;
+    }
+    .careers-text-slider-ctlr .mbc-text-slider-wrap {
+        padding-top: 80px;
+    }
+    .careers-text-slider-ctlr .mbc-text-slider-wrap .mbc-text-slider .mbc-text-slider-inr .mbc-text-slider-item .mbc-text-slider-title {
+        margin-bottom: 32px;
+    }
 }
 @media (max-width: 575px){
-
+    .careers-text-slider-ctlr {
+        padding-bottom: 60px;
+    }
+    .careers-text-slider-ctlr .mbc-text-slider-wrap {
+        padding-top: 50px;
+    }
+    .careers-text-slider-ctlr .mbc-text-slider-wrap .mbc-text-slider .mbc-text-slider-inr .mbc-text-slider-item .mbc-text-slider-title {
+        margin-bottom: 26px;
+    }
+}
+@media (max-width: 575px){
+    .careers-text-slider-ctlr {
+        padding-bottom: 40px;
+    }
 }
