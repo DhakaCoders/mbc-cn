@@ -57,6 +57,9 @@
     margin-bottom: 51px;
     border-bottom: 1px dashed #EC1218;
 }
+.contact-form-info blockquote{
+    margin: 0;
+}
 .contact-form-dtails {
     padding-bottom: 99px;
 }
