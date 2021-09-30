@@ -280,7 +280,6 @@
 	}
 	.about-sec-mgs-title{
 	    margin-bottom: 50px;
-	    font-size: 40px!important;
 	}
 }
 @media (max-width: 1399px){
@@ -348,7 +347,6 @@
 	}
 	.about-sec-mgs-title {
     	margin-bottom: 35px;
-    	font-size: 35px!important;
 	}
 	.about-lft-des {
     	padding-right: 20px;
