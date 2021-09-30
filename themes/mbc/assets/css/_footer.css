@@ -98,7 +98,8 @@
 	font-family: 'Museo-Sans-300';
 }
 .ftr-col a:hover{
-	color: #EC1218;
+	/*color: #EC1218;*/
+	color: #d4d6d6;
 }
 .ftr-details{
 	margin: -10px 0;
