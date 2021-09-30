@@ -202,6 +202,23 @@
 .hm-banner-play-icon a{
     display: inline-block;
 }
+#play-icon{
+   display: inline-block;
+   font-size: 88px;
+    color: #fff; 
+}
+#pause-icon{
+    display: none;
+    font-size: 88px;
+    color: #fff;
+}
+.pause-cntlr #pause-icon{
+    display: inline-block;
+    
+}
+.pause-cntlr #play-icon{
+    display: none;
+}
 .fl-h4.hm-banner-play-title{
     color: #fff;
     text-transform: uppercase;
@@ -273,10 +290,11 @@
     .hm-banner-play-icon{
         margin-bottom: 50px;
     }
-    .hm-banner-play-icon a i svg{
-        display: inline-block;
-        width: 75px!important;
-        height: auto!important;
+    #play-icon{
+        font-size: 75px;
+    }
+    #pause-icon{
+        font-size: 75px;
     }
     .home-body-cntlr .careers-grid-sec {
         padding-top: 150px;
@@ -332,8 +350,11 @@
     .hm-banner-play-icon{
         margin-bottom: 40px;
     }
-    .hm-banner-play-icon a i svg{
-        width: 65px!important;
+    #play-icon{
+        font-size: 65px;
+    }
+    #pause-icon{
+        font-size: 65px;
     }
     .fl-h4.hm-banner-play-title{
         font-size: 20px;
@@ -441,8 +462,11 @@
     .hm-banner-play-icon {
         margin-bottom: 20px;
     }
-    .hm-banner-play-icon a i svg {
-        width: 55px!important;
+    #play-icon{
+        font-size: 55px;
+    }
+    #pause-icon{
+        font-size: 55px;
     }
     .fl-h4.hm-banner-play-title {
         font-size: 16px;

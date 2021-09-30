@@ -270,6 +270,7 @@ ol li::before {
 /*page banner*/
 .page-banner{
 	position: relative;
+	overflow: hidden;
 }
 .page-banner-bg-black{
 	position: absolute;

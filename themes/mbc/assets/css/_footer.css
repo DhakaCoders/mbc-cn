@@ -49,7 +49,7 @@
 }
 .ftr-socials ul li a:hover i,
 .ftr-socials ul li a:hover{
-	color: #EC1218;
+	color: #d4d6d6;
 }
 .ftr-col-cntlr{
 	display: flex;
@@ -212,7 +212,7 @@
 }
 .ftr-developed-by p a:hover,
 .ftr-btm-menu ul li a:hover{
-	color: #EC1218;
+	color: #d4d6d6;
 }
 .ftr-developed-by{
 	margin-left: auto;
@@ -240,6 +240,9 @@
 
 /*responsive*/
 @media(max-width: 1699px){
+	.ftr-logo a{
+		max-width: 185px;
+	}
 	.ftr-topbar{
 		padding-bottom: 60px;
 		margin-bottom: 50px;

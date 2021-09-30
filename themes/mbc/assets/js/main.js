@@ -62,7 +62,7 @@ $(window).load(function() {
 //banner animation
 $(window).scroll(function() {
   var scroll = $(window).scrollTop();
-  $('.page-banner-bg').css({
+  $('.page-bnr-bg').css({
     '-webkit-transform' : 'scale(' + (1 + scroll/2000) + ')',
     '-moz-transform'    : 'scale(' + (1 + scroll/2000) + ')',
     '-ms-transform'     : 'scale(' + (1 + scroll/2000) + ')',
@@ -191,12 +191,31 @@ if( $('.responsive-slider').length ){
         $('.hm-bnr-logo-cntlr').toggleClass('hm-bnr-logo-btn-close');
       });
     }
-    if( $('.hm-banner-play-icon').length ){
-      $('.hm-banner-play-icon').click(function(e){
-        e.preventDefault();
-        $('#bt-vdo').play();
-      });
+    if (windowWidth > 991) {
+      if( $('.page-bnr-cntlr').length ){
+        var windowHeight = $(window).height();
+        var headerHight = $('.header').height();
+        var bnrHeight = (windowHeight - headerHight);
+        if (windowHeight < 635) {
+          $('.page-bnr-cntlr').css('height', bnrHeight);
+        }
+      }
     }
+   $('.hm-banner-play-icon a').on('click', function(e){
+    e.preventDefault();
+    $(this).toggleClass('pause-cntlr');
+      var video = $('#bt-vdo');
+      var video = $('#bt-vdo')[0];
+      var video = $('#bt-vdo');
+      if(video[0].paused) {
+        video[0].play();
+      }
+      else {
+        video[0].pause();
+      }
+      return false;
+   });
+
 
 
      /*start of shariful*/
