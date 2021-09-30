@@ -1,8 +1,8 @@
-.careers-text-sec .sec-entry-hdr{
+.careers-intro-sec .sec-entry-hdr{
     text-align: left;
     padding-bottom: 18px;
 }
-.careers-text-sec {
+.careers-intro-sec {
     padding-top: 161px;
     padding-bottom: 100px;
 }
@@ -123,7 +123,7 @@
     .full-width-des-title{
         margin-bottom: 26px;
     }
-    .careers-text-sec {
+    .careers-intro-sec {
         padding-top: 120px;
         padding-bottom: 80px;
     }
@@ -167,11 +167,11 @@
     .full-width-des-title {
         margin-bottom: 22px;
     }
-    .careers-text-sec {
+    .careers-intro-sec {
         padding-top: 100px;
         padding-bottom: 70px;
     }
-    .careers-text-sec .sec-entry-hdr{
+    .careers-intro-sec .sec-entry-hdr{
         padding-bottom: 10px;
     }
     .careers-grid-sec {
@@ -203,7 +203,7 @@
     .full-width-des-title {
         margin-bottom: 18px;
     }
-    .careers-text-sec {
+    .careers-intro-sec {
         padding-top: 80px;
         padding-bottom: 55px;
     }
@@ -233,11 +233,11 @@
     .left-des-rgt-img.full-width-img-des-cntlr .full-width-img-des-rgt .full-width-des-innr{
         padding-right: 45px;
     }
-    .careers-text-sec {
+    .careers-intro-sec {
         padding-top: 60px;
         padding-bottom: 40px;
     }
-    .careers-text-sec .sec-entry-hdr {
+    .careers-intro-sec .sec-entry-hdr {
         padding-bottom: 7px;
     }
     .careers-grid-sec {
@@ -285,7 +285,7 @@
     .left-des-rgt-img.full-width-img-des-cntlr .full-width-img-des-rgt .full-width-des-innr{
         padding-right: 0;
     }
-    .careers-text-sec {
+    .careers-intro-sec {
         padding-top: 50px;
         padding-bottom: 30px;
     }
