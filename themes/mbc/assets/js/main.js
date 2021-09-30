@@ -281,6 +281,14 @@ if( $('.responsive-slider').length ){
     });
 
 
+     if($('.count').length){
+      $('.counter').counterUp({
+          delay: 10,
+          time: 3000
+      });
+     }
+
+
 
       /*start of keshob*/
 
