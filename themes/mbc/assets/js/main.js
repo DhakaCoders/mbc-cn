@@ -282,7 +282,7 @@ if( $('.responsive-slider').length ){
 
 
      if($('.count').length){
-      $('.counter').counterUp({
+      $('.count').counterUp({
           delay: 10,
           time: 3000
       });
