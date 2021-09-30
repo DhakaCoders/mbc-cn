@@ -320,3 +320,8 @@
         margin-bottom: 26px;
     }
 }
+@media (max-width: 575px){
+    .careers-text-slider-ctlr {
+        padding-bottom: 40px;
+    }
+}

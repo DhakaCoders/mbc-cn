@@ -476,6 +476,9 @@ textarea {
     .contact-form-wrp .wpforms-container .wpforms-form .wpforms-field-container .wpforms-field input{
         font-size: 18px;
     }
+    .contact-form-info-mgs-title{
+        font-size: 30px!important;
+    }
 }
 @media (max-width: 767px){
     .contact-form-rgt,
