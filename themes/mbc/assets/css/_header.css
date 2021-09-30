@@ -81,9 +81,17 @@
 	color: #EC1218;
 }
 .hdr-mail a i svg{
+	
+	fill: #EC1218;
+}
+.home-v2 .hdr-mail a i svg{
 	fill: #48484A;
 }
 .hdr-mail a:hover i svg{
+	
+	fill: #48484A;
+}
+.home-v2 .hdr-mail a:hover i svg{
 	fill: #EC1218;
 }
 .hdr-tel{
@@ -95,7 +103,17 @@
 	padding-left: 29px;
 	font-size: 17px;
 	font-family: 'Museo-Sans-300';
+	
+	color: #EC1218;
+}
+.hdr-tel a:hover{
 	color: #716A6A;
+}
+.home-v2 .hdr-tel a{
+	color: #716A6A;
+}
+.home-v2 .hdr-tel a:hover{
+	color: #EC1218;
 }
 .hdr-tel a i{
 	display: inline-block;
@@ -112,9 +130,16 @@
 	line-height: 1;
 }
 .hdr-tel a i svg{
+	fill: #EC1218;
+}
+.home-v2 .hdr-tel a i svg{
 	fill: #6c6b69;
 }
 .hdr-tel a:hover i svg{
+	
+	fill: #6c6b69;
+}
+.home-v2 .hdr-tel a:hover i svg{
 	fill: #EC1218;
 }
 
