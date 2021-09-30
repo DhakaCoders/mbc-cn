@@ -320,6 +320,7 @@
 .mbc-gallery-sec .mbc-grids-sec-entry-hdr-title{
 	text-align: center;
 	margin-bottom: 30px;
+	font-family: 'Museo-Sans-300';
 }
 
 /*
@@ -546,7 +547,6 @@ Gallery design
 .mbc-btn ul li{
 	padding-left: 20px;
 	padding-right: 20px;
-	padding-bottom: 30px;
 }
 
 .mbc-prev-nxt{
@@ -692,8 +692,8 @@ Gallery design
 		padding-bottom: 150px;
 	}
 	.mbc-option-break-option-break-slider-ctlr{
-		padding-left: 50px;
-		padding-right: 50px;
+		padding-left: 100px;
+		padding-right: 100px;
 	}
 	.mbc-option-break-option-break-slider-ctlr .mbc-prev,
 	.mbc-option-break-option-break-slider-ctlr .mbc-nxt{
