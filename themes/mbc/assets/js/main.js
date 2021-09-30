@@ -331,6 +331,15 @@ google.maps.event.addDomListener(window, 'load', initialize);
       $(this).parents('.mbc-accordion-menu').siblings().find('.mbc-accordion-des').slideUp(300);
     });
 
+     $('.hm-chose-us-btn ul li a').click(function(e){
+      e.preventDefault();
+      var tagid = $(this).data('tag');
+      $('.hm-chose-us-btn ul li a').removeClass('current');
+      $('.hm-chose-us-con').removeClass('current');
+      $(this).addClass('current');
+      $('#'+tagid).addClass('current');
+    });
+
 
 
       /*start of keshob*/
