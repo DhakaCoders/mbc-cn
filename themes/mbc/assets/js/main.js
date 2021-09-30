@@ -281,6 +281,19 @@ if( $('.responsive-slider').length ){
     });
 
 
+/*     if($('.count').length){
+      $('.count').counterUp({
+          delay: 10,
+          time: 3000
+      });
+     }*/
+    if($('.counter').length){
+      $('.counter').counterUp({
+        delay: 10,
+        time: 2000
+      });
+    }
+
 
       /*start of keshob*/
 
