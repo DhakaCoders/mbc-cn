@@ -54,6 +54,10 @@
 	-o-transform: translateY(-50%);
 	height: 13px;
 	width: 1px;
+	background: #EC1218;
+	margin-top: 1px;
+}
+.home-v2 .hdr-details-col:before{
 	background: #716A6A;
 }
 .hdr-details-col:last-of-type:before{
@@ -164,6 +168,9 @@ nav.main-nav > ul > li > a{
 	position: relative;
 	padding-bottom: 58px;
 	color: #716A6A;
+}
+nav.main-nav > ul > li.menu-item-has-children ul.sub-menu li:last-child{
+	border-bottom: 0;
 }
 nav.main-nav > ul > li.menu-item-has-children ul.sub-menu li:hover a,
 nav.main-nav > ul > li.menu-item-has-children:hover a,
@@ -379,7 +386,7 @@ nav.main-nav > ul > li.menu-item-has-children ul.sub-menu li a{
 /*responsive*/
 @media(max-width: 1699px){
 	.logo a{
-		max-width: 200px;
+		max-width: 185px;
 	}
 	.hdr-topbar{
 		padding-top: 20px;
