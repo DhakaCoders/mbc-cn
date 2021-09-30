@@ -52,25 +52,25 @@
     right: 0;
     bottom: 0;
     z-index: 8;
-    padding: 0 33px 0 33px;
     padding-bottom: 165px;
     display: flex;
 }
 
 .hm-bnr-logo{
+    
+}
+.hm-bnr-logo-wrap{
     margin-top: auto;
-    margin-left: auto;
-    width: 0;
+    padding-right: 65px;
+    padding-left: 35px;
+    max-width: 0;
+    width: 100%;
     transition: all 0.5s;
     -ms-transition: all 0.5s;
     -webkit-transition: all 0.5s;
 }
-.hm-bnr-logo-btn-close .hm-bnr-logo{
-    padding-left: 63px;
-    padding-right: 23px;
-}
-.hm-bnr-logo-btn-close .hm-bnr-logo{
-    width: 100%;
+.hm-bnr-logo-btn-close .hm-bnr-logo-wrap{
+    max-width: 377px;
 }
 .hm-bnr-logo ul{
     margin: -35px 0;
@@ -86,9 +86,11 @@
 .hm-bnr-logo-btn{
     display: flex;
     align-items: center;
+    padding-left: 25px;
     background: #000000;
 }
 .hm-bnr-logo-btn-inr{
+    width: 63.82px;
     transform: rotate(-90deg);
     -ms-transform: rotate(-90deg);
     -webkit-transform: rotate(-90deg);
@@ -128,7 +130,6 @@
     bottom: 0;
     right: 0;
     left: 0;
-    /*height: 498px;*/
     z-index: 3;
 }
 .hm-bnr-btm-bg img{
@@ -239,7 +240,6 @@
         max-width: 800px;
     }
     .hm-bnr-logo-cntlr{
-        padding: 0 20px;
         padding-bottom: 100px;
     }
     
@@ -300,7 +300,6 @@
         max-width: 700px;
     }
     .hm-bnr-logo-cntlr{
-        padding: 0 10px;
         padding-bottom: 70px;
     }
     .hm-banner-play-icon{
@@ -402,7 +401,6 @@
         max-width: 120px;
     }
     .hm-bnr-logo-cntlr {
-        padding: 0 1px;
         padding-bottom: 50px;
     }
     .hm-bnr-logo{
