@@ -285,7 +285,10 @@
         margin-bottom: 26px;
     }
 }
-@media (max-width: 575px){
+@media (max-width: 479px){
+    .careers-intro-sec{
+        padding-top: 40px;
+    }
     .careers-text-slider-ctlr {
         padding-bottom: 40px;
     }
