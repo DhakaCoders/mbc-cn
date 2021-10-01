@@ -549,6 +549,9 @@ ol li::before {
 	    padding-top: 20px;
 	    margin-bottom: 20px;
 	}
+	.only-text .mbc-grid-item:not(:last-child){
+		padding-bottom: 0;
+	}
 }
 @media(max-width: 575px){
 	.default-page-con ol li, ol li{
