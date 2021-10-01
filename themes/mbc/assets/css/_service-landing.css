@@ -114,6 +114,7 @@
 	align-items: center;
 	justify-content: center;
 	margin-bottom: 40px;
+	text-align: center;
 }
 
 
@@ -128,6 +129,8 @@
 	color: #cbcbcb;
 	font-size: 80px;
 	line-height: 1;
+	min-width: 140px;
+	text-align: left;
 }
 .mbc-project-count-des{
 	text-align: center;
