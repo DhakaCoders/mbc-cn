@@ -223,12 +223,15 @@ ul li {
 
 .default-page-con ul li::before,
 ul li::before {
-	content: ">";
+	content: "";
 	position: absolute;
 	left: 0;
 	top: 0;
-	margin-top: 2px;
-	color: #EC1218;
+	margin-top: 10px;
+	background: url('../images/mbc-rgt-red-arrow.png');
+	background-repeat: no-repeat;
+	width: 9px;
+	height: 10px;
 }
 ul li.refGridItem:before{
 	display: none;

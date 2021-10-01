@@ -15,7 +15,7 @@
 }
 .mbc-position-available-con-sec .default-page-con ul li::before, 
 .mbc-position-available-con-sec ul li::before{
-	color: #000000;
+	background: url('../images/mbc-right-arrow.png');
 }
 
 
@@ -161,7 +161,7 @@
 .input-field-row input[type="text"]:focus,
 .input-field-row input[type="email"]:focus,
 .input-field-row input[type="telephone"]:focus{
-	border-color: #9A8E8E;
+	border-color: #7E7676;
 }
 
 
