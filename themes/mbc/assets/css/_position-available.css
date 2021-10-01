@@ -212,6 +212,7 @@
 	.input-field-row input[type="email"], 
 	.input-field-row input[type="telephone"]{
 		height: 50px;
+		font-size: 16px;
 	}
 	.postion-available-ctlr .news-grid-sec {
     padding-top: 100px;
@@ -232,6 +233,10 @@
 	.postion-available-ctlr .news-grid-sec {
     padding-top: 80px;
     padding-bottom: 70px;
+	}
+	.input-field-row input[type="submit"]{
+		padding: 15px 25px;
+		font-size: 16px;
 	}
 }
 
