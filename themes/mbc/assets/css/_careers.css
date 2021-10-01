@@ -270,6 +270,9 @@
     .careers-text-slider-ctlr .mbc-text-slider-wrap .mbc-text-slider .mbc-text-slider-inr .mbc-text-slider-item .mbc-text-slider-title {
         margin-bottom: 32px;
     }
+    .full-width-des-innr p:last-of-type{
+        margin-bottom: 40px;
+    }
 }
 @media (max-width: 575px){
     .careers-text-slider-ctlr {
