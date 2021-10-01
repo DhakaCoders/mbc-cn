@@ -14,6 +14,7 @@
 
 .hm-chose-us-btn{
 	padding-bottom: 60px;
+	overflow: hidden;
 }
 .hm-chose-us-btn ul{
 	display: flex;
