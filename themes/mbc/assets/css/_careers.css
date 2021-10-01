@@ -50,6 +50,7 @@
 .full-width-des-title{
     color: #FFFFFF;
     margin-bottom: 31px;
+    text-transform: uppercase;
 }
 .full-width-des-innr p{
     color: #FFFFFF;
@@ -93,6 +94,9 @@
 }
 .careers-text-slider-ctlr .mbc-text-slider-wrap .mbc-text-slider .mbc-text-slider-inr .mbc-text-slider-item .mbc-text-slider-title{
     margin-bottom: 80px;
+}
+.mbc-text-slider-sub-title{
+    text-transform: uppercase;
 }
 .left-des-rgt-img .full-width-img-des-lft{
     order: 2;
