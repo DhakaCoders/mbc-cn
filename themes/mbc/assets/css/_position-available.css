@@ -27,6 +27,10 @@
 	color: #fff;
 	text-transform: uppercase;
 }
+.mbc-pa-form-hdr-title{
+	text-transform: uppercase;
+	margin-bottom: 30px;
+}
 .mbc-pa-form form p{
 	margin-bottom: 25px;
 }
@@ -66,9 +70,17 @@
   font-family: 'Museo-Sans-300';
   line-height: 1;
   margin-right: -100px;
+  -webkit-transition: all 0.5s;
+  -ms-transition: all 0.5s;
+  transition: all 0.5s;
+}
+.input-field-row input[type="file"]:hover:before{
+	background: #EC1218;
+	border-color: #EC1218;
 }
 .input-field-row input[type="file"]{
 	color: #fff;
+	width: 100%;
 }
 
 .input-field-row input[type="submit"]{
@@ -149,7 +161,7 @@
 .input-field-row input[type="text"]:focus,
 .input-field-row input[type="email"]:focus,
 .input-field-row input[type="telephone"]:focus{
-	border-color: #000;
+	border-color: #9A8E8E;
 }
 
 
@@ -205,6 +217,9 @@
     padding-top: 100px;
     padding-bottom: 90px;
 	}
+	.mbc-pa-form-hdr-title{
+		margin-bottom: 30px;
+	}
 }
 
 @media(max-width: 767px){
@@ -217,5 +232,21 @@
 	.postion-available-ctlr .news-grid-sec {
     padding-top: 80px;
     padding-bottom: 70px;
+	}
+}
+
+@media(max-width: 479px){
+	.input-field-row input[type="file"]:before{
+		padding: 8px 12px;
+		font-size: 15px;
+		margin-right: -75px;
+	}
+	.input-field-row input[type="file"] {
+	    font-size: 15px;
+	}
+	.input-field-row input[type="submit"]{
+		padding: 15px 25px;
+    min-width: 100%;
+    font-size: 15px;
 	}
 }
