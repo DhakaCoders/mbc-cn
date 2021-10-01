@@ -293,6 +293,17 @@
 	.hm-service-sec-inr {
 	    padding-bottom: 80px;
 	}
+	.hm-chose-us-btn ul {
+	    margin-left: -60px;
+	    margin-right: -60px;
+	}
+	.hm-chose-us-btn ul li {
+	    padding-left: 60px;
+	    padding-right: 60px;
+	}
+	.hm-chose-us-btn ul li:after {
+	    width: 100px;
+	}
 }
 
 @media(max-width: 991px){
@@ -339,18 +350,15 @@
 
 @media(max-width: 767px){
 	.hm-chose-us-btn ul {
-	    margin-left: 0;
-	    margin-right: 0;
-	    display: block;
+	    margin-left: -40px;
+    	margin-right: -40px;
 	}
 	.hm-chose-us-btn ul li {
-	    padding-left: 0;
-	    padding-right: 0;
-	    text-align: center;
-	    padding-bottom: 10px;
+	    padding-left: 40px;
+    	padding-right: 40px;
 	}
 	.hm-chose-us-btn ul li:after{
-		content: none;
+		width: 65px;
 	}
 	.hm-chose-us-btn {
 	    padding-bottom: 20px;
