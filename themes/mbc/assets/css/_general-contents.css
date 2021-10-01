@@ -872,15 +872,20 @@ Gallery design
 	    padding-bottom: 80px;
 	}
 	.mbc-option-break-option-break-slider-ctlr {
-	    padding-left: 50px;
-	    padding-right: 50px;
+	    padding-left: 70px;
+	    padding-right: 70px;
 	}
 	.mbc-option-break-option-break-slider-ctlr .mbc-prev, 
 	.mbc-option-break-option-break-slider-ctlr .mbc-nxt{
 		width: 40px;
     	height: 40px;
 	}
-	
+	.mbc-option-break-option-break-slider-ctlr .mbc-prev i{
+		background-size: 16px 14px;
+	}
+	.mbc-option-break-option-break-slider-ctlr .mbc-nxt i{
+		background-size: 13px 16px;
+	}
 	.mbc-opb-slider-title {
 	    font-size: 29px!important;
 	}
@@ -993,6 +998,10 @@ Gallery design
 	.mbc-text-slider-title {
 	    font-size: 28px!important;
 	}
+	.mbc-option-break-option-break-slider-ctlr {
+	    padding-left: 60px;
+	    padding-right: 60px;
+	}
 
 
 }
@@ -1049,6 +1058,25 @@ Gallery design
 	}
 	.mbc-text-slider-title {
 	    font-size: 25px!important;
+	}
+	.mbc-option-break-option-break-slider-ctlr .mbc-prev, 
+	.mbc-option-break-option-break-slider-ctlr .mbc-nxt {
+	    width: 30px;
+	    height: 30px;
+	}
+	.mbc-option-break-option-break-slider-ctlr .mbc-prev i {
+	    background-size: 12px 10px;
+	    height: 11px;
+    	width: 12px;
+	}
+	.mbc-option-break-option-break-slider-ctlr .mbc-nxt i {
+	    background-size: 10px 12px;
+	    height: 12px;
+    	width: 11px;
+	}
+	.mbc-option-break-option-break-slider-ctlr {
+	    padding-left: 40px;
+	    padding-right: 40px;
 	}
 }
 

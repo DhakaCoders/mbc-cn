@@ -31,6 +31,7 @@
 .mbc-service-grds ul{
 	display: flex;
 	align-items: center;
+	justify-content: center;
 	flex-wrap: wrap;
 	margin-left: -10px;
 	margin-right: -10px;
@@ -199,15 +200,16 @@
 	.mbc-project-count-number span {
 	    font-size: 50px;
 	}
+	.mbc-service-grds ul li{
+		width: 33.3333%;
+	}
 }
 
 @media(max-width: 991px){
 	.mbc-service-sec {
 	    padding: 90px 0;
 	}
-	.mbc-service-grds ul li{
-		width: 33.3333%;
-	}
+	
 	.mbc-service-grd-des-title {
 	    font-size: 14px!important;
 	}
@@ -254,6 +256,9 @@
 		width: 100%;
 		margin-left: auto;
 		margin-right: auto;
+	}
+	.mbc-project-count-number{
+		margin-left: 50px;
 	}
 }
 
