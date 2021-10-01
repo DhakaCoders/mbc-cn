@@ -424,7 +424,7 @@ Gallery design
 
 .mbc-option-break-slider-sec{
 	padding-top: 170px;
-	padding-bottom: 200px;
+	padding-bottom: 170px;
 }
 .mbc-option-break-option-break-slider-ctlr{
 	padding-left: 100px;
@@ -486,7 +486,7 @@ Gallery design
 	background-image: url('../images/mbc-nxt.png');
 	background-repeat: no-repeat!important;
 	height: 20px;
-	width: 18px;
+	width: 14px;
 }
 .mbc-option-break-option-break-slider-ctlr .mbc-nxt:hover{
 	background: #EC1218;
@@ -694,7 +694,7 @@ Gallery design
 	}
 	.mbc-option-break-slider-sec{
 		padding-top: 130px;
-		padding-bottom: 150px;
+		padding-bottom: 130px;
 	}
 	.mbc-option-break-option-break-slider-ctlr{
 		padding-left: 100px;
@@ -747,12 +747,7 @@ Gallery design
 	
 }
 @media(max-width: 1399px){
-	.mbc-option-break-option-break-slider-ctlr .mbc-prev{
-		margin-left: -30px;
-	}
-	.mbc-option-break-option-break-slider-ctlr .mbc-nxt{
-		margin-right: -30px;
-	}
+	
 	
 }
 @media(max-width: 1199px){
@@ -800,14 +795,9 @@ Gallery design
 	}
 	.mbc-option-break-slider-sec {
 	    padding-top: 100px;
-	    padding-bottom: 120px;
+	    padding-bottom: 100px;
 	}
-	.mbc-option-break-option-break-slider-ctlr .mbc-prev {
-	    margin-left: -10px;
-	}
-	.mbc-option-break-option-break-slider-ctlr .mbc-nxt {
-	    margin-right: -10px;
-	}
+	
 	.mbc-opb-slider-grd-item {
 	     padding-bottom: 0; 
 	}
@@ -879,17 +869,18 @@ Gallery design
 	}
 	.mbc-option-break-slider-sec {
 	    padding-top: 80px;
-	    padding-bottom: 100px;
+	    padding-bottom: 80px;
 	}
 	.mbc-option-break-option-break-slider-ctlr {
-	    padding-left: 40px;
-	    padding-right: 40px;
+	    padding-left: 50px;
+	    padding-right: 50px;
 	}
 	.mbc-option-break-option-break-slider-ctlr .mbc-prev, 
 	.mbc-option-break-option-break-slider-ctlr .mbc-nxt{
 		width: 40px;
     	height: 40px;
 	}
+	
 	.mbc-opb-slider-title {
 	    font-size: 29px!important;
 	}
@@ -981,21 +972,21 @@ Gallery design
 	}
 	.mbc-option-break-slider-sec {
 	    padding-top: 70px;
-	    padding-bottom: 80px;
+	    padding-bottom: 70px;
 	}
 	.mbc-opb-slider-title {
 	    font-size: 28px!important;
 	}
-	.mbc-option-break-option-break-slider-ctlr .mbc-prev {
+	/*.mbc-option-break-option-break-slider-ctlr .mbc-prev {
 	    margin-left: -20px;
 	}
 	.mbc-option-break-option-break-slider-ctlr .mbc-nxt {
 	    margin-right: -20px;
-	}
-	.mbc-option-break-option-break-slider-ctlr {
+	}*/
+	/*.mbc-option-break-option-break-slider-ctlr {
 	    padding-left: 25px;
 	    padding-right: 25px;
-	}
+	}*/
 	.mbc-client-grd-item {
 	    width: 50%;
 	}
