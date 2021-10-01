@@ -80,6 +80,7 @@
 	position: relative;
 	padding-right: 18px;
 	text-transform: uppercase;
+	line-height: 1;
 }
 .news-grid-btn a:after{
 	position: absolute;
@@ -91,7 +92,7 @@
 	height: 10px;*/
 	right: 0;
 	top: 50%;
-    margin-top: 0;
+    margin-top: -2px;
     transition: all 0.5s;
     -ms-transition: all 0.5s;
     -webkit-transition: all 0.5s;
