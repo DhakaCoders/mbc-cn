@@ -69,6 +69,7 @@
 }
 .input-field-row input[type="file"]{
 	color: #fff;
+	width: 100%;
 }
 
 .input-field-row input[type="submit"]{
@@ -149,7 +150,7 @@
 .input-field-row input[type="text"]:focus,
 .input-field-row input[type="email"]:focus,
 .input-field-row input[type="telephone"]:focus{
-	border-color: #000;
+	border-color: #9A8E8E;
 }
 
 
@@ -217,5 +218,21 @@
 	.postion-available-ctlr .news-grid-sec {
     padding-top: 80px;
     padding-bottom: 70px;
+	}
+}
+
+@media(max-width: 479px){
+	.input-field-row input[type="file"]:before{
+		padding: 8px 12px;
+		font-size: 15px;
+		margin-right: -75px;
+	}
+	.input-field-row input[type="file"] {
+	    font-size: 15px;
+	}
+	.input-field-row input[type="submit"]{
+		padding: 15px 25px;
+    min-width: 100%;
+    font-size: 15px;
 	}
 }
