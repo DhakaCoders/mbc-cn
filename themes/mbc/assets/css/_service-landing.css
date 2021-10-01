@@ -159,12 +159,16 @@
 	.mbc-project-count-sec {
 	    padding: 120px 0 80px;
 	}
-	/*.mbc-project-count-number i{
+	.mbc-project-count-number i{
 		max-width: 55px;
 	}
 	.mbc-project-count-grd-item:nth-child(3) .mbc-project-count-number i{
 		max-width: 65px;
-	}*/
+	}
+	.mbc-project-count-number i svg{
+		width: 100%!important;
+		height: auto!important;
+	}
 	.mbc-project-count-number span{
 		font-size: 60px;
 	}
