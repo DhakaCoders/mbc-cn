@@ -75,10 +75,11 @@
 }
 .news-grid-btn a{
 	display: inline-block;
-	font-weight: 900;
+	font-family: 'Museo-Sans-500';
 	color: #000000;	
 	position: relative;
 	padding-right: 18px;
+	text-transform: uppercase;
 }
 .news-grid-btn a:after{
 	position: absolute;
@@ -90,7 +91,7 @@
 	height: 10px;*/
 	right: 0;
 	top: 50%;
-    margin-top: 1px;
+    margin-top: 0;
     transition: all 0.5s;
     -ms-transition: all 0.5s;
     -webkit-transition: all 0.5s;
