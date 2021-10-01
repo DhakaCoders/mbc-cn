@@ -140,9 +140,10 @@
 }
 .contact-form-wrp .wpforms-container .wpforms-form .wpforms-field-container .wpforms-field-textarea textarea:focus, 
 .contact-form-wrp .wpforms-container .wpforms-form .wpforms-field-container .wpforms-field input:focus {
-    border-color: #E5E5E5;
-    background-color: #E5E5E5;
-    color: #000;
+    /*border-color: #E5E5E5;
+    background-color: #E5E5E5;*/
+    border-color: #565656;
+    background-color: #565656;
 }
 .contact-form-wrp .wpforms-container .wpforms-form .wpforms-submit-container button {
     min-width: 222px;
