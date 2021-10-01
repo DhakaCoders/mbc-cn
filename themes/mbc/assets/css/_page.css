@@ -557,9 +557,7 @@ ol li::before {
 	.default-page-con ul li, ul li{
 		padding: 2px 0 10px 22px;
 	}
-	.default-page-con ul li::before, ul li::before{
-		margin-top: 2px;
-	}
+	
 }
 
 @media(max-width: 359px){
