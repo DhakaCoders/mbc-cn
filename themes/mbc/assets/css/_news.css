@@ -102,6 +102,7 @@
 }
 .news-grid-btn a:hover{
 	color: #ed1c24;
+	letter-spacing: 1px;
 }
 .news-grid-btn a:hover:after{
 	right: -5px;
