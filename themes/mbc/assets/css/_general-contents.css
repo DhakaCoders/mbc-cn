@@ -577,6 +577,11 @@ Gallery design
 	cursor: pointer;
 }
 
+.mbc-btn-sec .mbc-white-prev-nxt .mbc-prev i,
+.mbc-btn-sec .mbc-white-prev-nxt .mbc-nxt i{
+	margin-top: -5px;
+}
+
 
 .mbc-client-sec{
 	padding-top: 150px;
@@ -730,6 +735,14 @@ Gallery design
 	.mbc-btn-sec {
 	    padding-top: 70px;
 	    padding-bottom: 70px;
+	}
+	.mbc-btn ul {
+	    margin-left: -10px;
+	    margin-right: -10px;
+	}
+	.mbc-btn ul li {
+	    padding-left: 10px;
+	    padding-right: 10px;
 	}
 	
 }
