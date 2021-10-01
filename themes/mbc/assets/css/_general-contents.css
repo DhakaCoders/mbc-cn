@@ -838,6 +838,10 @@ Gallery design
 	.mbc-btn{
 		padding-bottom: 30px;
 	}
+	.mbc-text-slider .mbc-prev,
+	.mbc-text-slider .mbc-nxt{
+		margin-top: -15px;
+	}
 }
 @media(max-width: 991px){
 	.mbc-text-slider-ctlr {
@@ -903,6 +907,10 @@ Gallery design
 	.mbc-text-slider-title {
 	    font-size: 32px!important;
 	}
+	.mbc-text-slider-inr {
+	    padding-left: 40px;
+	    padding-right: 40px;
+	}
 
 }
 @media(max-width: 767px){
@@ -946,12 +954,10 @@ Gallery design
 		padding-right: 7px;
 	}
 	.mbc-text-slider .mbc-prev {
-	    left: -15px!important;
-	    margin-top: 18px;
+	    left: 0!important;
 	}
 	.mbc-text-slider .mbc-nxt {
-	    right: -15px!important;
-	    margin-top: 18px;
+	    right: 0!important;
 	}
 	.mbc-grds-black-bg .mbc-grid-item h1,
 	.mbc-grds-black-bg .mbc-grid-item h2,
