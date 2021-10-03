@@ -624,6 +624,25 @@ Gallery design
 	text-align: center;
 }
 
+.general-content-ctr .full-width-des-subtitle{
+	color: #000;
+}
+.general-content-ctr .full-width-des-title{
+	color: #000;
+}
+.general-content-ctr .full-width-des-innr p {
+    color: #000;
+}
+
+.general-content-ctr .full-width-img-bleed-sec-rows-cntlr ul li:nth-child(2n+2) .full-width-des-title{
+	color: #fff;
+}
+.general-content-ctr .full-width-img-bleed-sec-rows-cntlr ul li:nth-child(2n+2) .full-width-des-innr p {
+    color: #fff;
+}
+.general-content-ctr .full-width-img-bleed-sec-rows-cntlr ul li:nth-child(2n+2) .full-width-des-subtitle{
+	color: #fff;
+}
 
 
 /*responsive*/
