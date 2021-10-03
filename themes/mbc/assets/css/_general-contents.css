@@ -523,6 +523,10 @@ Gallery design
 	padding-bottom: 130px;
 }
 
+.mbc-content-des a{
+	margin-bottom: 20px;
+}
+
 
 
 .mbc-btn-sec{
@@ -547,6 +551,7 @@ Gallery design
 .mbc-btn ul li{
 	padding-left: 20px;
 	padding-right: 20px;
+	padding-bottom: 20px;
 }
 
 .mbc-prev-nxt{
