@@ -52,6 +52,9 @@
     margin-bottom: 31px;
     text-transform: uppercase;
 }
+.full-width-des-subtitle{
+    text-transform: uppercase;
+}
 .full-width-des-innr p{
     color: #FFFFFF;
 }
