@@ -72,6 +72,7 @@
 }
 .hdr-mail{
 	padding: 0 11px;
+	margin-top: -1px;
 }
 .hdr-tel a span,
 .hdr-tel a i,
@@ -132,6 +133,10 @@
 	-ms-transition: all 0.5s;
 	-webkit-transition: all 0.5s;
 	line-height: 1;
+	margin-top: -2px;
+}
+.hdr-mail a i{
+	margin-top: -1px;
 }
 .hdr-tel a i svg{
 	fill: #EC1218;

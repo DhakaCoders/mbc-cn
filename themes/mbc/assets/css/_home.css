@@ -12,7 +12,7 @@
 	font-family: 'Museo-Sans-300';
 }
 .ftr-top-btn .mbc-black-transparent-btn{
-	font-family: 'Museo-Sans-700';
+	font-family: 'Museo-Sans-900';
 }
 
 
@@ -29,6 +29,7 @@
     text-align: center;
     z-index: 4;
     padding: 0 14%;
+    opacity: 0.5;
 }
 .hm-body-cntlr-bg-img img{
     display: inline-block;
@@ -52,7 +53,8 @@
     right: 0;
     bottom: 0;
     z-index: 8;
-    padding-bottom: 165px;
+    padding-bottom: 65px;
+    padding-top: 65px;
     display: flex;
     transition: all 0.5s;
     -ms-transition: all 0.5s;
@@ -67,6 +69,7 @@
 }
 .hm-bnr-logo-wrap{
     margin-top: auto;
+    margin-bottom: auto;
     padding-right: 65px;
     padding-left: 35px;
     max-width: 377px;
@@ -284,7 +287,6 @@
         padding-left: 0;
     }
     .hm-bnr-logo-cntlr{
-        padding-bottom: 100px;
     }
     
     .hm-banner-play-icon{
@@ -345,7 +347,6 @@
         max-width: 700px;
     }
     .hm-bnr-logo-cntlr{
-        padding-bottom: 70px;
     }
     .hm-banner-play-icon{
         margin-bottom: 40px;

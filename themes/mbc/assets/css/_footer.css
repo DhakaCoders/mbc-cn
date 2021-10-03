@@ -167,7 +167,7 @@
 	left: 0;
 	top: 50%;
 	background: #fff;
-	height: 12px;
+	height: 16px;
 	width: 2px;
 	transform: translateY(-50%);
 	-ms-transform: translateY(-50%);
@@ -240,6 +240,9 @@
 
 /*responsive*/
 @media(max-width: 1699px){
+	.footer-wrp{
+		padding-top: 70px;
+	}
 	.ftr-logo a{
 		max-width: 185px;
 	}
@@ -276,7 +279,10 @@
 	}
 	.ftr-col{
 		max-width: 33.33%;
-		margin-bottom: 40px;
+		margin-bottom: 55px;
+	}
+	.fl-h6.ftr-col-title{
+		margin-bottom: 20px;
 	}
 	.ftr-col:nth-of-type(3){
 		padding-right: 0;
@@ -301,6 +307,7 @@
 		max-width: 100%;
 		padding-right: 0;
 		text-align: center;
+		margin-bottom: 40px;
 	}
 	.ftr-col-cntlr{
 		padding-bottom: 20px;
