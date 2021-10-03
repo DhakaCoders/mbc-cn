@@ -314,6 +314,7 @@ textarea {
 .contact-google-map iframe{
     height: 540px;
     width: 100%;
+    vertical-align: bottom;
 }
 .contact-google-parachute{
     position: absolute;
