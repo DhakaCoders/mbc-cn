@@ -366,6 +366,39 @@ ol li::before {
 	display: none;
 }
 
+/**/
+/*404*/
+
+.page-404-sec-wrp {
+    padding-bottom: 85px;
+    padding-top: 85px;
+}
+.page-404-dsc-wrp {
+    text-align: center;
+}
+.title-404 {
+    display: inline-block;
+    vertical-align: baseline;
+    padding-bottom: 40px;
+    font-size: 96px;
+    font-family: 'Museo-Sans-700';
+    line-height: 1;
+    margin-bottom: 0;
+}
+.page-404-dsc-wrp span {
+    display: block;
+    font-size: 22px;
+    line-height: 1;
+    font-family: 'Museo-Sans-700';
+    padding-bottom: 20px;
+}
+.page-404-dsc-wrp p {
+    margin-bottom: 60px;
+}
+.page-404-btn {
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
 
 
 /*responsive*/
@@ -562,7 +595,11 @@ ol li::before {
 	}
 	
 }
-
+@media(max-width: 479px){
+	.page-404-btn a{
+        width: 100%;
+    }
+}
 @media(max-width: 359px){
 	.fl-transparent-btn{
 		min-width: 180px;
