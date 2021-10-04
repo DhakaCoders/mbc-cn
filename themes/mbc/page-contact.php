@@ -23,6 +23,7 @@ $mapcode = get_field('gmap_code', $thisID);
 	  </div>
 	</div>
 </section>
+
 <section class="breadcrumb-sec">
 <div class="container">
   <div class="row">
@@ -46,10 +47,14 @@ $mapcode = get_field('gmap_code', $thisID);
       <div class="contact-form-block clearfix">
         <div class="contact-form-lft mHc">
           <div class="contact-form-info-cntlr">
+          	<?php 
+              $intro = get_field('introsec', $thisID);
+              if($intro):
+            ?>
             <div class="contact-form-info">
-              <h4 class="contact-form-info-title fl-h4">Let’s Talk</h4>
+              <?php if( !empty($intro['title']) ) printf( '<h2 class="contact-form-info-title fl-h4">%s</h2>', $intro['title'] ); ?>
               <div class="contact-form-info-des">
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In eu blandit erat. In ullamcorper nisl nec elementum dapibus. Nulla nec quam pellentesque, pellentesque odio non, maximus erat. </p>
+              	<?php if( !empty($intro['description']) ) echo wpautop( $intro['description'] ); ?>
               </div>
               <div class="contact-form-dtails">
                 <div class="cnt-addres">
@@ -64,6 +69,7 @@ $mapcode = get_field('gmap_code', $thisID);
                 <h2 class="contact-form-info-mgs-title fl-h2">“Committed to providing clients with value, quality and a safe work place.”</h2>
               </blockquote>
             </div>
+            <?php endif; ?>
           </div>
         </div>
         <div class="contact-form-rgt mHc">
@@ -108,10 +114,11 @@ $mapcode = get_field('gmap_code', $thisID);
 
 
 <section class="contact-google-map-sec-wrp">
-<div class="contact-google-map-wrp">
-  <div class="contact-google-map">
-    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d818.4276633048174!2d138.64988033210548!3d-34.86349704945986!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6ab0b5f79609d1c7%3A0x859e54c1dba31b8!2sPaula%20Ave%2C%20Windsor%20Gardens%20SA%205087%2C%20Australia!5e0!3m2!1sen!2sbd!4v1632836475479!5m2!1sen!2sbd" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
-</div>
+	<div class="contact-google-map-wrp">
+		<div class="contact-google-map">
+		    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d818.4276633048174!2d138.64988033210548!3d-34.86349704945986!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6ab0b5f79609d1c7%3A0x859e54c1dba31b8!2sPaula%20Ave%2C%20Windsor%20Gardens%20SA%205087%2C%20Australia!5e0!3m2!1sen!2sbd!4v1632836475479!5m2!1sen!2sbd" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+		</div>
+	</div>
 </section>
 <?php get_template_part('templates/contact', 'sec'); ?>
 <?php get_footer(); ?>
