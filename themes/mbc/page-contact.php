@@ -58,16 +58,27 @@ $mapcode = get_field('gmap_code', $thisID);
               </div>
               <div class="contact-form-dtails">
                 <div class="cnt-addres">
-                  <a href="#"><span>M&B Civil - Adelaide</span><span>15 Paula Avenue</span><span>Windsor Gardens SA 5087</span></a>
+                  <a href="#">
+                  	M&B Civil - Adelaide <br>
+                  	15 Paula Avenue</br>
+                  	Windsor Gardens SA 5087
+                  </a>
                 </div>
                 <div class="cnt-tel">
                   <span>Phone </span>
                   <a href="tel:+61882666650">+61 8 8266 6650</a>
                 </div>
               </div>
+
+              <?php 
+                $bottom_des_sec = get_field('bottom_des_sec', $thisID);
+                if($bottom_des_sec):
+	          ?>
               <blockquote>
-                <h2 class="contact-form-info-mgs-title fl-h2">“Committed to providing clients with value, quality and a safe work place.”</h2>
+              	<?php if( !empty($bottom_des_sec['bottom_des']) ) printf( '<h2 class="contact-form-info-mgs-title fl-h2">“%s”</h2>', $bottom_des_sec['bottom_des'] ); ?>
               </blockquote>
+              <?php endif; ?>
+
             </div>
             <?php endif; ?>
           </div>
