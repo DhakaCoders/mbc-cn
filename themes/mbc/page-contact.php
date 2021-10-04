@@ -21,7 +21,7 @@ $mapcode = get_field('gmap_code', $thisID);
         <div class="contact-form-lft mHc">
           <div class="contact-form-info-cntlr">
             <div class="contact-form-info">
-	    		<?php 
+	    			<?php 
 	          	    $intro = get_field('introsec', $thisID);
 	          	      if($intro):
 	        	?>
@@ -50,7 +50,7 @@ $mapcode = get_field('gmap_code', $thisID);
 	            <?php 
 	               $bottom_des_sec = get_field('bottom_des_sec', $thisID);
 	               if($bottom_des_sec):
-		        ?>
+		        	?>
 	            <blockquote>
 	              <?php if( !empty($bottom_des_sec['bottom_des']) ) printf( '<h2 class="contact-form-info-mgs-title fl-h2">“%s”</h2>', $bottom_des_sec['bottom_des'] ); ?>
 	            </blockquote>
