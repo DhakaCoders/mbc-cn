@@ -64,6 +64,9 @@
 .contact-form-dtails {
     padding-bottom: 99px;
 }
+.contact-form-dtails .cnt-addres span{
+    display: block;
+}
 .contact-form-dtails {
     font-family: 'Museo-Sans-300';
 }
@@ -366,7 +369,7 @@ textarea {
         margin-bottom: 36px;
     }
     .contact-form-info {
-        padding-right: 40px;
+        padding-right: 55px;
     }
     .contact-google-map iframe{
         height: 520px;
@@ -376,7 +379,7 @@ textarea {
         font-size: 19px;
     }
     .contact-form-info-mgs-title {
-        font-size: 30px!important;
+        font-size: 29px!important;
     }
 
 }
