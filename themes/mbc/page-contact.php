@@ -70,8 +70,6 @@ $mapcode = get_field('gmap_code', $thisID);
 		        		if( !empty($form['title']) ) printf( '<h2 class="contact-form-sub-title fl-h4">%s</h2>', $form['title'] ); 
 		        		if( !empty($form['subtitle']) ) printf( '<h3 class="contact-form-title fl-h3">%s</h3>', $form['subtitle'] ); 
 		        	?>
-		          <!-- <h4 class="contact-form-sub-title fl-h4">contact</h4>
-		          <h3 class="contact-form-title fl-h3">Get in touch</h3> -->
 		        </div>
 		        <div class="contact-form-wrp clearfix">
 		          <div class="wpforms-container">
