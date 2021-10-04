@@ -1,36 +1,10 @@
-<?php get_header(); ?>
-<section class="page-banner">
-  <div class="page-banner-bg-black"></div>
-  <div class="page-bnr-bg inline-bg" style="background-image: url('<?php echo THEME_URI; ?>/assets/images/page-banner-bg-001.jpg');"></div>
-  <div class="container">
-    <div class="row">
-      <div class="col-md-12">
-        <div class="page-bnr-cntlr">
-          <div class="page-bnr-desc">
-            <h1 class="fl-h1 page-bnr-title">Industrial and Infrastructure</h1>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section class="breadcrumb-sec">
-  <div class="container">
-    <div class="row">
-      <div class="col-md-12">
-        <div class="breadcrumb-sec-inr">
-          <ul class="reset-list clearfix">
-            <li class="home"><a href="#"><span>Home</span></a></li>
-            <li class="active"><span>industrial and infrastructure</span></li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-
+<?php 
+/*Template Name: Services*/
+get_header(); 
+$thisID = get_the_ID();
+?>
+<?php get_template_part('templates/page', 'banner'); ?>
+<?php get_template_part('templates/breadcrumbs'); ?>
 <section class="mbc-service-sec">
   <div class="container">
     <div class="row">

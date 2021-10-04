@@ -364,7 +364,7 @@ if($projects):
           </ul>
         </div>
         <div class="news-grids-btn">
-          <a class="mbc-transparent-btn" href="#">load more</a>
+          <a class="mbc-transparent-btn" href="#">FIND OUT MORE</a>
         </div>
       </div>
     </div>
