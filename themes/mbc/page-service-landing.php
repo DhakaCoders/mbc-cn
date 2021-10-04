@@ -77,66 +77,48 @@ $thisID = get_the_ID();
     </div>
   </div>
 </section>
-
+<?php
+$showhide_pstatus = get_field('showhide_pstatus', HOMEID);
+if($showhide_pstatus): 
+$projects = get_field('projectstatus', HOMEID);
+if($projects):
+?>
 <section class="mbc-project-count-sec">
   <div class="container">
     <div class="row">
       <div class="col-md-12">
         <div class="mbc-project-count-sec-inr">
           <div class="mbc-project-count-grds">
+            <?php foreach( $projects as $project ): ?>
             <div class="mbc-project-count-grd-item">
               <div class="mbc-project-count-grd-item-inr">
                 <div class="mbc-project-count-number">
-                  <i>
-                    <svg class="mbc-project-count-img-01-svg" width="66.08" height="64.674" viewBox="0 0 66.08 64.674" fill="#ec1218">
-                        <use xlink:href="#mbc-project-count-img-01-svg"></use></svg>
-                  </i>
-                  <span class="counter">87</span>
+                  <i><?php if( !empty($project['icon']) ) echo cbv_get_image_tag($project['icon']); ?></i>
+                  <?php if( !empty($project['Total_projects']) ) printf('<span class="counter">%s</span>', $project['Total_projects']); ?>
                 </div>
                 <div class="mbc-project-count-des">
-                  <h2 class="mbc-project-count-des-title fl-h5">Number of Projects </h2>
-                  <p>Mauris ac turpis molestie, pellentesque lectus a, pharetra massa. Maecenas volutpat, velit in tincidunt malesuada, ex nisi tincidunt purus</p>
+                  <?php 
+                    if( !empty($project['title']) ) printf('<h2 class="mbc-project-count-des-title fl-h5">%s</h2>', $project['title']);
+                    if( !empty($project['description']) ) echo wpautop( $project['description'] ); 
+                  ?>
                 </div>
               </div>
             </div>
-            <div class="mbc-project-count-grd-item">
-              <div class="mbc-project-count-grd-item-inr">
-                <div class="mbc-project-count-number">
-                  <i>
-                    <svg class="mbc-project-count-img-02-svg" width="64.305" height="64.269" viewBox="0 0 64.305 64.269" fill="#ec1218">
-                        <use xlink:href="#mbc-project-count-img-02-svg"></use></svg>
-                  </i>
-                  <span class="counter">2319</span>
-                </div>
-                <div class="mbc-project-count-des">
-                  <h2 class="mbc-project-count-des-title fl-h5">completed projects</h2>
-                  <p>Mauris ac turpis molestie, pellentesque lectus a, pharetra massa. Maecenas volutpat, velit in tincidunt malesuada, ex nisi tincidunt purus</p>
-                </div>
-              </div>
-            </div>
-            <div class="mbc-project-count-grd-item">
-              <div class="mbc-project-count-grd-item-inr">
-                <div class="mbc-project-count-number">
-                  <i>
-                    <svg class="mbc-project-count-img-03-svg" width="79.531" height="64.269" viewBox="0 0 79.531 64.269" fill="#ec1218">
-                        <use xlink:href="#mbc-project-count-img-03-svg"></use></svg>
-                  </i>
-                  <span class="counter">1975</span>
-                </div>
-                <div class="mbc-project-count-des">
-                  <h2 class="mbc-project-count-des-title fl-h5">year established</h2>
-                  <p>Mauris ac turpis molestie, pellentesque lectus a, pharetra massa. Maecenas volutpat, velit in tincidunt malesuada, ex nisi tincidunt purus</p>
-                </div>
-              </div>
-            </div>
+            <?php endforeach; ?>
           </div>
         </div>
       </div>
     </div>
   </div>
 </section>
-
-
+<?php endif; ?>
+<?php endif; ?>
+<?php
+$showhide_slide = get_field('showhide_slide', $thisID);
+if($showhide_slide): 
+$slides = get_field('slides', $thisID);
+if($slides):
+?>
 <section class="mbc-option-break-slider-sec inline-bg" style="background:url(<?php echo THEME_URI; ?>/assets/images/mbc-opb-slider-bg.jpg);">
   <div class="container">
     <div class="row">
@@ -170,5 +152,7 @@ $thisID = get_the_ID();
     </div>
   </div>
 </section>
+<?php endif; ?>
+<?php endif; ?>
 <?php get_template_part('templates/contact', 'sec'); ?>
 <?php get_footer(); ?>
