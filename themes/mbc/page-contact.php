@@ -1,20 +1,28 @@
-<?php get_header(); ?>
+<?php
+/*Template Name: Contact*/
+get_header();
+$thisID = get_the_ID();
+$telephone = get_field('telephone', 'options');
+$address = get_field('address', 'options');
+$gurl = get_field('gurl', 'options');
+$gmaplink = !empty($gurl)?$gurl: 'javascript:void()';
+$mapcode = get_field('gmap_code', $thisID);
+?>
 <section class="page-banner">
-<div class="page-banner-bg-black"></div>
-<div class="page-bnr-bg inline-bg" style="background-image: url('<?php echo THEME_URI; ?>/assets/images/contact-bnr.jpg');"></div>
-<div class="container">
-  <div class="row">
-    <div class="col-md-12">
-      <div class="page-bnr-cntlr">
-        <div class="page-bnr-desc">
-          <h1 class="fl-h1 page-bnr-title">Contact</h1>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
+	<div class="page-banner-bg-black"></div>
+	<div class="page-bnr-bg inline-bg" style="background-image: url('<?php echo THEME_URI; ?>/assets/images/contact-bnr.jpg');"></div>
+	<div class="container">
+	  <div class="row">
+	    <div class="col-md-12">
+	      <div class="page-bnr-cntlr">
+	        <div class="page-bnr-desc">
+	          <h1 class="fl-h1 page-bnr-title">Contact</h1>
+	        </div>
+	      </div>
+	    </div>
+	  </div>
+	</div>
 </section>
-
 <section class="breadcrumb-sec">
 <div class="container">
   <div class="row">
