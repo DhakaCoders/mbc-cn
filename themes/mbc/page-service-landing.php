@@ -5,6 +5,7 @@ $thisID = get_the_ID();
 ?>
 <?php get_template_part('templates/page', 'banner'); ?>
 <?php get_template_part('templates/breadcrumbs'); ?>
+
 <section class="mbc-service-sec">
   <div class="container">
     <div class="row">
@@ -130,21 +131,13 @@ if($slides):
               <span class="mbc-nxt"><i></i></span>
             </div>
             <div class="mbc-opb-slider-grds mbcOpbSlider clearfix">
+              <?php foreach( $slides as $slide ): ?>
               <div class="mbc-opb-slider-grd-item">
                 <div class="mbc-opb-slider-grd-item-des">
-                  <h2 class="mbc-opb-slider-title fl-h2">M&B Civil delivers civil contracting projects that fall into the broad categories of Industrial construction</h2>
+                <?php if( !empty($slide['description']) ) printf('<h2 class="mbc-opb-slider-title fl-h2">%s</h2>', $slide['description']); ?>
                 </div>
               </div>
-              <div class="mbc-opb-slider-grd-item">
-                <div class="mbc-opb-slider-grd-item-des">
-                  <h2 class="mbc-opb-slider-title fl-h2">M&B Civil delivers civil contracting projects that fall into the broad categories of Industrial construction</h2>
-                </div>
-              </div>
-              <div class="mbc-opb-slider-grd-item">
-                <div class="mbc-opb-slider-grd-item-des">
-                  <h2 class="mbc-opb-slider-title fl-h2">M&B Civil delivers civil contracting projects that fall into the broad categories of Industrial construction</h2>
-                </div>
-              </div>
+              <?php endforeach; ?>
             </div>
           </div>
         </div>

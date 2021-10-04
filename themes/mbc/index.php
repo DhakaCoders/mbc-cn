@@ -1,37 +1,25 @@
-<?php get_header(); ?>
+<?php 
+get_header(); 
+$thisID = get_option( 'page_for_posts' );
+$imgID = get_field('banner', $thisID);
+$banner = !empty($imgID)?cbv_get_image_src($imgID):banner_placeholder();
+?>
   <section class="page-banner">
     <div class="page-banner-bg-black"></div>
-    <div class="page-bnr-bg inline-bg" style="background-image: url('<?php echo THEME_URI; ?>/assets/images/news-bnr.jpg');"></div>
+    <div class="page-bnr-bg inline-bg" style="background-image: url('<?php echo $banner; ?>');"></div>
     <div class="container">
       <div class="row">
         <div class="col-md-12">
           <div class="page-bnr-cntlr">
             <div class="page-bnr-desc">
-              <h1 class="fl-h1 page-bnr-title">Industry News</h1>
+              <h1 class="fl-h1 page-bnr-title"><?php echo get_the_title($thisID); ?></h1>
             </div>
           </div>
         </div>
       </div>
     </div>
   </section>
-
-  <section class="breadcrumb-sec">
-    <div class="container">
-      <div class="row">
-        <div class="col-md-12">
-          <div class="breadcrumb-sec-inr">
-            <ul class="reset-list clearfix">
-              <li class="home"><a href="#"><span>Home</span></a></li>
-              <li class="active"><span>case studies</span></li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-
-
+<?php get_template_part('templates/breadcrumbs'); ?>
 
   <section class="news-grid-sec">
     <div class="container">
@@ -41,203 +29,65 @@
             <h2 class="mbc-sec-entry-hdr-sub-title fl-h4">industry news</h2>
             <h3 class="mbc-sec-entry-hdr-title fl-h3">Nulla vel elit nec diam pretium</h3>
           </div>
+          <?php if(  have_posts() ): ?>
           <div class="news-grids-cntlr">
             <ul class="reset-list">
+              <?php 
+                  while(have_posts()): the_post(); 
+                  global $post;
+                  $imgID = get_post_thumbnail_id(get_the_ID());
+                  $imgsrc = !empty($imgID)? cbv_get_image_src($imgID): news_placeholder('tag');
+                  $imgtag = !empty($imgID)? cbv_get_image_tag($imgID): news_placeholder('tag');
+              ?>
               <li>
                 <div class="news-grid-item">
                   <div class="news-grid-img-cntlr has-inline-bg">
-                    <a class="overlay-link" href="#"></a>
-                    <div class="inline-bg" style="background-image: url(<?php echo THEME_URI; ?>/assets/images/news-grid-1.jpg);"></div>
-                    <img src="<?php echo THEME_URI; ?>/assets/images/news-grid-1.jpg" alt="">
+                    <a class="overlay-link" href="<?php the_permalink(); ?>"></a>
+                    <div class="inline-bg" style="background-image: url(<?php echo $imgsrc; ?>);"></div>
+                    <?php echo $imgtag; ?>
                   </div>
                   <div class="news-grid-des">
                     <div class="news-grid-des-title">
-                      <h3 class="news-grid-title fl-h5 mHc"><a href="#">Name of News Article, July 2021</a></h3>
+                      <h3 class="news-grid-title fl-h5 mHc"><a href="#"><?php the_title(); ?>,<?php echo get_the_date('F Y'); ?></a></h3>
                     </div>
                     <div class="news-grid-btn">
-                      <a href="#">Read more</a>
+                      <a href="<?php the_permalink(); ?>">Read more</a>
                     </div>
                   </div>
                 </div>
               </li>
-              <li>
-                <div class="news-grid-item">
-                  <div class="news-grid-img-cntlr has-inline-bg">
-                    <a class="overlay-link" href="#"></a>
-                    <div class="inline-bg" style="background-image: url(<?php echo THEME_URI; ?>/assets/images/news-grid-2.jpg);"></div>
-                    <img src="<?php echo THEME_URI; ?>/assets/images/news-grid-2.jpg" alt="">
-                  </div>
-                  <div class="news-grid-des">
-                    <div class="news-grid-des-title">
-                      <h3 class="news-grid-title fl-h5 mHc"><a href="#">Name of News Article, July 2021</a></h3>
-                    </div>
-                    <div class="news-grid-btn">
-                      <a href="#">Read more</a>
-                    </div>
-                  </div>
-                </div>
-              </li>
-              <li>
-                <div class="news-grid-item">
-                  <div class="news-grid-img-cntlr has-inline-bg">
-                    <a class="overlay-link" href="#"></a>
-                    <div class="inline-bg" style="background-image: url(<?php echo THEME_URI; ?>/assets/images/news-grid-3.jpg);"></div>
-                    <img src="<?php echo THEME_URI; ?>/assets/images/news-grid-3.jpg" alt="">
-                  </div>
-                  <div class="news-grid-des">
-                    <div class="news-grid-des-title">
-                      <h3 class="news-grid-title fl-h5 mHc"><a href="#">Name of News Article, July 2021</a></h3>
-                    </div>
-                    <div class="news-grid-btn">
-                      <a href="#">Read more</a>
-                    </div>
-                  </div>
-                </div>
-              </li>
-              <li>
-                <div class="news-grid-item">
-                  <div class="news-grid-img-cntlr has-inline-bg">
-                    <a class="overlay-link" href="#"></a>
-                    <div class="inline-bg" style="background-image: url(<?php echo THEME_URI; ?>/assets/images/news-grid-4.jpg);"></div>
-                    <img src="<?php echo THEME_URI; ?>/assets/images/news-grid-4.jpg" alt="">
-                  </div>
-                  <div class="news-grid-des">
-                    <div class="news-grid-des-title">
-                      <h3 class="news-grid-title fl-h5 mHc"><a href="#">Name of News Article, July 2021</a></h3>
-                    </div>
-                    <div class="news-grid-btn">
-                      <a href="#">Read more</a>
-                    </div>
-                  </div>
-                </div>
-              </li>
-              <li>
-                <div class="news-grid-item">
-                  <div class="news-grid-img-cntlr has-inline-bg">
-                    <a class="overlay-link" href="#"></a>
-                    <div class="inline-bg" style="background-image: url(<?php echo THEME_URI; ?>/assets/images/news-grid-5.jpg);"></div>
-                    <img src="<?php echo THEME_URI; ?>/assets/images/news-grid-5.jpg" alt="">
-                  </div>
-                  <div class="news-grid-des">
-                    <div class="news-grid-des-title">
-                      <h3 class="news-grid-title fl-h5 mHc"><a href="#">Name of News Article, July 2021</a></h3>
-                    </div>
-                    <div class="news-grid-btn">
-                      <a href="#">Read more</a>
-                    </div>
-                  </div>
-                </div>
-              </li>
-              <li>
-                <div class="news-grid-item">
-                  <div class="news-grid-img-cntlr has-inline-bg">
-                    <a class="overlay-link" href="#"></a>
-                    <div class="inline-bg" style="background-image: url(<?php echo THEME_URI; ?>/assets/images/news-grid-6.jpg);"></div>
-                    <img src="<?php echo THEME_URI; ?>/assets/images/news-grid-6.jpg" alt="">
-                  </div>
-                  <div class="news-grid-des">
-                    <div class="news-grid-des-title">
-                      <h3 class="news-grid-title fl-h5 mHc"><a href="#">Name of News Article, July 2021</a></h3>
-                    </div>
-                    <div class="news-grid-btn">
-                      <a href="#">Read more</a>
-                    </div>
-                  </div>
-                </div>
-              </li>
-              <li>
-                <div class="news-grid-item">
-                  <div class="news-grid-img-cntlr has-inline-bg">
-                    <a class="overlay-link" href="#"></a>
-                    <div class="inline-bg" style="background-image: url(<?php echo THEME_URI; ?>/assets/images/news-grid-7.jpg);"></div>
-                    <img src="<?php echo THEME_URI; ?>/assets/images/news-grid-7.jpg" alt="">
-                  </div>
-                  <div class="news-grid-des">
-                    <div class="news-grid-des-title">
-                      <h3 class="news-grid-title fl-h5 mHc"><a href="#">Name of News Article, July 2021</a></h3>
-                    </div>
-                    <div class="news-grid-btn">
-                      <a href="#">Read more</a>
-                    </div>
-                  </div>
-                </div>
-              </li>
-              <li>
-                <div class="news-grid-item">
-                  <div class="news-grid-img-cntlr has-inline-bg">
-                    <a class="overlay-link" href="#"></a>
-                    <div class="inline-bg" style="background-image: url(<?php echo THEME_URI; ?>/assets/images/news-grid-8.jpg);"></div>
-                    <img src="<?php echo THEME_URI; ?>/assets/images/news-grid-8.jpg" alt="">
-                  </div>
-                  <div class="news-grid-des">
-                    <div class="news-grid-des-title">
-                      <h3 class="news-grid-title fl-h5 mHc"><a href="#">Name of News Article, July 2021</a></h3>
-                    </div>
-                    <div class="news-grid-btn">
-                      <a href="#">Read more</a>
-                    </div>
-                  </div>
-                </div>
-              </li>
-              <li>
-                <div class="news-grid-item">
-                  <div class="news-grid-img-cntlr has-inline-bg">
-                    <a class="overlay-link" href="#"></a>
-                    <div class="inline-bg" style="background-image: url(<?php echo THEME_URI; ?>/assets/images/news-grid-9.jpg);"></div>
-                    <img src="<?php echo THEME_URI; ?>/assets/images/news-grid-9.jpg" alt="">
-                  </div>
-                  <div class="news-grid-des">
-                    <div class="news-grid-des-title">
-                      <h3 class="news-grid-title fl-h5 mHc"><a href="#">Name of News Article, July 2021</a></h3>
-                    </div>
-                    <div class="news-grid-btn">
-                      <a href="#">Read more</a>
-                    </div>
-                  </div>
-                </div>
-              </li>
+              <?php endwhile; ?>
             </ul>
           </div>
+          <?php else: ?>
+              <div class="notfound">No Results.</div>
+          <?php endif; ?>
+          <?php 
+          global $wp_query;
+          if( $wp_query->max_num_pages > 1 ): 
+          ?>
           <div class="fl-pagination-blog-cntrl">
             <div class="fl-pagination-ctlr">
-              <ul class="page-numbers">
-                <li class="prev page-numbers">
-                  <a href="#"><</a>
-                </li>
-                <li><span aria-current="page" class="page-numbers current">1</span></li>
-                <li><a class="page-numbers" href="#">2</a></li>
-                <li><a class="page-numbers" href="#">3</a></li>
-                <li><span aria-current="page" class="page-numbers current">...</span></li>
-                <li><a class="page-numbers" href="#">5</a></li>
-                <li><a class="page-numbers" href="#">6</a></li>
-                <li class="next page-numbers">
-                  <a href="#">></a>
-                </li>
-              </ul>
+                <?php
+                  $big = 999999999; // need an unlikely integer
+                  $wp_query->query_vars['paged'] > 1 ? $current = $wp_query->query_vars['paged'] : $current = 1;
+
+                  echo paginate_links( array(
+                    'base'      => str_replace( $big, '%#%', esc_url( get_pagenum_link( $big ) ) ),
+                    'type'      => 'list',
+                    'prev_text' => __(''),
+                    'next_text' => __(''),
+                    'format'    => '?paged=%#%',
+                    'current'   => $current,
+                    'total'     => $wp_query->max_num_pages
+                  ) );
+                ?>
             </div>
           </div>
+        <?php endif; ?>
         </div>
       </div>
     </div>
   </section>
-
-
-
-
-  <section class="footer-top-sec inline-bg" style="background: url('<?php echo THEME_URI; ?>/assets/images/ftr-top-sec-bg.jpg');">
-    <div class="container">
-      <div class="row">
-        <div class="col-md-12">
-          <div class="ftr-top-cntlr">
-            <div class="ftr-top-desc">
-              <h2 class="fl-h3 ftr-top-title">For more information, please get in touch below</h2>
-              <div class="ftr-top-btn">
-                <a class="mbc-black-transparent-btn" href="#">contact us</a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
+<?php get_template_part('templates/contact', 'sec'); ?>
 <?php get_footer(); ?>
