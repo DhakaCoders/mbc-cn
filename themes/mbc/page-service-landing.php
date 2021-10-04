@@ -5,7 +5,14 @@ $thisID = get_the_ID();
 ?>
 <?php get_template_part('templates/page', 'banner'); ?>
 <?php get_template_part('templates/breadcrumbs'); ?>
-
+<?php
+  $args = array( 
+    'post_type' => 'career', 
+    'posts_per_page' => 4, 
+    'orderby' => 'title',
+    'order' => 'desc'  
+  );
+?>
 <section class="mbc-service-sec">
   <div class="container">
     <div class="row">

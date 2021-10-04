@@ -1,990 +1,618 @@
 <?php get_header(); ?>
-  <section class="page-banner">
-    <div class="page-banner-bg-black"></div>
-    <div class="page-bnr-bg inline-bg" style="background-image: url('<?php echo THEME_URI; ?>/assets/images/page-banner-bg-001.jpg');"></div>
-    <div class="container">
+<?php get_template_part('templates/page', 'banner'); ?>
+<?php get_template_part('templates/breadcrumbs'); ?>
+<div class="gap-100 hide-sm"></div>
+ <div class="general-content-ctr">
+<?php while ( have_rows('contents') ) : the_row();  ?>
+<?php 
+  if( get_row_layout() == 'full_width' ){ 
+  $fctitle = get_sub_field('fc_title');
+  $heading_color = get_sub_field('heading_color');
+  $fc_text = get_sub_field('fc_text');
+  $body_color = get_sub_field('body_color');
+  $bg_color = get_sub_field('bg_color');
+?>
+<section class="mbc-fullwidth-txt-module"<?php echo !empty($bg_color)?' style="background:'.$bg_color.'"':''; ?> >
+  <div class="container">
       <div class="row">
         <div class="col-md-12">
-          <div class="page-bnr-cntlr">
-            <div class="page-bnr-desc">
-              <h1 class="fl-h1 page-bnr-title">About us</h1>
+          <div>
+            <?php if( !empty($fctitle) ): ?>
+            <h2<?php echo !empty($heading_color)?' style="color:'.$heading_color.'"':''; ?>>
+              <?php printf('%s', $fctitle)?>
+            </h2>
+            <?php endif; ?>
+            <?php if( !empty($fc_text) ): ?>
+            <div class="text-body"<?php echo !empty($body_color)?' style="color:'.$body_color.'!important"':''; ?>>
+              <?php echo wpautop($fc_text); ?>
+            </div>
+            <?php endif; ?>
+          </div>
+        </div>
+      </div>
+  </div>    
+</section>
+<?php 
+}elseif( get_row_layout() == 'two_columns' ){
+$fc_title = get_sub_field('fc_title');
+$fc_text1 = get_sub_field('fc_text1');
+$fc_text2 = get_sub_field('fc_text2');
+$bg_color = get_sub_field('bg_color');
+$txt_color = get_sub_field('txt_color');
+$hd_color = get_sub_field('hd_color');
+$txt_color = !empty($txt_color)?' style="color:'.$txt_color.'!important"':''; 
+$string = '';
+if( !empty($hd_color) ){
+  $string = str_replace(' ', '', strip_tags($fc_text1));
+  $string = strip_tags(substr($string,2, 8)); 
+}elseif(!empty($txt_color)){
+  $string = str_replace(' ', '', strip_tags($fc_text1));
+  $string = strip_tags(substr($string,2, 8)); 
+  $hd_color = $txt_color;
+}
+
+?>
+<section class="mbc-grids-sec-cntlr"<?php echo !empty($bg_color)?' style="background:'.$bg_color.'"':''; ?>>
+  <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <div class="mbc-grd-sec-inr">
+            <div class="mbc-grids-sec-entry-hdr">
+              <?php if( !empty($fc_title) ) printf('<h2 class="fl-h2 mbc-grids-sec-entry-hdr-title"%s>%s</h2>', $txt_color, $fc_title); ?>
+            </div>
+            <div class="mbc-columns mbc-columns-2"<?php echo $txt_color; ?>>
+              <?php if( !empty($string) ): ?>
+              <style type="text/css">
+                .<?php echo $string; ?> h2{
+                  color: <?php echo $hd_color; ?>;
+                }
+              </style>
+              <?php endif; ?>
+              <div class="mbc-grid-item<?php echo !empty($string)?' '.$string:''; ?>">
+                <div class="mbc-grid-item-inr">
+                  <?php if( !empty($fc_text1) ) echo wpautop($fc_text1); ?>
+                </div>
+              </div>
+              <div class="mbc-grid-item<?php echo !empty($string)?' '.$string:''; ?>">
+                <div class="mbc-grid-item-inr">
+                  <?php if( !empty($fc_text2) ) echo wpautop($fc_text2); ?>
+                </div>
+              </div>
             </div>
           </div>
         </div>
       </div>
-    </div>
-  </section>
-
-  <section class="breadcrumb-sec">
-    <div class="container">
+  </div>    
+</section>
+<?php 
+}elseif( get_row_layout() == 'three_columns' ){ 
+$fc_title = get_sub_field('fc_title');
+$fc_text1 = get_sub_field('fc_text1');
+$fc_text2 = get_sub_field('fc_text2');
+$fc_text3 = get_sub_field('fc_text3');
+?>
+<section class="mbc-grids-sec-cntlr">
+  <div class="container">
       <div class="row">
         <div class="col-md-12">
-          <div class="breadcrumb-sec-inr">
-            <ul class="reset-list clearfix">
-              <li class="home"><a href="#"><span>Home</span></a></li>
-              <li class="active"><span>About Us</span></li>
-            </ul>
+          <div class="mbc-grd-sec-inr">
+            <div class="mbc-grids-sec-entry-hdr">
+            <?php if( !empty($fc_title) ) printf('<h2 class="fl-h2 mbc-grids-sec-entry-hdr-title">%s</h2>', $fc_title); ?>
+            </div>
+            <div class="mbc-columns mbc-columns-3">
+              <div class="mbc-grid-item">
+                <div class="mbc-grid-item-inr">
+                  <?php if( !empty($fc_text1) ) echo wpautop($fc_text1); ?>
+                </div>
+              </div>
+              <div class="mbc-grid-item">
+                <div class="mbc-grid-item-inr">
+                  <?php if( !empty($fc_text2) ) echo wpautop($fc_text2); ?>
+                </div>
+              </div>
+              <div class="mbc-grid-item">
+                <div class="mbc-grid-item-inr">
+                  <?php if( !empty($fc_text3) ) echo wpautop($fc_text3); ?>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
-    </div>
-  </section>
-
-  <div class="gap-100 hide-sm"></div>
-
-  <section class="mbc-fullwidth-txt-module">
-    <div class="container">
-        <div class="row">
-          <div class="col-md-12">
-            <div>
-              <h4>Full Width</h4>
-              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas eros odio, dignissim ut nisi in, ultrices molestie lacus. Nullam feugiat feugiat erat vitae accumsan. Quisque at nunc a ipsum imperdiet fermentum. Suspendisse euismod sit amet ligula a hendrerit. Proin rutrum mi at turpis malesuada, vel iaculis erat accumsan. Aliquam faucibus turpis libero, eget viverra ipsum luctus id. Etiam eu facilisis odio. Proin ornare ullamcorper lectus eget sagittis.Integer tincidunt sodales massa quis aliquam. Ut vitae est at ipsum vehicula interdum. Aenean maximus aliquam aliquet. Nam egestas purus eu metus pellentesque eleifend a sed augue. In id urna vel magna commodo tempor. Proin quis dictum arcu. Pellentesque ornare felis enim, a varius erat ultrices quis. Suspendisse feugiat congue rutrum. Suspendisse vitae vehicula mauris. In sed tortor ut quam ultrices feugiat.</p>
+  </div>    
+</section>
+<?php 
+}elseif( get_row_layout() == 'columns1_2' ){ 
+$fc_title = get_sub_field('fc_title');
+$fc_text1 = get_sub_field('fc_text1');
+$fc_text2 = get_sub_field('fc_text2');
+?>
+<section class="mbc-grids-sec-cntlr">
+  <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <div class="mbc-grd-sec-inr">
+            <div class="mbc-grids-sec-entry-hdr">
+              <?php if( !empty($fc_title) ) printf('<h2 class="fl-h2 mbc-grids-sec-entry-hdr-title">%s</h2>', $fc_title); ?>
             </div>
-          </div>
-        </div>
-    </div>    
-  </section>
-  <section class="mbc-fullwidth-txt-module mbc-fullwidth-txt-module-light-gray-bg">
-    <div class="container">
-        <div class="row">
-          <div class="col-md-12">
-            <div>
-              <h4>full width light grey background</h4>
-              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas eros odio, dignissim ut nisi in, ultrices molestie lacus. Nullam feugiat feugiat erat vitae accumsan. Quisque at nunc a ipsum imperdiet fermentum. Suspendisse euismod sit amet ligula a hendrerit. Proin rutrum mi at turpis malesuada, vel iaculis erat accumsan. Aliquam faucibus turpis libero, eget viverra ipsum luctus id. Etiam eu facilisis odio. Proin ornare ullamcorper lectus eget sagittis.Integer tincidunt sodales massa quis aliquam. Ut vitae est at ipsum vehicula interdum. Aenean maximus aliquam aliquet. Nam egestas purus eu metus pellentesque eleifend a sed augue. In id urna vel magna commodo tempor. Proin quis dictum arcu. Pellentesque ornare felis enim, a varius erat ultrices quis. Suspendisse feugiat congue rutrum. Suspendisse vitae vehicula mauris. In sed tortor ut quam ultrices feugiat.</p>
-            </div>
-          </div>
-        </div>
-    </div>    
-  </section>
-
-  <section class="mbc-fullwidth-txt-module mbc-fullwidth-txt-module-white-dark-gray-bg">
-    <div class="container">
-        <div class="row">
-          <div class="col-md-12">
-            <div>
-              <h4>full width white on dark grey</h4>
-              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas eros odio, dignissim ut nisi in, ultrices molestie lacus. Nullam feugiat feugiat erat vitae accumsan. Quisque at nunc a ipsum imperdiet fermentum. Suspendisse euismod sit amet ligula a hendrerit. Proin rutrum mi at turpis malesuada, vel iaculis erat accumsan. Aliquam faucibus turpis libero, eget viverra ipsum luctus id. Etiam eu facilisis odio. Proin ornare ullamcorper lectus eget sagittis.Integer tincidunt sodales massa quis aliquam. Ut vitae est at ipsum vehicula interdum. Aenean maximus aliquam aliquet. Nam egestas purus eu metus pellentesque eleifend a sed augue. In id urna vel magna commodo tempor. Proin quis dictum arcu. Pellentesque ornare felis enim, a varius erat ultrices quis. Suspendisse feugiat congue rutrum. Suspendisse vitae vehicula mauris. In sed tortor ut quam ultrices feugiat.</p>
-            </div>
-          </div>
-        </div>
-    </div>    
-  </section>
-
-  <section class="mbc-fullwidth-txt-module mbc-fullwidth-txt-module-white-blue">
-    <div class="container">
-        <div class="row">
-          <div class="col-md-12">
-            <div>
-              <h4>full width white on dusty blue</h4>
-              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas eros odio, dignissim ut nisi in, ultrices molestie lacus. Nullam feugiat feugiat erat vitae accumsan. Quisque at nunc a ipsum imperdiet fermentum. Suspendisse euismod sit amet ligula a hendrerit. Proin rutrum mi at turpis malesuada, vel iaculis erat accumsan. Aliquam faucibus turpis libero, eget viverra ipsum luctus id. Etiam eu facilisis odio. Proin ornare ullamcorper lectus eget sagittis.Integer tincidunt sodales massa quis aliquam. Ut vitae est at ipsum vehicula interdum. Aenean maximus aliquam aliquet. Nam egestas purus eu metus pellentesque eleifend a sed augue. In id urna vel magna commodo tempor. Proin quis dictum arcu. Pellentesque ornare felis enim, a varius erat ultrices quis. Suspendisse feugiat congue rutrum. Suspendisse vitae vehicula mauris. In sed tortor ut quam ultrices feugiat.</p>
-            </div>
-          </div>
-        </div>
-    </div>    
-  </section>
-
-  <section class="mbc-fullwidth-txt-module mbc-fullwidth-txt-module-white-black" >
-    <div class="container">
-        <div class="row">
-          <div class="col-md-12">
-            <div>
-              <h4>Full Width White On Black</h4>
-              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas eros odio, dignissim ut nisi in, ultrices molestie lacus. Nullam feugiat feugiat erat vitae accumsan. Quisque at nunc a ipsum imperdiet fermentum. Suspendisse euismod sit amet ligula a hendrerit. Proin rutrum mi at turpis malesuada, vel iaculis erat accumsan. Aliquam faucibus turpis libero, eget viverra ipsum luctus id. Etiam eu facilisis odio. Proin ornare ullamcorper lectus eget sagittis.Integer tincidunt sodales massa quis aliquam. Ut vitae est at ipsum vehicula interdum. Aenean maximus aliquam aliquet. Nam egestas purus eu metus pellentesque eleifend a sed augue. In id urna vel magna commodo tempor. Proin quis dictum arcu. Pellentesque ornare felis enim, a varius erat ultrices quis. Suspendisse feugiat congue rutrum. Suspendisse vitae vehicula mauris. In sed tortor ut quam ultrices feugiat.</p>
-            </div>
-          </div>
-        </div>
-    </div>    
-  </section>
-
-  <div class="gap-50"></div>
-
-  <section class="mbc-grids-sec-cntlr">
-    <div class="container">
-        <div class="row">
-          <div class="col-md-12">
-            <div class="mbc-grd-sec-inr">
-              <div class="mbc-grids-sec-entry-hdr">
-                <h2 class="fl-h4 mbc-grids-sec-entry-hdr-title">2 columns</h2>
-              </div>
-              <div class="mbc-columns mbc-columns-2">
-                <div class="mbc-grid-item">
-                  <div class="mbc-grid-item-inr">
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas eros odio, dignissim ut nisi in, ultrices molestie lacus. Nullam feugiat feugiat erat vitae accumsan. Quisque at nunc a ipsum imperdiet fermentum. Suspendisse euismod sit amet ligula a hendrerit. Proin rutrum mi at turpis malesuada, vel iaculis erat accumsan. Aliquam faucibus turpis libero, eget viverra ipsum luctus id. Etiam eu facilisis odio. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas eros odio, dignissim ut nisi in, ultrices molestie lacus. Nullam feugiat feugiat erat vitae accumsan. Quisque at nunc a ipsum imperdiet fermentum. Suspendisse euismod sit amet ligula a hendrerit. Proin rutrum mi at turpis malesuada, vel iaculis erat accumsan. Aliquam faucibus turpis libero, eget viverra ipsum luctus id. Etiam eu facilisis odio.</p>
-                  </div>
+            <div class="mbc-columns mbc-columns-2L">
+              <div class="mbc-grid-item">
+                <div class="mbc-grid-item-inr">
+                  <?php if( !empty($fc_text1) ) echo wpautop($fc_text1); ?>
                 </div>
-                <div class="mbc-grid-item">
-                  <div class="mbc-grid-item-inr">
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas eros odio, dignissim ut nisi in, ultrices molestie lacus. Nullam feugiat feugiat erat vitae accumsan. Quisque at nunc a ipsum imperdiet fermentum. Suspendisse euismod sit amet ligula a hendrerit. Proin rutrum mi at turpis malesuada, vel iaculis erat accumsan. Aliquam faucibus turpis libero, eget viverra ipsum luctus id. Etiam eu facilisis odio. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas eros odio, dignissim ut nisi in, ultrices molestie lacus. Nullam feugiat feugiat erat vitae accumsan. Quisque at nunc a ipsum imperdiet fermentum. Suspendisse euismod sit amet ligula a hendrerit. Proin rutrum mi at turpis malesuada, vel iaculis erat accumsan. Aliquam faucibus turpis libero, eget viverra ipsum luctus id. Etiam eu facilisis odio.</p>
-                  </div>
+              </div>
+              <div class="mbc-grid-item">
+                <div class="mbc-grid-item-inr">
+                  <?php if( !empty($fc_text2) ) echo wpautop($fc_text2); ?>
                 </div>
               </div>
             </div>
           </div>
         </div>
-    </div>    
-  </section>
-
-  <section class="mbc-grids-sec-cntlr">
-    <div class="container">
-        <div class="row">
-          <div class="col-md-12">
-            <div class="mbc-grd-sec-inr">
-              <div class="mbc-grids-sec-entry-hdr">
-                <h2 class="fl-h4 mbc-grids-sec-entry-hdr-title">3 columns</h2>
+      </div>
+  </div>    
+</section>
+<?php 
+}elseif( get_row_layout() == 'columns_2_1' ){ 
+$fc_title = get_sub_field('fc_title');
+$fc_text1 = get_sub_field('fc_text1');
+$fc_text2 = get_sub_field('fc_text2');
+?>
+<section class="mbc-grids-sec-cntlr">
+  <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <div class="mbc-grd-sec-inr">
+            <div class="mbc-grids-sec-entry-hdr">
+              <?php if( !empty($fc_title) ) printf('<h2 class="fl-h2 mbc-grids-sec-entry-hdr-title">%s</h2>', $fc_title); ?>
+            </div>
+            <div class="mbc-columns mbc-columns-2R">
+              <div class="mbc-grid-item">
+                <div class="mbc-grid-item-inr">
+                  <?php if( !empty($fc_text1) ) echo wpautop($fc_text1); ?>
+                </div>
               </div>
-              <div class="mbc-columns mbc-columns-3">
-                <div class="mbc-grid-item">
-                  <div class="mbc-grid-item-inr">
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas eros odio, dignissim ut nisi in, ultrices molestie lacus. Nullam feugiat feugiat erat vitae accumsan. Quisque at nunc a ipsum imperdiet fermentum. Suspendisse euismod sit amet ligula a hendrerit. Proin rutrum mi at turpis malesuada, vel iaculis erat accumsan. Aliquam faucibus turpis libero, eget viverra ipsum luctus id. Etiam eu facilisis odio. Proin ornare ullamcorper lectus eget sagittis.</p>
-                  </div>
-                </div>
-                <div class="mbc-grid-item">
-                  <div class="mbc-grid-item-inr">
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas eros odio, dignissim ut nisi in, ultrices molestie lacus. Nullam feugiat feugiat erat vitae accumsan. Quisque at nunc a ipsum imperdiet fermentum. Suspendisse euismod sit amet ligula a hendrerit. Proin rutrum mi at turpis malesuada, vel iaculis erat accumsan. Aliquam faucibus turpis libero, eget viverra ipsum luctus id. Etiam eu facilisis odio. Proin ornare ullamcorper lectus eget sagittis.</p>
-                  </div>
-                </div>
-                <div class="mbc-grid-item">
-                  <div class="mbc-grid-item-inr">
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas eros odio, dignissim ut nisi in, ultrices molestie lacus. Nullam feugiat feugiat erat vitae accumsan. Quisque at nunc a ipsum imperdiet fermentum. Suspendisse euismod sit amet ligula a hendrerit. Proin rutrum mi at turpis malesuada, vel iaculis erat accumsan. Aliquam faucibus turpis libero, eget viverra ipsum luctus id. Etiam eu facilisis odio. Proin ornare ullamcorper lectus eget sagittis.</p>
-                  </div>
+              <div class="mbc-grid-item">
+                <div class="mbc-grid-item-inr">
+                  <?php if( !empty($fc_text2) ) echo wpautop($fc_text2); ?>
                 </div>
               </div>
             </div>
           </div>
         </div>
-    </div>    
-  </section>
-
-  <section class="mbc-grids-sec-cntlr">
-    <div class="container">
-        <div class="row">
-          <div class="col-md-12">
-            <div class="mbc-grd-sec-inr">
-              <div class="mbc-grids-sec-entry-hdr">
-                <h2 class="fl-h4 mbc-grids-sec-entry-hdr-title">1/3 + 2/3</h2>
-              </div>
-              <div class="mbc-columns mbc-columns-2L">
-                <div class="mbc-grid-item">
-                  <div class="mbc-grid-item-inr">
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas eros odio, dignissim ut nisi in, ultrices molestie lacus. Nullam feugiat feugiat erat vitae accumsan. Quisque at nunc a ipsum imperdiet fermentum. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas eros odio, dignissim ut nisi in, ultrices molestie lacus. Nullam feugiat feugiat erat vitae accumsan. Quisque at nunc a ipsum imperdiet fermentum. </p>
-                  </div>
-                </div>
-                <div class="mbc-grid-item">
-                  <div class="mbc-grid-item-inr">
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas eros odio, dignissim ut nisi in, ultrices molestie lacus. Nullam feugiat feugiat erat vitae accumsan. Quisque at nunc a ipsum imperdiet fermentum. Suspendisse euismod sit amet ligula a hendrerit. Proin rutrum mi at turpis malesuada, vel iaculis erat accumsan. Aliquam faucibus turpis libero, eget viverra ipsum luctus id. Etiam eu facilisis odio. Proin ornare ullamcorper lectus eget sagittis.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas eros odio, dignissim ut nisi in, ultrices molestie lacus. Nullam feugiat feugiat erat vitae accumsan. Quisque at nunc a ipsum imperdiet fermentum. Suspendisse euismod sit amet ligula a hendrerit. Proin rutrum mi at turpis malesuada, vel iaculis erat accumsan. Aliquam faucibus turpis libero, eget viverra ipsum luctus id. Etiam eu facilisis odio. Proin ornare ullamcorper lectus eget sagittis.</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-    </div>    
-  </section>
-
-  <section class="mbc-grids-sec-cntlr">
-    <div class="container">
-        <div class="row">
-          <div class="col-md-12">
-            <div class="mbc-grd-sec-inr">
-              <div class="mbc-grids-sec-entry-hdr">
-                <h2 class="fl-h4 mbc-grids-sec-entry-hdr-title">2/3 + 1/3</h2>
-              </div>
-              <div class="mbc-columns mbc-columns-2R lftimg-rgtdes">
-
-                <div class="mbc-grid-item">
-                  <div class="mbc-grid-item-inr">
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas eros odio, dignissim ut nisi in, ultrices molestie lacus. Nullam feugiat feugiat erat vitae accumsan. Quisque at nunc a ipsum imperdiet fermentum. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas eros odio, dignissim ut nisi in, ultrices molestie lacus. Nullam feugiat feugiat erat vitae accumsan. Quisque at nunc a ipsum imperdiet fermentum. </p>
-                  </div>
-                </div>
-
-                <div class="mbc-grid-item">
-                  <div class="mbc-grid-item-inr">
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas eros odio, dignissim ut nisi in, ultrices molestie lacus. Nullam feugiat feugiat erat vitae accumsan. Quisque at nunc a ipsum imperdiet fermentum. Suspendisse euismod sit amet ligula a hendrerit. Proin rutrum mi at turpis malesuada, vel iaculis erat accumsan. Aliquam faucibus turpis libero, eget viverra ipsum luctus id. Etiam eu facilisis odio. Proin ornare ullamcorper lectus eget sagittis.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas eros odio, dignissim ut nisi in, ultrices molestie lacus. Nullam feugiat feugiat erat vitae accumsan. Quisque at nunc a ipsum imperdiet fermentum. Suspendisse euismod sit amet ligula a hendrerit. Proin rutrum mi at turpis malesuada, vel iaculis erat accumsan. Aliquam faucibus turpis libero, eget viverra ipsum luctus id. Etiam eu facilisis odio. Proin ornare ullamcorper lectus eget sagittis. </p>
-                  </div>
-                </div>
-                
-              </div>
-            </div>
-          </div>
-        </div>
-    </div>    
-  </section>
-
-  <section class="mbc-grids-sec-cntlr">
+      </div>
+  </div>    
+</section>
+<?php 
+}elseif( get_row_layout() == 'four_columns' ){ 
+$fc_title = get_sub_field('fc_title');
+$fc_text1 = get_sub_field('fc_text1');
+$fc_text2 = get_sub_field('fc_text2');
+$fc_text3 = get_sub_field('fc_text3');
+$fc_text4 = get_sub_field('fc_text4');
+?>
+<section class="mbc-grids-sec-cntlr">
     <div class="container">
       <div class="row">
         <div class="col-md-12">
           <div class="mbc-grd-sec-inr">
             <div class="mbc-grids-sec-entry-hdr">
-              <h2 class="fl-h4 mbc-grids-sec-entry-hdr-title">1/4 columns</h2>
+              <?php if( !empty($fc_title) ) printf('<h2 class="fl-h2 mbc-grids-sec-entry-hdr-title">%s</h2>', $fc_title); ?>
             </div>
             <div class="mbc-columns mbc-columns-4">
               <div class="mbc-grid-item">
                 <div class="mbc-grid-item-inr">
-                  <p>Quisque at nunc a ipsum imperdiet fermentum. Suspendisse euismod sit amet ligula a hendrerit. Proin rutrum mi at turpis malesuada, vel iaculis erat accumsan. Aliquam faucibus turpis libero, eget viverra ipsum luctus id. Etiam eu facilisis odio. </p>
+                  <?php if( !empty($fc_text1) ) echo wpautop($fc_text1); ?>
                 </div>
               </div>
               <div class="mbc-grid-item">
                 <div class="mbc-grid-item-inr">
-                  <p>Quisque at nunc a ipsum imperdiet fermentum. Suspendisse euismod sit amet ligula a hendrerit. Proin rutrum mi at turpis malesuada, vel iaculis erat accumsan. Aliquam faucibus turpis libero, eget viverra ipsum luctus id. Etiam eu facilisis odio. </p>
+                 <?php if( !empty($fc_text2) ) echo wpautop($fc_text2); ?>
                 </div>
               </div>
               <div class="mbc-grid-item">
                 <div class="mbc-grid-item-inr">
-                  <p>Quisque at nunc a ipsum imperdiet fermentum. Suspendisse euismod sit amet ligula a hendrerit. Proin rutrum mi at turpis malesuada, vel iaculis erat accumsan. Aliquam faucibus turpis libero, eget viverra ipsum luctus id. Etiam eu facilisis odio. </p>
+                  <?php if( !empty($fc_text3) ) echo wpautop($fc_text3); ?>
                 </div>
               </div>
               <div class="mbc-grid-item">
                 <div class="mbc-grid-item-inr">
-                  <p>Quisque at nunc a ipsum imperdiet fermentum. Suspendisse euismod sit amet ligula a hendrerit. Proin rutrum mi at turpis malesuada, vel iaculis erat accumsan. Aliquam faucibus turpis libero, eget viverra ipsum luctus id. Etiam eu facilisis odio. </p>
+                  <?php if( !empty($fc_text4) ) echo wpautop($fc_text4); ?>
                 </div>
               </div>
             </div>
           </div>
         </div>
       </div>
-    </div>    
-  </section>
+  </div>    
+</section>
+<?php 
+}elseif( get_row_layout() == 'testimonials' ){ 
+$testiobj = get_sub_field('select_testimonial');
+if( empty($testiobj) ){
+    $testiobj = get_posts( array(
+      'post_type' => 'testimonials',
+      'posts_per_page'=> -1,
+      'orderby' => 'date',
+      'order'=> 'asc',
 
-  <section class="mbc-text-slider-ctlr">
-    <div class="container">
-      <div class="row">
-        <div class="col-md-12">
-          <div class="mbc-text-slider-wrap">
-             <div class="mbc-text-slider">
-              <div class="mbc-slider-prev-nxt">
-                <span class="mbc-prev"></span>
-                <span class="mbc-nxt"></span>
+    ) );  
+}
+if($testiobj){
+?>
+<section class="mbc-text-slider-ctlr">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="mbc-text-slider-wrap">
+           <div class="mbc-text-slider">
+            <div class="mbc-slider-prev-nxt">
+              <span class="mbc-prev"></span>
+              <span class="mbc-nxt"></span>
+            </div>
+            <div class="mbc-text-slider-inr ptTextSlider">
+              <?php foreach( $testiobj as $testi ) : ?>
+              <div class="mbc-text-slider-item">
+                <h2 class="mbc-text-slider-title fl-h2">“<?php echo $testi->post_content; ?>”</h2>
               </div>
-              <div class="mbc-text-slider-inr mbcTextSlider">
-                <div class="mbc-text-slider-item">
-                  <h2 class="mbc-text-slider-title fl-h2">“Regardless of where we operate, we deliver high standards of work that gives our clients the right </h2>
+              <?php endforeach; ?>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<?php 
+}
+}elseif( get_row_layout() == 'luxury_packages' ){ 
+$packobj = get_sub_field('select_package');
+if( empty($packobj) ){
+    $packobj = get_posts( array(
+      'post_type' => 'packages',
+      'posts_per_page'=> 2,
+      'orderby' => 'date',
+      'order'=> 'asc'
+    ) );  
+}
+if($packobj){
+?>
+<section class="full-width-img-bleed-sec">
+<div class="full-width-img-bleed-sec-rows-cntlr">
+  <ul class="reset-list clearfix">
+    <?php 
+      foreach( $packobj as $package ) :
+      $imgID = get_post_thumbnail_id($package->ID);
+      $imgtag = !empty($imgID)? cbv_get_image_tag($imgID): package_placeholder('tag'); 
+      $imgsrc = !empty($imgID)? cbv_get_image_src($imgID): package_placeholder(); 
+    ?>
+    <li>
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12">
+            <div class="full-width-img-des-cntlr">
+              <div class="full-width-img-des-lft mHc">
+                <div class="full-width-img-cntlr">
+                  <div class="inline-bg" style="background-image: url(<?php echo $imgsrc; ?>);"></div>
+                  <?php echo $imgtag; ?>
                 </div>
-                <div class="mbc-text-slider-item">
-                  <h2 class="mbc-text-slider-title fl-h2">“Regardless of where we operate, we deliver high standards of work that gives our clients the right </h2>
-                </div>
-                <div class="mbc-text-slider-item">
-                  <h2 class="mbc-text-slider-title fl-h2">“Regardless of where we operate, we deliver high standards of work that gives our clients the right </h2>
+              </div>
+              <div class="full-width-img-des-rgt mHc">
+                <div class="full-width-des-innr">
+                  <h2 class="full-width-des-title fl-h2"><?php echo get_the_title($package->ID); ?></h2>
+                  <?php echo get_the_excerpt($package->ID); ?>
                 </div>
               </div>
             </div>
           </div>
         </div>
       </div>
-    </div>
-  </section>
-
-  <section class="full-width-img-bleed-sec">
-    <div class="full-width-img-bleed-sec-rows-cntlr">
-      <ul class="reset-list clearfix">
-        <li>
-          <div class="container">
-            <div class="row">
-              <div class="col-md-12">
-                <div class="full-width-img-des-cntlr">
-                  <div class="full-width-img-des-lft mHc">
-                    <div class="full-width-img-cntlr">
-                      <div class="inline-bg" style="background-image: url(<?php echo THEME_URI; ?>/assets/images/Careers-1.jpg);"></div>
-                      <img src="<?php echo THEME_URI; ?>/assets/images/Careers-1.jpg" alt="">
-                    </div>
-                  </div>
-                  <div class="full-width-img-des-rgt mHc">
-                    <div class="full-width-des-innr">
-                      <h4 class="full-width-des-title fl-h4">CADET PROGRAM</h4>
-                      <p>Phasellus scelerisque, odio id semper pretium, nunc nibh mollis lorem, vel pharetra mi dui nec tellus. Praesent condimentum lacus justo, id eleifend tortor fringilla in. Sed egestas sapien malesuada ipsum tristique elementum. Integer vulputate, dolor pretium pretium gravida.</p>
-                      <a class="mbc-white-transparent-btn" href="#">learn more</a>
-                    </div>
-                  </div>            
+    </li>
+    <?php endforeach; ?>
+  </ul>
+</div>
+</section>
+<?php 
+}
+}elseif( get_row_layout() == 'accordion_design_1' ){ 
+$fc_title = get_sub_field('fc_title');
+$fc_text = get_sub_field('fc_text');
+$accordions = get_sub_field('accordions');
+?>
+<section class="mbc-des-accordion-sec mbc-grids-sec-cntlr">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="mbc-des-accordion-sec-inr">
+          <div class="mbc-columns mbc-columns-2L">
+            <div class="mbc-grid-item">
+              <div class="mbc-grid-item-inr">
+                <div class="mbc-grids-col-entry-hdr">
+                  <?php if( !empty($fc_title) ) printf('<h2 class="fl-h2 mbc-grids-col-entry-hdr-title">%s</h2>', $fc_title); ?>
                 </div>
+                <?php if( !empty($fc_text) ) echo wpautop($fc_text);?>
               </div>
             </div>
-          </div>
-        </li>
-        <li>
-          <div class="container">
-            <div class="row">
-              <div class="col-md-12">
-                <div class="full-width-img-des-cntlr left-des-rgt-img">
-                  <div class="full-width-img-des-lft mHc">
-                    <div class="full-width-img-cntlr">
-                      <div class="inline-bg" style="background-image: url(<?php echo THEME_URI; ?>/assets/images/Careers-1.jpg);"></div>
-                      <img src="<?php echo THEME_URI; ?>/assets/images/Careers-1.jpg" alt="">
-                    </div>
+            <?php if( $accordions ): ?>
+            <div class="mbc-grid-item">
+              <div class="mbc-grid-item-inr">
+                <?php foreach( $accordions as $accordion ): ?>
+                <div class="mbc-accordion-menu">
+                  <div class="mbc-accordion-hdr">
+                  <?php if( !empty($accordion['title']) ) printf('<h3 class="mbc-accordion-title fl-h6">%s</h3>', $accordion['title']); ?>
                   </div>
-                  <div class="full-width-img-des-rgt mHc">
-                    <div class="full-width-des-innr">
-                      <h4 class="full-width-des-title fl-h4">CADET PROGRAM</h4>
-                      <p>Phasellus scelerisque, odio id semper pretium, nunc nibh mollis lorem, vel pharetra mi dui nec tellus. Praesent condimentum lacus justo, id eleifend tortor fringilla in. Sed egestas sapien malesuada ipsum tristique elementum. Integer vulputate, dolor pretium pretium gravida.</p>
-                      <a class="mbc-white-transparent-btn" href="#">learn more</a>
-                    </div>
-                  </div>            
+                  <div class="mbc-accordion-des">
+                    <?php if( !empty($accordion['description']) ) echo wpautop($accordion['description']);?>
+                  </div>
                 </div>
+                <?php endforeach; ?>
               </div>
             </div>
+            <?php endif; ?>
           </div>
-        </li>
-      </ul>
+        </div>
+      </div>
     </div>
-  </section>
-
-  <div class="gap-50"></div>
-  
-  <section class="mbc-des-accordion-sec mbc-grids-sec-cntlr">
-    <div class="container">
+  </div>
+</section>
+<?php 
+}elseif( get_row_layout() == 'accordion_design_2' ){ 
+$fc_title = get_sub_field('fc_title');
+$fc_text = get_sub_field('fc_text');
+$accordions = get_sub_field('accordions');
+?>
+<section class="mbc-des-accordion-sec mbc-grids-sec-cntlr mbc-des-accordion-gray-bg">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="mbc-des-accordion-sec-inr">
+          <div class="mbc-columns mbc-columns-2L">
+            <div class="mbc-grid-item">
+              <div class="mbc-grid-item-inr">
+                <div class="mbc-grids-col-entry-hdr">
+                  <?php if( !empty($fc_title) ) printf('<h2 class="fl-h2 mbc-grids-col-entry-hdr-title">%s</h2>', $fc_title); ?>
+                </div>
+                <?php if( !empty($fc_text) ) echo wpautop($fc_text);?>
+              </div>
+            </div>
+            <?php if( $accordions ): ?>
+            <div class="mbc-grid-item">
+              <div class="mbc-grid-item-inr">
+                <?php foreach( $accordions as $accordion ): ?>
+                <div class="mbc-accordion-menu">
+                  <div class="mbc-accordion-hdr">
+                    <?php if( !empty($accordion['title']) ) printf('<h3 class="mbc-accordion-title fl-h6">%s</h3>', $accordion['title']); ?>
+                  </div>
+                  <div class="mbc-accordion-des">
+                    <?php if( !empty($accordion['description']) ) echo wpautop($accordion['description']);?>
+                  </div>
+                </div>
+                <?php endforeach; ?>
+              </div>
+            </div>
+            <?php endif; ?>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<?php 
+}elseif( get_row_layout() == 'text_image' ){ 
+$fc_title = get_sub_field('fc_title');
+$fc_text = get_sub_field('fc_text');
+$fc_image = get_sub_field('image');
+$image_position = get_sub_field('image_position');
+$class_position = $image_position == 'right'?' mbc-columns-2R lftimg-rgtdes':' mbc-columns-2L';
+?>
+<section class="mbc-grids-sec-cntlr">
+  <div class="container">
       <div class="row">
         <div class="col-md-12">
-          <div class="mbc-des-accordion-sec-inr">
-            <div class="mbc-columns mbc-columns-2L ">
+          <div class="mbc-grd-sec-inr">
+            <div class="mbc-columns<?php echo $class_position; ?>">
+              <div class="mbc-grid-item">
+                <div class="mbc-grid-item-inr">
+                  <div class="mbc-grid-item-img inline-bg" style="background:url(<?php echo !empty($fc_image)?cbv_get_image_src($fc_image):''; ?>);">
+                    <?php echo !empty($fc_image)?cbv_get_image_tag($fc_image):''; ?>
+                  </div>
+                </div>
+              </div>
               <div class="mbc-grid-item">
                 <div class="mbc-grid-item-inr">
                   <div class="mbc-grids-col-entry-hdr">
-                    <h2 class="fl-h4 mbc-grids-col-entry-hdr-title">1/3 + 2/3</h2>
+                  <?php if( !empty($fc_title) ) printf('<h2 class="fl-h2 mbc-grids-col-entry-hdr-title">%s</h2>', $fc_title); ?>
                   </div>
-                  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas eros odio, dignissim ut nisi in, ultrices molestie lacus. Nullam feugiat feugiat erat vitae accumsan. Quisque at nunc a ipsum imperdiet fermentum. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas eros odio, dignissim ut nisi in, ultrices molestie lacus. Nullam feugiat feugiat erat vitae accumsan. Quisque at nunc a ipsum imperdiet fermentum.</p>
+                  <?php if( !empty($fc_text) ) echo wpautop($fc_text);?>
                 </div>
               </div>
-              <div class="mbc-grid-item">
-                <div class="mbc-grid-item-inr">
-                  <div class="mbc-accordion-menu">
-                    <div class="mbc-accordion-hdr">
-                      <h3 class="mbc-accordion-title fl-h4">Heading to go here
-                      </h3>
-                    </div>
-                    <div class="mbc-accordion-des">
-                      <p>Lorem ipsum dolor sit amet, consetet sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam.</p>
-                    </div>
-                  </div>
-                  <div class="mbc-accordion-menu">
-                    <div class="mbc-accordion-hdr">
-                      <h3 class="mbc-accordion-title fl-h4">Heading to go here
-                      </h3>
-                    </div>
-                    <div class="mbc-accordion-des">
-                      <p>Lorem ipsum dolor sit amet, consetet sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam.</p>
-                    </div>
-                  </div>
-                  <div class="mbc-accordion-menu">
-                    <div class="mbc-accordion-hdr">
-                      <h3 class="mbc-accordion-title fl-h4">Heading to go here
-                      </h3>
-                    </div>
-                    <div class="mbc-accordion-des">
-                      <p>Lorem ipsum dolor sit amet, consetet sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam.</p>
-                    </div>
-                  </div>
-                  <div class="mbc-accordion-menu">
-                    <div class="mbc-accordion-hdr">
-                      <h3 class="mbc-accordion-title fl-h4">Heading to go here
-                      </h3>
-                    </div>
-                    <div class="mbc-accordion-des">
-                      <p>Lorem ipsum dolor sit amet, consetet sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam.</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="mbc-grids-sec-cntlr">
-    <div class="container">
-        <div class="row">
-          <div class="col-md-12">
-            <div class="mbc-grd-sec-inr">
-              <div class="mbc-columns mbc-columns-2R lftimg-rgtdes">
-
-                <div class="mbc-grid-item">
-                  <div class="mbc-grid-item-inr">
-                    <div class="mbc-grid-item-img inline-bg" style="background:url(<?php echo THEME_URI; ?>/assets/images/mbc-grd-item-img-01.jpg);">
-                      <img src="<?php echo THEME_URI; ?>/assets/images/mbc-grd-item-img-01.jpg">
-                    </div>
-                  </div>
-                </div>
-
-                <div class="mbc-grid-item">
-                  <div class="mbc-grid-item-inr">
-                    <div class="mbc-grids-col-entry-hdr">
-                      <h2 class="fl-h4 mbc-grids-col-entry-hdr-title">2/3 text + image</h2>
-                    </div>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas eros odio, dignissim ut nisi in, ultrices molestie lacus. Nullam feugiat feugiat erat vitae accumsan. Quisque at nunc a ipsum imperdiet fermentum. Suspendisse euismod sit amet ligula a hendrerit. Proin rutrum mi at turpis malesuada, vel iaculis erat accumsan. Aliquam faucibus turpis libero, eget viverra ipsum luctus id. Etiam eu facilisis odio. Proin ornare ullamcorper lectus eget sagittis. Quisque at nunc a ipsum imperdiet fermentum. Suspendisse euismod sit amet ligula a hendrerit. Proin rutrum mi at turpis malesuada, vel iaculis erat accumsan. Aliquam faucibus turpis libero, eget viverra ipsum luctus id. Etiam eu facilisis odio. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas eros odio, dignissim ut nisi in, ultrices molestie lacus.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas eros odio, dignissim ut nisi in, ultrices molestie lacus. Nullam feugiat feugiat erat vitae accumsan. Quisque at nunc a ipsum imperdiet fermentum. Suspendisse euismod sit amet ligula a hendrerit. Proin rutrum mi at turpis malesuada, vel iaculis erat accumsan. Aliquam faucibus turpis libero, eget viverra ipsum luctus id. Etiam eu facilisis odio. Proin ornare ullamcorper lectus eget sagittis. Quisque at nunc a ipsum imperdiet fermentum. Suspendisse euismod sit amet ligula a hendrerit. Proin rutrum mi at turpis malesuada, vel iaculis erat accumsan. Aliquam faucibus turpis libero, eget viverra ipsum luctus id. Etiam eu facilisis odio. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas eros odio, dignissim ut nisi in, ultrices molestie lacus.</p>
-                  </div>
-                </div>
-                
-              </div>
-            </div>
-          </div>
-        </div>
-    </div>    
-  </section>
-
-  <section class="mbc-grids-sec-cntlr">
-    <div class="container">
-        <div class="row">
-          <div class="col-md-12">
-            <div class="mbc-grd-sec-inr">
               
-              <div class="mbc-columns mbc-columns-2L">
-                <div class="mbc-grid-item">
-                  <div class="mbc-grid-item-inr">
-                    <div class="mbc-grid-item-img inline-bg" style="background:url(<?php echo THEME_URI; ?>/assets/images/mbc-grd-item-img-02.jpg)">
-                      <img src="<?php echo THEME_URI; ?>/assets/images/mbc-grd-item-img-02.jpg">
-                    </div>
-                  </div>
-                </div>
-                <div class="mbc-grid-item">
-                  <div class="mbc-grid-item-inr">
-                    <div class="mbc-grids-col-entry-hdr">
-                      <h2 class="fl-h4 mbc-grids-col-entry-hdr-title">image + 2/3 text</h2>
-                    </div>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas eros odio, dignissim ut nisi in, ultrices molestie lacus. Nullam feugiat feugiat erat vitae accumsan. Quisque at nunc a ipsum imperdiet fermentum. Suspendisse euismod sit amet ligula a hendrerit. Proin rutrum mi at turpis malesuada, vel iaculis erat accumsan. Aliquam faucibus turpis libero, eget viverra ipsum luctus id. Etiam eu facilisis odio. Proin ornare ullamcorper lectus eget sagittis.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas eros odio, dignissim ut nisi in, ultrices molestie lacus. Nullam feugiat feugiat erat vitae accumsan. Quisque at nunc a ipsum imperdiet fermentum. Suspendisse euismod sit amet ligula a hendrerit. Proin rutrum mi at turpis malesuada, vel iaculis erat accumsan. Aliquam faucibus turpis libero, eget viverra ipsum luctus id. Etiam eu facilisis odio. Proin ornare ullamcorper lectus eget sagittis.</p>
-                  </div>
-                </div>
-              </div>
             </div>
           </div>
         </div>
-    </div>    
-  </section>
-
-  <section class="mbc-des-accordion-sec mbc-grids-sec-cntlr mbc-des-accordion-gray-bg">
-    <div class="container">
+      </div>
+  </div>    
+</section>
+<?php 
+}elseif( get_row_layout() == 'text_image2' ){ 
+$fc_title = get_sub_field('fc_title');
+$fc_text = get_sub_field('fc_text');
+$fc_image = get_sub_field('image');
+$image_position = get_sub_field('image_position');
+$class_position = $image_position == 'right'?' lftimg-rgtdes':'';
+?>
+<section class="mbc-grids-sec-cntlr">
+  <div class="container">
       <div class="row">
         <div class="col-md-12">
-          <div class="mbc-des-accordion-sec-inr">
-            <div class="mbc-columns mbc-columns-2L">
+          <div class="mbc-grd-sec-inr">
+            <div class="mbc-columns mbc-columns-2<?php echo $class_position; ?>">
               <div class="mbc-grid-item">
                 <div class="mbc-grid-item-inr">
-                  <div class="mbc-grids-col-entry-hdr">
-                    <h2 class="fl-h4 mbc-grids-col-entry-hdr-title">1/3 + 2/3</h2>
+                <div class="mbc-grid-item-img mbc-grd-item-img-columns2 inline-bg" style="background:url(<?php echo !empty($fc_image)?cbv_get_image_src($fc_image):''; ?>)">
+                    <?php echo !empty($fc_image)?cbv_get_image_tag($fc_image):''; ?>
                   </div>
-                  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas eros odio, dignissim ut nisi in, ultrices molestie lacus. Nullam feugiat feugiat erat vitae accumsan. Quisque at nunc a ipsum imperdiet fermentum.</p>
                 </div>
               </div>
               <div class="mbc-grid-item">
                 <div class="mbc-grid-item-inr">
-                  <div class="mbc-accordion-menu">
-                    <div class="mbc-accordion-hdr">
-                      <h3 class="mbc-accordion-title fl-h4">Heading to go here
-                      </h3>
-                    </div>
-                    <div class="mbc-accordion-des">
-                      <p>Quisque at nunc a ipsum imperdiet fermentum. Suspendisse euismod sit amet ligula a hendrerit. Proin rutrum mi at turpis malesuada, vel iaculis erat accumsan. Aliquam faucibus turpis libero, eget viverra ipsum luctus id. Etiam eu facilisis odio. Proin ornare ullamcorper lectus eget sagittis.</p>
-                    </div>
+                  <div class="mbc-grids-col-entry-hdr">
+                    <?php if( !empty($fc_title) ) printf('<h2 class="fl-h2 mbc-grids-col-entry-hdr-title">%s</h2>', $fc_title); ?>
                   </div>
-                  <div class="mbc-accordion-menu">
-                    <div class="mbc-accordion-hdr">
-                      <h3 class="mbc-accordion-title fl-h4">Heading to go here
-                      </h3>
-                    </div>
-                    <div class="mbc-accordion-des">
-                      <p>Quisque at nunc a ipsum imperdiet fermentum. Suspendisse euismod sit amet ligula a hendrerit. Proin rutrum mi at turpis malesuada, vel iaculis erat accumsan. Aliquam faucibus turpis libero, eget viverra ipsum luctus id. Etiam eu facilisis odio. Proin ornare ullamcorper lectus eget sagittis.</p>
-                    </div>
-                  </div>
-                  <div class="mbc-accordion-menu">
-                    <div class="mbc-accordion-hdr">
-                      <h3 class="mbc-accordion-title fl-h4">Heading to go here
-                      </h3>
-                    </div>
-                    <div class="mbc-accordion-des">
-                      <p>Quisque at nunc a ipsum imperdiet fermentum. Suspendisse euismod sit amet ligula a hendrerit. Proin rutrum mi at turpis malesuada, vel iaculis erat accumsan. Aliquam faucibus turpis libero, eget viverra ipsum luctus id. Etiam eu facilisis odio. Proin ornare ullamcorper lectus eget sagittis.</p>
-                    </div>
-                  </div>
-                  <div class="mbc-accordion-menu">
-                    <div class="mbc-accordion-hdr">
-                      <h3 class="mbc-accordion-title fl-h4">Heading to go here
-                      </h3>
-                    </div>
-                    <div class="mbc-accordion-des">
-                      <p>Quisque at nunc a ipsum imperdiet fermentum. Suspendisse euismod sit amet ligula a hendrerit. Proin rutrum mi at turpis malesuada, vel iaculis erat accumsan. Aliquam faucibus turpis libero, eget viverra ipsum luctus id. Etiam eu facilisis odio. Proin ornare ullamcorper lectus eget sagittis.</p>
-                    </div>
-                  </div>
+                  <?php if( !empty($fc_text) ) echo wpautop($fc_text);?>
                 </div>
               </div>
             </div>
           </div>
         </div>
       </div>
-    </div>
-  </section>
+  </div>    
+</section>
+<?php 
+}elseif( get_row_layout() == 'team_members' ){ 
+$fc_title = get_sub_field('fc_title');
+$memberobj = get_sub_field('select_members');
+if( empty($memberobj) ){
+    $memberobj = get_posts( array(
+      'post_type' => 'team-members',
+      'posts_per_page'=> -1,
+      'orderby' => 'date',
+      'order'=> 'asc',
 
-  <section class="mbc-grids-sec-cntlr">
-    <div class="container">
-        <div class="row">
-          <div class="col-md-12">
-            <div class="mbc-grd-sec-inr">
-              <div class="mbc-columns mbc-columns-2 lftimg-rgtdes">
-                <div class="mbc-grid-item">
-                  <div class="mbc-grid-item-inr">
-                    <div class="mbc-grid-item-img mbc-grd-item-img-columns2 inline-bg" style="background:url(<?php echo THEME_URI; ?>/assets/images/mbc-grd-item-img-03.jpg)">
-                      <img src="<?php echo THEME_URI; ?>/assets/images/mbc-grd-item-img-03.jpg">
-                    </div>
-                  </div>
-                </div>
-                <div class="mbc-grid-item">
-                  <div class="mbc-grid-item-inr">
-                    <div class="mbc-grids-col-entry-hdr">
-                      <h2 class="fl-h4 mbc-grids-col-entry-hdr-title">2 columns, image + text</h2>
-                    </div>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas eros odio, dignissim ut nisi in, ultrices molestie lacus. Nullam feugiat feugiat erat vitae accumsan. Quisque at nunc a ipsum imperdiet fermentum. Suspendisse euismod sit amet ligula a hendrerit. Proin rutrum mi at turpis malesuada, vel iaculis erat accumsan. Aliquam faucibus turpis libero, eget viverra ipsum luctus id. Etiam eu facilisis odio. </p>
-                  </div>
-                </div>
-                
-              </div>
-            </div>
+    ) );  
+}
+?>
+<section class="mbc-team-sec">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="mbc-team-sec-inr">
+          <div class="mbc-grids-sec-entry-hdr">
+            <?php if( !empty($fc_title) ) printf('<h2 class="fl-h2 mbc-grids-sec-entry-hdr-title">%s</h2>', $fc_title); ?>
           </div>
-        </div>
-    </div>    
-  </section>
-
-  <section class="mbc-grids-sec-cntlr">
-    <div class="container">
-        <div class="row">
-          <div class="col-md-12">
-            <div class="mbc-grd-sec-inr">
-              <div class="mbc-columns mbc-columns-2">
-                <div class="mbc-grid-item">
-                  <div class="mbc-grid-item-inr">
-                    <div class="mbc-grid-item-img mbc-grd-item-img-columns2 inline-bg" style="background:url(<?php echo THEME_URI; ?>/assets/images/mbc-grd-item-img-04.jpg)">
-                      <img src="<?php echo THEME_URI; ?>/assets/images/mbc-grd-item-img-04.jpg">
+          <div class="mbc-team-slider-ctlr">
+            <div class="mbc-slider-prev-nxt">
+              <span class="mbc-prev">
+                <!-- <i><svg class="fl-prev-svg" width="53" height="46" viewBox="0 0 53 46" fill="#fff">
+                  <use xlink:href="#fl-prev-svg"></use> </svg></i> -->
+              </span>
+              <span class="mbc-nxt"></span>
+            </div>
+            <?php if($memberobj): ?>
+            <div class="mbc-team-grds ptTeamSlider">
+            <?php 
+                foreach( $memberobj as $member ) :
+                $imgID = get_post_thumbnail_id($member->ID);
+                $imgtag = !empty($imgID)? cbv_get_image_tag($imgID): ''; 
+                $position = get_field('position', $member->ID);
+                $link = get_field('link', $member->ID);
+            ?>
+              <div class="mbc-team-grd-item-ctlr">
+                <div class="mbc-team-grd-item">
+                  <?php if( !empty($link) ) printf('<a href="%s" class="overlay-link"></a>', $link); ?>
+                  <div class="mbc-team-grd-item-img-ctlr">
+                    <div class="mbc-team-grd-item-img">
+                      <?php echo $imgtag; ?>
                     </div>
                   </div>
-                </div>
-                <div class="mbc-grid-item">
-                  <div class="mbc-grid-item-inr">
-                    <div class="mbc-grids-col-entry-hdr">
-                      <h2 class="fl-h4 mbc-grids-col-entry-hdr-title">2 columns, image + text</h2>
-                    </div>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas eros odio, dignissim ut nisi in, ultrices molestie lacus. Nullam feugiat feugiat erat vitae accumsan. Quisque at nunc a ipsum imperdiet fermentum. Suspendisse euismod sit amet ligula a hendrerit. Proin rutrum mi at turpis malesuada, vel iaculis erat accumsan. Aliquam faucibus turpis libero, eget viverra ipsum luctus id. Etiam eu facilisis odio. </p>
+                  <div class="mbc-team-grd-item-des">
+                    <h3 class="mbc-team-grd-des-title fl-h6">
+                      <a href="#">
+                        <?php if( !empty($link) ) printf('<a href="%s">', $link); ?>
+                        <?php echo get_the_title($member->ID); ?>,
+                      <?php if( !empty($link) ) printf('</a>'); ?>
+                    </h3>
+                    <?php if( !empty($position) ) printf('<strong>%s</strong>', $position); ?>
+                    <p><?php echo get_the_excerpt($member->ID); ?></p>
+                    <?php if( !empty($link) ) printf('<a class="fl-transparent-btn" href="%s">read more</a>', $link); ?>
                   </div>
                 </div>
               </div>
+              <?php endforeach; ?>
             </div>
-          </div>
-        </div>
-    </div>    
-  </section>
-
-  <section class="mbc-option-break-slider-sec inline-bg" style="background:url(<?php echo THEME_URI; ?>/assets/images/mbc-opb-slider-bg.jpg);">
-    <div class="container">
-      <div class="row">
-        <div class="col-md-12">
-          <div class="mbc-option-break-slider-sec-inr">
-            <div class="mbc-option-break-option-break-slider-ctlr">
-              <div class="mbc-slider-prev-nxt">
-                <span class="mbc-prev"><i></i></span>
-                <span class="mbc-nxt"><i></i></span>
-              </div>
-              <div class="mbc-opb-slider-grds mbcOpbSlider clearfix">
-                <div class="mbc-opb-slider-grd-item">
-                  <div class="mbc-opb-slider-grd-item-des">
-                    <h2 class="mbc-opb-slider-title fl-h2">Optional break out quote on photo. Quisque at nunc a ipsum imperdiet fermentum. Suspendisse</h2>
-                  </div>
-                </div>
-                <div class="mbc-opb-slider-grd-item">
-                  <div class="mbc-opb-slider-grd-item-des">
-                    <h2 class="mbc-opb-slider-title fl-h2">Optional break out quote on photo. Quisque at nunc a ipsum imperdiet fermentum. Suspendisse</h2>
-                  </div>
-                </div>
-                <div class="mbc-opb-slider-grd-item">
-                  <div class="mbc-opb-slider-grd-item-des">
-                    <h2 class="mbc-opb-slider-title fl-h2">Optional break out quote on photo. Quisque at nunc a ipsum imperdiet fermentum. Suspendisse</h2>
-                  </div>
-                </div>
-              </div>
-            </div>
+            <?php endif; ?>
           </div>
         </div>
       </div>
     </div>
-  </section>
-
-  <section class="mbc-content-sec">
-    <div class="container">
-      <div class="row">
-        <div class="col-md-12">
-          <div class="mbc-content-sec-inr">
-            <div class="mbc-content-des">
-              <h1><span style="color: #CBCBCB;">Heading 1</span>&nbsp;&nbsp;<span style="color: #716A6A;">Heading 1</span>&nbsp;&nbsp;<span style="color: #405D6F;">Heading 1</span>&nbsp;&nbsp;<span style="color: #000000;">Heading 1</span></h1>
-              <h2><span style="color: #CBCBCB;">Heading 2</span>&nbsp;&nbsp;<span style="color: #716A6A;">Heading 2</span>&nbsp;&nbsp;<span style="color: #405D6F;">Heading 2</span>&nbsp;&nbsp;<span style="color: #000000;">Heading 2</span></h2>
-              <h3><span style="color: #CBCBCB;">Heading 3</span>&nbsp;&nbsp;<span style="color: #716A6A;">Heading 3</span>&nbsp;&nbsp;<span style="color: #405D6F;">Heading 3</span>&nbsp;&nbsp;<span style="color: #000000;">Heading 3</span></h3>
-              <a class="mbc-transparent-btn" href="#">view all</a>
-              <a class="mbc-transparent-btn" href="#">find out more</a>
+  </div>
+</section>
+<?php 
+}elseif( get_row_layout() == 'featured_images' ){ 
+$fc_title = get_sub_field('fc_title');
+$fc_images = get_sub_field('fc_images');
+?>
+<section class="mbc-fea-sec">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="mbc-fea-sec-inr">
+          <div class="mbc-grids-sec-entry-hdr">
+            <?php if( !empty($fc_title) ) printf('<h2 class="fl-h2 mbc-grids-sec-entry-hdr-title">%s</h2>', $fc_title); ?>
+          </div>
+          <?php if($fc_images): ?>
+          <div class="mbc-fea-slider-ctlr">
+            <div class="mbc-fea-slider-grds">
+              <?php foreach( $fc_images as $image ): ?>
+              <div class="mbc-fea-slider-grd-item">
+                <div class="mbc-fea-slider-grd-item-img">
+                  <?php echo !empty($image)?cbv_get_image_tag( $image ):''; ?>
+                </div>
+              </div>
+              <?php endforeach; ?>
             </div>
           </div>
+          <?php endif; ?>
         </div>
       </div>
     </div>
-  </section>
-
-
-  <section class="mbc-btn-sec">
-    <div class="container">
-      <div class="row">
-        <div class="col-md-12">
-          <div class="mbc-btn-sec-inr">
-            <div class="mbc-btn">
-              <ul class="reset-list clearfix">
-                <li><a class="mbc-white-transparent-btn" href="#">submit</a></li>
-                <li><a class="mbc-transparent-btn" href="#">find out more</a></li>
-                <li><a class="mbc-black-transparent-btn" href="#">contact us</a></li>
-                <li><a class="mbc-white-btn" href="#">find out more</a></li>
-              </ul>
-            </div>
-            <div class="mbc-prev-nxt-ctlr">
-              <div class="mbc-prev-nxt-wrap">
-                <div class="mbc-prev-nxt mbc-white-prev-nxt">
-                  <ul class="reset-list">
-                    <li><div class="mbc-prev"><i><img src="<?php echo THEME_URI; ?>/assets/images/mbc-prev.png"></i></div></li>
-                    <li><div class="mbc-nxt"><i><img src="<?php echo THEME_URI; ?>/assets/images/mbc-nxt.png"></i></div></li>
-                  </ul>
+  </div>
+</section>
+<?php 
+}elseif( get_row_layout() == 'gallery' ){ 
+$fc_title = get_sub_field('fc_title');
+$gallery = get_sub_field('fc_gallery');
+$lightbox = get_sub_field('display_lightbox');
+?>
+<section class="mbc-gallery-sec">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="mbc-gallery-sec-inr">
+          <div class="mbc-grids-sec-entry-hdr">
+            <?php if( !empty($fc_title) ) printf('<h2 class="fl-h2 mbc-grids-sec-entry-hdr-title">%s</h2>', $fc_title); ?>
+          </div>
+          <?php if( $gallery ): ?>
+          <div class="gallery-wrap clearfix">
+            <div class="gallery gallery-columns-4">
+              <?php 
+                foreach( $gallery as $image ): 
+                $lightboxImg = !empty($image)?cbv_get_image_src( $image ):'';
+              ?>
+              <figure class="gallery-item">
+                <div class="gallery-icon portrait">
+                  <?php if( isset($lightbox[0]) && $lightbox[0] == '1' ) echo "<a data-fancybox='gallery' href='{$lightboxImg}' class='overlay-link'></a>"; ?>
+                  <div class="gallery-icon-img inline-bg" style="background: url('<?php echo !empty($image)?cbv_get_image_src( $image ):''; ?>');"></div>
+                  <?php echo !empty($image)?cbv_get_image_tag( $image ):''; ?>
                 </div>
-              </div>
+              </figure>
+              <?php endforeach; ?>
             </div>
           </div>
+          <?php endif; ?>
         </div>
       </div>
     </div>
-  </section>
-
-
-  <section class="mbc-team-sec">
-    <div class="container">
-      <div class="row">
-        <div class="col-md-12">
-          <div class="mbc-team-sec-inr">
-            <div class="mbc-grids-sec-entry-hdr">
-              <h4 class="fl-h4 mbc-team-subtitle">leading the way</h4>
-              <h2 class="fl-h3 mbc-grids-sec-entry-hdr-title">Meet the team</h2>
-            </div>
-            <div class="mbc-team-slider-ctlr">
-              <div class="mbc-slider-prev-nxt">
-                <span class="mbc-prev">
-                  
-                </span>
-                <span class="mbc-nxt"></span>
-              </div>
-              <div class="mbc-team-grds mbcTeamSlider">
-                <div class="mbc-team-grd-item-ctlr">
-                  <div class="mbc-team-grd-item">
-                    <a href="#" class="overlay-link"></a>
-                    <div class="mbc-team-grd-item-img-ctlr">
-                      <div class="mbc-team-grd-item-img">
-                        <img src="<?php echo THEME_URI; ?>/assets/images/mbc-team-grd-item-img-01.png">
-                      </div>
-                    </div>
-                    <div class="mbc-team-grd-item-des">
-                      <h3 class="mbc-team-grd-des-title fl-h4"><a href="#">George Harrison,</a></h3>
-                      <strong>CEO</strong>
-                      <p>George has over 25 years experience in the mining industry and has filled a variety of technical and management roles covering Maintenance Coordinator, Sales Manager, Technical Support Manager and Product Development Manager.</p>
-                    </div>
-                  </div>
-                </div>
-                <div class="mbc-team-grd-item-ctlr">
-                  <div class="mbc-team-grd-item">
-                    <a href="#" class="overlay-link"></a>
-                    <div class="mbc-team-grd-item-img-ctlr">
-                      <div class="mbc-team-grd-item-img">
-                        <img src="<?php echo THEME_URI; ?>/assets/images/mbc-team-grd-item-img-02.png">
-                      </div>
-                    </div>
-                    <div class="mbc-team-grd-item-des">
-                      <h3 class="mbc-team-grd-des-title fl-h4"><a href="#">Leo Matthews,</a></h3>
-                      <strong>Lead Engineer</strong>
-                      <p>Leo has over 25 years experience in the mining industry and has filled a variety of technical and management roles covering Maintenance Coordinator, Sales Manager, Technical Support Manager and Product Development Manager. </p>
-                    </div>
-                  </div>
-                </div>
-                <div class="mbc-team-grd-item-ctlr">
-                  <div class="mbc-team-grd-item">
-                    <a href="#" class="overlay-link"></a>
-                    <div class="mbc-team-grd-item-img-ctlr">
-                      <div class="mbc-team-grd-item-img">
-                        <img src="<?php echo THEME_URI; ?>/assets/images/mbc-team-grd-item-img-03.png">
-                      </div>
-                    </div>
-                    <div class="mbc-team-grd-item-des">
-                      <h3 class="mbc-team-grd-des-title fl-h4"><a href="#">Michelle Fellows,</a></h3>
-                      <strong>Stategist</strong>
-                      <p>Michelle has over 25 years experience in the mining industry and has filled a variety of technical and management roles covering Maintenance Coordinator, Sales Manager, Technical Support Manager and Product Development Manager.</p>
-                    </div>
-                  </div>
-                </div>
-                <div class="mbc-team-grd-item-ctlr">
-                  <div class="mbc-team-grd-item">
-                    <a href="#" class="overlay-link"></a>
-                    <div class="mbc-team-grd-item-img-ctlr">
-                      <div class="mbc-team-grd-item-img">
-                        <img src="<?php echo THEME_URI; ?>/assets/images/mbc-team-grd-item-img-04.png">
-                      </div>
-                    </div>
-                    <div class="mbc-team-grd-item-des">
-                      <h3 class="mbc-team-grd-des-title fl-h4"><a href="#">Matt Lindburg,</a></h3>
-                      <strong>Engineering Technologist</strong>
-                      <p>Matt has over 25 years experience in the mining industry and has filled a variety of technical and management roles covering Maintenance Coordinator, Sales Manager, Technical Support Manager and Product Development Manager.</p>
-                    </div>
-                  </div>
-                </div>
-                <div class="mbc-team-grd-item-ctlr">
-                  <div class="mbc-team-grd-item">
-                    <a href="#" class="overlay-link"></a>
-                    <div class="mbc-team-grd-item-img-ctlr">
-                      <div class="mbc-team-grd-item-img">
-                        <img src="<?php echo THEME_URI; ?>/assets/images/mbc-team-grd-item-img-01.png">
-                      </div>
-                    </div>
-                    <div class="mbc-team-grd-item-des">
-                      <h3 class="mbc-team-grd-des-title fl-h4"><a href="#">George Harrison,</a></h3>
-                      <strong>CEO</strong>
-                      <p>George has over 25 years experience in the mining industry and has filled a variety of technical and management roles covering Maintenance Coordinator, Sales Manager, Technical Support Manager and Product Development Manager.</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="mbc-grids-sec-cntlr mbc-fullwidth-txt-module-white-dark-gray-bg">
-    <div class="container">
-        <div class="row">
-          <div class="col-md-12">
-            <div class="mbc-grd-sec-inr">
-              <div class="mbc-columns mbc-columns-2">
-                <div class="mbc-grid-item">
-                  <div class="mbc-grid-item-inr">
-                    <h4>Lorem ipsum dolor sit amet</h4>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas eros odio, dignissim ut nisi in, ultrices molestie lacus. Nullam feugiat feugiat erat vitae accumsan. Quisque at nunc a ipsum imperdiet fermentum. Suspendisse euismod sit amet ligula a hendrerit. Proin rutrum mi at turpis malesuada, vel iaculis erat accumsan. Aliquam faucibus turpis libero, eget viverra ipsum luctus id. Etiam eu facilisis odio. </p>
-                    <h4>Lorem ipsum dolor sit amet</h4>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas eros odio, dignissim ut nisi in, ultrices molestie lacus. Nullam feugiat feugiat erat vitae accumsan. Quisque at nunc a ipsum imperdiet fermentum. Suspendisse euismod sit amet ligula a hendrerit. Proin rutrum mi at turpis malesuada, vel iaculis erat accumsan. Aliquam faucibus turpis libero, eget viverra ipsum luctus id. Etiam eu facilisis odio.</p>
-                  </div>
-                </div>
-                <div class="mbc-grid-item">
-                  <div class="mbc-grid-item-inr">
-                    <h4>Lorem ipsum dolor sit amet</h4>
-                    <p>Proin ornare ullamcorper lectus eget sagittis.Integer tincidunt sodales massa quis aliquam. Ut vitae est at ipsum vehicula interdum. Aenean maximus aliquam aliquet. Nam egestas purus eu metus pellentesque eleifend a sed augue. In id urna vel magna commodo tempor. Proin quis dictum arcu. Pellentesque ornare felis enim, a varius erat ultrices quis. Suspendisse feugiat congue rutrum. Suspendisse vitae vehicula mauris. In sed tortor ut quam ultrices feugiat.</p>
-                    <h4>Lorem ipsum dolor sit amet</h4>
-                    <p>Proin ornare ullamcorper lectus eget sagittis.Integer tincidunt sodales massa quis aliquam. Ut vitae est at ipsum vehicula interdum. Aenean maximus aliquam aliquet. Nam egestas purus eu metus pellentesque eleifend a sed augue. In id urna vel magna commodo tempor. Proin quis dictum arcu. Pellentesque ornare felis enim, a varius erat ultrices quis. Suspendisse feugiat congue rutrum. Suspendisse vitae vehicula mauris. In sed tortor ut quam ultrices feugiat.</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-    </div>    
-  </section>
-
-
-  <section class="mbc-client-sec">
-    <div class="container">
-      <div class="row">
-        <div class="col-md-12">
-          <div class="mbc-client-sec-inr">
-            <div class="mbc-client-hdr">
-              <h3 class="mbc-client-subtitle fl-h4">our partners</h3>
-              <h2 class="mbc-client-title fl-h3">Meet our collaborators</h2>
-            </div>
-            <div class="mbc-client-grds">
-              <div class="mbc-client-grd-item">
-                <div class="mbc-client-grd-item-img">
-                  <img src="<?php echo THEME_URI; ?>/assets/images/mbc-client-img-01.png">
-                </div>
-              </div>
-              <div class="mbc-client-grd-item">
-                <div class="mbc-client-grd-item-img">
-                  <img src="<?php echo THEME_URI; ?>/assets/images/mbc-client-img-02.png">
-                </div>
-              </div>
-              <div class="mbc-client-grd-item">
-                <div class="mbc-client-grd-item-img">
-                  <img src="<?php echo THEME_URI; ?>/assets/images/mbc-client-img-03.png">
-                </div>
-              </div>
-              <div class="mbc-client-grd-item">
-                <div class="mbc-client-grd-item-img">
-                  <img src="<?php echo THEME_URI; ?>/assets/images/mbc-client-img-04.png">
-                </div>
-              </div>
-              <div class="mbc-client-grd-item">
-                <div class="mbc-client-grd-item-img">
-                  <img src="<?php echo THEME_URI; ?>/assets/images/mbc-client-img-05.png">
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-
-  <!-- <section class="mbc-fea-sec">
-    <div class="container">
-      <div class="row">
-        <div class="col-md-12">
-          <div class="mbc-fea-sec-inr">
-            <div class="mbc-grids-sec-entry-hdr">
-              <h2 class="fl-h2 mbc-grids-sec-entry-hdr-title">As Featured In</h2>
-            </div>
-            <div class="mbc-fea-slider-ctlr">
-              <div class="mbc-fea-slider-grds">
-                <div class="mbc-fea-slider-grd-item">
-                  <div class="mbc-fea-slider-grd-item-img">
-                    <img src="<?php echo THEME_URI; ?>/assets/images/mbc-fea-slider-img-01.jpg">
-                  </div>
-                </div>
-                <div class="mbc-fea-slider-grd-item">
-                  <div class="mbc-fea-slider-grd-item-img">
-                    <img src="<?php echo THEME_URI; ?>/assets/images/mbc-fea-slider-img-02.jpg">
-                  </div>
-                </div>
-                <div class="mbc-fea-slider-grd-item">
-                  <div class="mbc-fea-slider-grd-item-img">
-                    <img src="<?php echo THEME_URI; ?>/assets/images/mbc-fea-slider-img-03.jpg">
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section> -->
-
-  <section class="mbc-ol-ul-sec">
-    <div class="container">
-      <div class="row">
-        <div class="col-md-12">
-          <div class="mbc-ol-ul-sec-inr">
-            <div class="mbc-grids-sec-entry-hdr">
-              <h2 class="fl-h4 mbc-grids-sec-entry-hdr-title">ordered + unordered lists</h2>
-            </div>
-            <div class="mbc-columns mbc-columns-4">
-              <div class="mbc-grid-item">
-                <div class="mbc-grid-item-inr">
-                  <ol>
-                    <li>Quisque at nunc a ipsum imperdiet fermentum. </li>
-                    <li>Suspendisse euismod sit amet ligula a hendrerit.</li>
-                    <li>Proin rutrum mi at turpis malesuada, vel iaculis erat accumsan.</li>
-                    <li>Aliquam faucibus turpis libero, eget viverra ipsum luctus id. </li>
-                  </ol>
-                </div>
-              </div>
-              <div class="mbc-grid-item">
-                <div class="mbc-grid-item-inr">
-                  <ol>
-                    <li>Quisque at nunc a ipsum imperdiet fermentum. </li>
-                    <li>Suspendisse euismod sit amet ligula a hendrerit.</li>
-                    <li>Proin rutrum mi at turpis malesuada, vel iaculis erat accumsan.</li>
-                    <li>Aliquam faucibus turpis libero, eget viverra ipsum luctus id. </li>
-                  </ol>
-                </div>
-              </div>
-              <div class="mbc-grid-item">
-                <div class="mbc-grid-item-inr">
-                  <ul>
-                    <li>Quisque at nunc a ipsum imperdiet fermentum. </li>
-                    <li>Suspendisse euismod sit amet ligula a hendrerit. </li>
-                    <li>Proin rutrum mi at turpis malesuada, vel iaculis erat accumsan. </li>
-                    <li>Aliquam faucibus turpis libero, eget viverra ipsum luctus id. </li>
-                  </ul>
-                </div>
-              </div>
-              <div class="mbc-grid-item">
-                <div class="mbc-grid-item-inr">
-                  <ul>
-                    <li>Quisque at nunc a ipsum imperdiet fermentum. </li>
-                    <li>Suspendisse euismod sit amet ligula a hendrerit. </li>
-                    <li>Proin rutrum mi at turpis malesuada, vel iaculis erat accumsan. </li>
-                    <li>Aliquam faucibus turpis libero, eget viverra ipsum luctus id. </li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-
-  <section class="mbc-gallery-sec">
-    <div class="container">
-      <div class="row">
-        <div class="col-md-12">
-          <div class="mbc-gallery-sec-inr">
-            <div class="mbc-grids-sec-entry-hdr">
-              <h2 class="fl-h4 mbc-grids-sec-entry-hdr-title">Gallery</h2>
-            </div>
-            <div class="gallery-wrap clearfix">
-              <div class="gallery gallery-columns-4">
-                <figure class="gallery-item">
-                  <div class="gallery-icon portrait">
-                    <div class="gallery-icon-img inline-bg" style="background: url('<?php echo THEME_URI; ?>/assets/images/gallery-img-01.jpg');"></div>
-                    <img src="<?php echo THEME_URI; ?>/assets/images/gallery-img-01.jpg">
-                  </div>
-                </figure>
-
-                <figure class="gallery-item">
-                  <div class="gallery-icon portrait">
-                    <div class="gallery-icon-img inline-bg" style="background: url('<?php echo THEME_URI; ?>/assets/images/gallery-img-02.jpg');"></div>
-                    <img src="<?php echo THEME_URI; ?>/assets/images/gallery-img-02.jpg">
-                  </div>
-                </figure>
-
-                <figure class="gallery-item">
-                  <div class="gallery-icon portrait">
-                    <div class="gallery-icon-img inline-bg" style="background: url('<?php echo THEME_URI; ?>/assets/images/gallery-img-03.jpg');"></div>
-                    <img src="<?php echo THEME_URI; ?>/assets/images/gallery-img-03.jpg">
-                  </div>
-                </figure>
-
-                <figure class="gallery-item">
-                  <div class="gallery-icon portrait">
-                    <div class="gallery-icon-img inline-bg" style="background: url('<?php echo THEME_URI; ?>/assets/images/gallery-img-04.jpg');"></div>
-                    <img src="<?php echo THEME_URI; ?>/assets/images/gallery-img-04.jpg">
-                  </div>
-                </figure>
-
-                <figure class="gallery-item">
-                  <div class="gallery-icon portrait">
-                    <div class="gallery-icon-img inline-bg" style="background: url('<?php echo THEME_URI; ?>/assets/images/gallery-img-05.jpg');"></div>
-                    <img src="<?php echo THEME_URI; ?>/assets/images/gallery-img-05.jpg">
-                  </div>
-                </figure>
-
-                <figure class="gallery-item">
-                  <div class="gallery-icon portrait">
-                    <div class="gallery-icon-img inline-bg" style="background: url('<?php echo THEME_URI; ?>/assets/images/gallery-img-06.jpg');"></div>
-                    <img src="<?php echo THEME_URI; ?>/assets/images/gallery-img-06.jpg">
-                  </div>
-                </figure>
-
-                <figure class="gallery-item">
-                  <div class="gallery-icon portrait">
-                    <div class="gallery-icon-img inline-bg" style="background: url('<?php echo THEME_URI; ?>/assets/images/gallery-img-07.jpg');"></div>
-                    <img src="<?php echo THEME_URI; ?>/assets/images/gallery-img-07.jpg">
-                  </div>
-                </figure>
-
-                <figure class="gallery-item">
-                  <div class="gallery-icon portrait">
-                    <div class="gallery-icon-img inline-bg" style="background: url('<?php echo THEME_URI; ?>/assets/images/gallery-img-08.jpg');"></div>
-                    <img src="<?php echo THEME_URI; ?>/assets/images/gallery-img-08.jpg">
-                  </div>
-                </figure>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
+  </div>
+</section>
+<?php }elseif( get_row_layout() == 'horizontal_line' ){ ?>
+<hr>
+<?php }elseif( get_row_layout() == 'gap' ){ 
+  $fc_gap = get_sub_field('fc_gap');
+?>
+<div class="gap-<?php echo $fc_gap; ?>"></div>
+<?php } ?>
+<?php endwhile; ?>
+</div>
 <?php get_template_part('templates/contact', 'sec'); ?>
 <?php get_footer(); ?>

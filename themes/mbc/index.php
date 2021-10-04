@@ -48,7 +48,7 @@ $banner = !empty($imgID)?cbv_get_image_src($imgID):banner_placeholder();
                   </div>
                   <div class="news-grid-des">
                     <div class="news-grid-des-title">
-                      <h3 class="news-grid-title fl-h5 mHc"><a href="#"><?php the_title(); ?>,<?php echo get_the_date('F Y'); ?></a></h3>
+                      <h3 class="news-grid-title fl-h5 mHc"><a href="<?php the_permalink(); ?>"><?php the_title(); ?>,<?php echo get_the_date('F Y'); ?></a></h3>
                     </div>
                     <div class="news-grid-btn">
                       <a href="<?php the_permalink(); ?>">Read more</a>
