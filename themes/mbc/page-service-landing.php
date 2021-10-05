@@ -4,7 +4,20 @@ get_header();
 $thisID = get_the_ID();
 ?>
 <?php get_template_part('templates/page', 'banner'); ?>
-<?php get_template_part('templates/breadcrumbs'); ?>
+  <section class="breadcrumb-sec">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <div class="breadcrumb-sec-inr">
+            <ul class="reset-list clearfix">
+              <li class="home"><a href="<?php echo esc_url(home_url('/')); ?>"><span>Home</span></a></li>
+              <li class="active"><span>industrial and infrastructure</span></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 <?php
   $args = array( 
     'post_type' => 'career', 
@@ -125,9 +138,10 @@ if($projects):
 $showhide_slide = get_field('showhide_slide', $thisID);
 if($showhide_slide): 
 $slides = get_field('slides', $thisID);
+$slidebg = get_field('slide_bg_image', $thisID);
 if($slides):
 ?>
-<section class="mbc-option-break-slider-sec inline-bg" style="background:url(<?php echo THEME_URI; ?>/assets/images/mbc-opb-slider-bg.jpg);">
+<section class="mbc-option-break-slider-sec inline-bg" style="background:url(<?php echo !empty($slidebg)?cbv_get_image_src($slidebg):''; ?>);">
   <div class="container">
     <div class="row">
       <div class="col-md-12">
