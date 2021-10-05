@@ -1,6 +1,8 @@
 <?php 
 get_header(); 
 $thisID = get_option( 'page_for_posts' );
+$customtitle = get_field('custom_title', $thisID);
+$page_title = !empty($customtitle)? $customtitle: get_the_title($thisID);
 $imgID = get_field('banner', $thisID);
 $banner = !empty($imgID)?cbv_get_image_src($imgID):banner_placeholder();
 ?>
@@ -12,7 +14,7 @@ $banner = !empty($imgID)?cbv_get_image_src($imgID):banner_placeholder();
         <div class="col-md-12">
           <div class="page-bnr-cntlr">
             <div class="page-bnr-desc">
-              <h1 class="fl-h1 page-bnr-title"><?php echo get_the_title($thisID); ?></h1>
+              <h1 class="fl-h1 page-bnr-title"><?php echo $page_title; ?></h1>
             </div>
           </div>
         </div>
@@ -20,14 +22,17 @@ $banner = !empty($imgID)?cbv_get_image_src($imgID):banner_placeholder();
     </div>
   </section>
 <?php get_template_part('templates/breadcrumbs'); ?>
-
+<?php 
+$intro = get_field('intro', $thisID);
+$introtitle = !empty($intro['title'])?$intro['title']:$page_title;
+?>
   <section class="news-grid-sec">
     <div class="container">
       <div class="row">
         <div class="col-md-12">
           <div class="sec-entry-hdr">
-            <h2 class="mbc-sec-entry-hdr-sub-title fl-h4">industry news</h2>
-            <h3 class="mbc-sec-entry-hdr-title fl-h3">Nulla vel elit nec diam pretium</h3>
+            <h2 class="mbc-sec-entry-hdr-sub-title fl-h4"><?php echo $introtitle; ?></h2>
+            <?php if( !empty($intro['subtitle']) ) printf('<h3 class="mbc-sec-entry-hdr-title fl-h3">%s</h3>', $intro['subtitle']); ?>
           </div>
           <?php if(  have_posts() ): ?>
           <div class="news-grids-cntlr">

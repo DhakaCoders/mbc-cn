@@ -63,7 +63,7 @@ if( !empty($hd_color) ){
             <div class="mbc-columns mbc-columns-2"<?php echo $txt_color; ?>>
               <?php if( !empty($string) ): ?>
               <style type="text/css">
-                .<?php echo $string; ?> h2{
+                .<?php echo $string; ?> h4{
                   color: <?php echo $hd_color; ?>;
                 }
               </style>
@@ -250,7 +250,7 @@ if($testiobj){
               <span class="mbc-prev"></span>
               <span class="mbc-nxt"></span>
             </div>
-            <div class="mbc-text-slider-inr ptTextSlider">
+            <div class="mbc-text-slider-inr mbcTextSlider">
               <?php foreach( $testiobj as $testi ) : ?>
               <div class="mbc-text-slider-item">
                 <h2 class="mbc-text-slider-title fl-h2">“<?php echo $testi->post_content; ?>”</h2>
@@ -265,11 +265,11 @@ if($testiobj){
 </section>
 <?php 
 }
-}elseif( get_row_layout() == 'luxury_packages' ){ 
-$packobj = get_sub_field('select_package');
+}elseif( get_row_layout() == 'careers' ){ 
+$packobj = get_sub_field('select_careers');
 if( empty($packobj) ){
     $packobj = get_posts( array(
-      'post_type' => 'packages',
+      'post_type' => 'career',
       'posts_per_page'=> 2,
       'orderby' => 'date',
       'order'=> 'asc'
@@ -300,7 +300,8 @@ if($packobj){
               <div class="full-width-img-des-rgt mHc">
                 <div class="full-width-des-innr">
                   <h2 class="full-width-des-title fl-h2"><?php echo get_the_title($package->ID); ?></h2>
-                  <?php echo get_the_excerpt($package->ID); ?>
+                  <?php echo wpautop(get_the_excerpt($package->ID)); ?>
+                  <a class="mbc-white-transparent-btn" href="#">learn more</a>
                 </div>
               </div>
             </div>
@@ -471,6 +472,7 @@ $class_position = $image_position == 'right'?' lftimg-rgtdes':'';
 <?php 
 }elseif( get_row_layout() == 'team_members' ){ 
 $fc_title = get_sub_field('fc_title');
+$subtitle = get_sub_field('subtitle');
 $memberobj = get_sub_field('select_members');
 if( empty($memberobj) ){
     $memberobj = get_posts( array(
@@ -488,18 +490,20 @@ if( empty($memberobj) ){
       <div class="col-md-12">
         <div class="mbc-team-sec-inr">
           <div class="mbc-grids-sec-entry-hdr">
-            <?php if( !empty($fc_title) ) printf('<h2 class="fl-h2 mbc-grids-sec-entry-hdr-title">%s</h2>', $fc_title); ?>
+            <?php 
+              if( !empty($fc_title) ) printf('<h4 class="fl-h4 mbc-team-subtitle">%s</h4>', $fc_title); 
+              if( !empty($subtitle) ) printf('<h2 class="fl-h3 mbc-grids-sec-entry-hdr-title">%s</h2>', $subtitle); 
+            ?>
           </div>
           <div class="mbc-team-slider-ctlr">
             <div class="mbc-slider-prev-nxt">
               <span class="mbc-prev">
-                <!-- <i><svg class="fl-prev-svg" width="53" height="46" viewBox="0 0 53 46" fill="#fff">
-                  <use xlink:href="#fl-prev-svg"></use> </svg></i> -->
+                
               </span>
               <span class="mbc-nxt"></span>
             </div>
             <?php if($memberobj): ?>
-            <div class="mbc-team-grds ptTeamSlider">
+            <div class="mbc-team-grds mbcTeamSlider">
             <?php 
                 foreach( $memberobj as $member ) :
                 $imgID = get_post_thumbnail_id($member->ID);
@@ -517,14 +521,12 @@ if( empty($memberobj) ){
                   </div>
                   <div class="mbc-team-grd-item-des">
                     <h3 class="mbc-team-grd-des-title fl-h6">
-                      <a href="#">
                         <?php if( !empty($link) ) printf('<a href="%s">', $link); ?>
                         <?php echo get_the_title($member->ID); ?>,
                       <?php if( !empty($link) ) printf('</a>'); ?>
                     </h3>
                     <?php if( !empty($position) ) printf('<strong>%s</strong>', $position); ?>
                     <p><?php echo get_the_excerpt($member->ID); ?></p>
-                    <?php if( !empty($link) ) printf('<a class="fl-transparent-btn" href="%s">read more</a>', $link); ?>
                   </div>
                 </div>
               </div>
