@@ -18,9 +18,9 @@
         <div class="col-md-12">
           <div>
             <?php if( !empty($fctitle) ): ?>
-            <h2<?php echo !empty($heading_color)?' style="color:'.$heading_color.'"':''; ?>>
+            <h4<?php echo !empty($heading_color)?' style="color:'.$heading_color.'"':''; ?>>
               <?php printf('%s', $fctitle)?>
-            </h2>
+            </h4>
             <?php endif; ?>
             <?php if( !empty($fc_text) ): ?>
             <div class="text-body"<?php echo !empty($body_color)?' style="color:'.$body_color.'!important"':''; ?>>
@@ -58,7 +58,7 @@ if( !empty($hd_color) ){
         <div class="col-md-12">
           <div class="mbc-grd-sec-inr">
             <div class="mbc-grids-sec-entry-hdr">
-              <?php if( !empty($fc_title) ) printf('<h2 class="fl-h2 mbc-grids-sec-entry-hdr-title"%s>%s</h2>', $txt_color, $fc_title); ?>
+              <?php if( !empty($fc_title) ) printf('<h2 class="fl-h4 mbc-grids-sec-entry-hdr-title"%s>%s</h2>', $txt_color, $fc_title); ?>
             </div>
             <div class="mbc-columns mbc-columns-2"<?php echo $txt_color; ?>>
               <?php if( !empty($string) ): ?>
@@ -97,7 +97,7 @@ $fc_text3 = get_sub_field('fc_text3');
         <div class="col-md-12">
           <div class="mbc-grd-sec-inr">
             <div class="mbc-grids-sec-entry-hdr">
-            <?php if( !empty($fc_title) ) printf('<h2 class="fl-h2 mbc-grids-sec-entry-hdr-title">%s</h2>', $fc_title); ?>
+            <?php if( !empty($fc_title) ) printf('<h2 class="fl-h4 mbc-grids-sec-entry-hdr-title">%s</h2>', $fc_title); ?>
             </div>
             <div class="mbc-columns mbc-columns-3">
               <div class="mbc-grid-item">
@@ -133,7 +133,7 @@ $fc_text2 = get_sub_field('fc_text2');
         <div class="col-md-12">
           <div class="mbc-grd-sec-inr">
             <div class="mbc-grids-sec-entry-hdr">
-              <?php if( !empty($fc_title) ) printf('<h2 class="fl-h2 mbc-grids-sec-entry-hdr-title">%s</h2>', $fc_title); ?>
+              <?php if( !empty($fc_title) ) printf('<h2 class="fl-h4 mbc-grids-sec-entry-hdr-title">%s</h2>', $fc_title); ?>
             </div>
             <div class="mbc-columns mbc-columns-2L">
               <div class="mbc-grid-item">
@@ -164,7 +164,7 @@ $fc_text2 = get_sub_field('fc_text2');
         <div class="col-md-12">
           <div class="mbc-grd-sec-inr">
             <div class="mbc-grids-sec-entry-hdr">
-              <?php if( !empty($fc_title) ) printf('<h2 class="fl-h2 mbc-grids-sec-entry-hdr-title">%s</h2>', $fc_title); ?>
+              <?php if( !empty($fc_title) ) printf('<h2 class="fl-h4 mbc-grids-sec-entry-hdr-title">%s</h2>', $fc_title); ?>
             </div>
             <div class="mbc-columns mbc-columns-2R">
               <div class="mbc-grid-item">
@@ -197,7 +197,7 @@ $fc_text4 = get_sub_field('fc_text4');
         <div class="col-md-12">
           <div class="mbc-grd-sec-inr">
             <div class="mbc-grids-sec-entry-hdr">
-              <?php if( !empty($fc_title) ) printf('<h2 class="fl-h2 mbc-grids-sec-entry-hdr-title">%s</h2>', $fc_title); ?>
+              <?php if( !empty($fc_title) ) printf('<h2 class="fl-h4 mbc-grids-sec-entry-hdr-title">%s</h2>', $fc_title); ?>
             </div>
             <div class="mbc-columns mbc-columns-4">
               <div class="mbc-grid-item">
@@ -226,6 +226,12 @@ $fc_text4 = get_sub_field('fc_text4');
       </div>
   </div>    
 </section>
+<?php 
+}elseif( get_row_layout() == 'texteditor' ){ 
+$fc_text = get_sub_field('fc_text');
+$bg_color = get_sub_field('bg_color');
+?>
+
 <?php 
 }elseif( get_row_layout() == 'testimonials' ){ 
 $testiobj = get_sub_field('select_testimonial');
@@ -265,53 +271,45 @@ if($testiobj){
 </section>
 <?php 
 }
-}elseif( get_row_layout() == 'careers' ){ 
-$packobj = get_sub_field('select_careers');
-if( empty($packobj) ){
-    $packobj = get_posts( array(
-      'post_type' => 'career',
-      'posts_per_page'=> 2,
-      'orderby' => 'date',
-      'order'=> 'asc'
-    ) );  
-}
-if($packobj){
+}elseif( get_row_layout() == 'bleed_image' ){ 
+$bleed_images = get_sub_field('fc_bleed_image');
+if($bleed_images){
 ?>
 <section class="full-width-img-bleed-sec">
-<div class="full-width-img-bleed-sec-rows-cntlr">
-  <ul class="reset-list clearfix">
-    <?php 
-      foreach( $packobj as $package ) :
-      $imgID = get_post_thumbnail_id($package->ID);
-      $imgtag = !empty($imgID)? cbv_get_image_tag($imgID): package_placeholder('tag'); 
-      $imgsrc = !empty($imgID)? cbv_get_image_src($imgID): package_placeholder(); 
-    ?>
-    <li>
-      <div class="container">
-        <div class="row">
-          <div class="col-md-12">
-            <div class="full-width-img-des-cntlr">
-              <div class="full-width-img-des-lft mHc">
-                <div class="full-width-img-cntlr">
-                  <div class="inline-bg" style="background-image: url(<?php echo $imgsrc; ?>);"></div>
-                  <?php echo $imgtag; ?>
+  <div class="full-width-img-bleed-sec-rows-cntlr">
+    <ul class="reset-list clearfix">
+      <?php 
+        $i = 1;
+        foreach( $bleed_images as $bleed_image ): 
+      ?>
+      <li>
+        <div class="container">
+          <div class="row">
+            <div class="col-md-12">
+              <div class="full-width-img-des-cntlr<?php echo ($i%2 == 0)?' left-des-rgt-img':''; ?>">
+                <div class="full-width-img-des-lft mHc">
+                  <div class="full-width-img-cntlr">
+                    <div class="inline-bg" style="background-image: url(<?php echo !empty($bleed_image['image'])?cbv_get_image_src($bleed_image['image']):'';?>);"></div>
+                    <?php echo !empty($bleed_image['image'])?cbv_get_image_tag($bleed_image['image']):'';?>
+                  </div>
                 </div>
-              </div>
-              <div class="full-width-img-des-rgt mHc">
-                <div class="full-width-des-innr">
-                  <h2 class="full-width-des-title fl-h2"><?php echo get_the_title($package->ID); ?></h2>
-                  <?php echo wpautop(get_the_excerpt($package->ID)); ?>
-                  <a class="mbc-white-transparent-btn" href="#">learn more</a>
-                </div>
+                <div class="full-width-img-des-rgt mHc">
+                  <div class="full-width-des-innr">
+                    <?php 
+                    if( !empty($bleed_image['fc_title']) ) printf('<h4 class="full-width-des-subtitle fl-h4">%s</h4>', $bleed_image['fc_title']);
+                    if( !empty($bleed_image['fc_subtitle']) ) printf('<h3 class="full-width-des-title fl-h3">%s</h3>', $bleed_image['fc_subtitle']);
+                    if( !empty($bleed_image['fc_text']) ) echo wpautop($bleed_image['fc_text']);
+                    ?>
+                  </div>
+                </div>            
               </div>
             </div>
           </div>
         </div>
-      </div>
-    </li>
-    <?php endforeach; ?>
-  </ul>
-</div>
+      </li>
+      <?php $i++; endforeach; ?>
+    </ul>
+  </div>
 </section>
 <?php 
 }
@@ -468,6 +466,75 @@ $class_position = $image_position == 'right'?' lftimg-rgtdes':'';
         </div>
       </div>
   </div>    
+</section>
+<?php 
+}elseif( get_row_layout() == 'slider' ){ 
+$fc_image = get_sub_field('fc_image');
+$slides = get_sub_field('slide');
+?>
+<section class="mbc-option-break-slider-sec inline-bg" style="background:url(<?php echo !empty($fc_image)?cbv_get_image_src($fc_image):THEME_URI.'/assets/images/mbc-opb-slider-bg.jpg'; ?>);">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <?php if( $slides ): ?>
+        <div class="mbc-option-break-slider-sec-inr">
+          <div class="mbc-option-break-option-break-slider-ctlr">
+            <div class="mbc-slider-prev-nxt">
+              <span class="mbc-prev"><i></i></span>
+              <span class="mbc-nxt"><i></i></span>
+            </div>
+            <div class="mbc-opb-slider-grds mbcOpbSlider clearfix">
+              <?php foreach( $slides as $slide ): ?>
+              <div class="mbc-opb-slider-grd-item">
+                <div class="mbc-opb-slider-grd-item-des">
+                  <?php if( !empty($slide['text']) ) printf('<h2 class="mbc-opb-slider-title fl-h2">%s</h2>', $slide['text']); ?>
+                </div>
+              </div>
+              <?php endforeach; ?>
+            </div>
+          </div>
+        </div>
+        <?php endif; ?>
+      </div>
+    </div>
+  </div>
+</section>
+<?php 
+}elseif( get_row_layout() == 'partners' ){ 
+$fc_title = get_sub_field('fc_title');
+$subtitle = get_sub_field('subtitle');
+$logos = get_sub_field('logos');
+?>
+<section class="mbc-client-sec">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="mbc-client-sec-inr">
+          <div class="mbc-client-hdr">
+            <?php 
+              if( !empty($fc_title) ) printf('<h3 class="mbc-client-subtitle fl-h4">%s</h3>', $fc_title); 
+              if( !empty($subtitle) ) printf('<h2 class="mbc-client-title fl-h3">%s</h2>', $subtitle); 
+            ?>
+          </div>
+          <?php if( $logos ): ?>
+          <div class="mbc-client-grds">
+            <?php foreach( $logos as $logo ): ?>
+            <div class="mbc-client-grd-item">
+              <div class="mbc-client-grd-item-img">
+                <?php 
+                  if( !empty($logo['link']) ) printf('<a href="%s">', $logo['link']);
+                  if( !empty($logo['logo']) ) echo cbv_get_image_tag($logo['logo']); 
+                  if( !empty($logo['link']) ) printf('</a>');
+                ?>
+              </div>
+            </div>
+            <?php endforeach; ?>
+          </div>
+          <?php endif; ?>
+        </div>
+      </div>
+    </div>
+  </div>
 </section>
 <?php 
 }elseif( get_row_layout() == 'team_members' ){ 
