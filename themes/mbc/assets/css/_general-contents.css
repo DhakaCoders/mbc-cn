@@ -532,14 +532,19 @@ Gallery design
 .mbc-btn-sec{
 	padding-top: 80px;
 	padding-bottom: 80px;
-	background: #CBCBCB;
-}
+	/*background: #CBCBCB;
+*/}
 .mbc-btn-sec-inr{
 	display: flex;
 	align-items: center;
 }
 .mbc-prev-nxt-ctlr{
 	margin-left: auto;
+}
+.mbc-btn a{
+	display: inline-block;
+	vertical-align: baseline;
+	margin-bottom: 15px;
 }
 .mbc-btn ul{
 	display: flex;
