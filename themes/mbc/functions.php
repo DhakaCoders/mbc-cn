@@ -35,12 +35,11 @@ if( !function_exists('cbv_theme_setup') ){
         ) );
 
         register_nav_menus( array(
-            'cbv_main_menu1' => __( 'Main Menu 1', 'mbc' ),
-            'cbv_main_menu2' => __( 'Main Menu 2', 'mbc' ),
+            'cbv_main_menu' => __( 'Main Menu', 'mbc' ),
             'cbv_footer_menu1' => __( 'Footer Menu 1', 'mbc' ),
             'cbv_footer_menu2' => __( 'Footer Menu 2', 'mbc' ),
             'cbv_footer_menu3' => __( 'Footer Menu 3', 'mbc' ),
-            'cbv_booking_menu' => __( 'Booking Menu', 'mbc' ),
+            'cbv_footer_menu4' => __( 'Footer Menu 4', 'mbc' ),
             'cbv_copyright_menu' => __( 'Copyright', 'mbc' ),
         ) );
 
@@ -63,6 +62,7 @@ function cbv_theme_scripts(){
     include_once( THEME_DIR . '/enq-scripts/animate.php' );
     include_once( THEME_DIR . '/enq-scripts/select2.php' );
     include_once( THEME_DIR . '/enq-scripts/flatpickr.php' );
+    include_once( THEME_DIR . '/enq-scripts/waypoints.php' );
     include_once( THEME_DIR . '/enq-scripts/theme.default.php' );
 }
 
@@ -73,8 +73,7 @@ Includes->>
 include_once(THEME_DIR .'/inc/widgets-area.php');
 include_once(THEME_DIR .'/inc/breadcrumbs.php');
 include_once(THEME_DIR .'/inc/cbv-functions.php');
-include_once(THEME_DIR .'/inc/ajax-news-load.php');
-include_once(THEME_DIR .'/inc/ajax-tag-news-load.php');
+include_once(THEME_DIR .'/inc/ajax-services-load.php');
 /**
 ACF Option pages->>
 */

@@ -238,13 +238,13 @@ function cabin_placeholder($format = 'src'){
   return '';
 
 }
-function package_placeholder($format = 'src'){
+function career_placeholder($format = 'src'){
   $placehoder = get_field('placeholder', 'options');
   if( !empty($placehoder) ){
       if( $format == 'src' ){
-        $placeholder = !empty($placehoder['luxury_package'])? cbv_get_image_src($placehoder['luxury_package']):'';
+        $placeholder = !empty($placehoder['career'])? cbv_get_image_src($placehoder['career']):'';
       }else{
-        $placeholder = !empty($placehoder['luxury_package'])? cbv_get_image_tag($placehoder['luxury_package']):'';
+        $placeholder = !empty($placehoder['career'])? cbv_get_image_tag($placehoder['career']):'';
       }
       return $placeholder;
   }
@@ -264,4 +264,15 @@ function cbv_get_excerpt(){
   $excerpt = implode(" ",$excerpt);
   $excerpt .= $link;
   return wpautop($excerpt);
+}
+
+add_action('admin_head', 'cbv_admin_style');
+function cbv_admin_style(){
+  if( is_user_logged_in() && isset($_GET['action']) && $_GET['action'] == 'edit' ){
+    $output = '';
+    $output .= '<style>';
+    $output .='body.wp-admin textarea#excerpt{ height: 8em !important; }';
+    $output .= '</style>';
+    echo $output;
+  }
 }
