@@ -21,10 +21,7 @@ $mapcode = get_field('gmap_code', $thisID);
         <div class="contact-form-lft mHc">
           <div class="contact-form-info-cntlr">
             <div class="contact-form-info">
-	    			<?php 
-	          	    $intro = get_field('introsec', $thisID);
-	          	      if($intro):
-	        	?>
+	    			    <?php $intro = get_field('introsec', $thisID); ?>
               	<div>
               	<?php if( !empty($intro['title']) ) printf( '<h2 class="contact-form-info-title fl-h4">%s</h2>', $intro['title'] ); ?>
 	              <div class="contact-form-info-des">
@@ -45,14 +42,10 @@ $mapcode = get_field('gmap_code', $thisID);
 	                </div>
 	              </div>
               	</div>
-              	<?php endif; ?>
 
-	            <?php 
-	               $bottom_des_sec = get_field('bottom_des_sec', $thisID);
-	               if($bottom_des_sec):
-		        	?>
+	            <?php if($intro['quote_text']): ?>
 	            <blockquote>
-	              <?php if( !empty($bottom_des_sec['bottom_des']) ) printf( '<h2 class="contact-form-info-mgs-title fl-h2">“%s”</h2>', $bottom_des_sec['bottom_des'] ); ?>
+	              <?php printf( '<h2 class="contact-form-info-mgs-title fl-h2">“%s”</h2>', $intro['quote_text'] ); ?>
 	            </blockquote>
 	            <?php endif; ?>
             </div>

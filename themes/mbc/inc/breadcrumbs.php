@@ -1,15 +1,15 @@
 <?php
 function cbv_breadcrumbs() {
   /* === OPTIONS === */
-  $text['home']     = __('Home', THEME_NAME); // text for the 'Home' link
-  $text['blog']     = __('Blog', THEME_NAME); // text for the 'Home' link
-  $text['category'] = __('Archive by Category "%s"', THEME_NAME); // text for a category page
-  $text['search']   = __('Search Results for "%s"', THEME_NAME); // text for a search results page
-  $text['tag']      = __('Posts Tagged "%s"', THEME_NAME); // text for a tag page
-  $text['author']   = __('Articles Posted by %s', THEME_NAME); // text for an author page
-  $text['404']      = __('Error 404', THEME_NAME); // text for the 404 page
-  $text['page']     = __('Page %s', THEME_NAME); // text 'Page N'
-  $text['cpage']    = __('Comment Page %s', THEME_NAME); // text 'Comment Page N'
+  $text['home']     = __('Home', 'mbc'); // text for the 'Home' link
+  $text['blog']     = __('Blog', 'mbc'); // text for the 'Home' link
+  $text['category'] = __('Archive by Category "%s"', 'mbc'); // text for a category page
+  $text['search']   = __('Search Results for "%s"', 'mbc'); // text for a search results page
+  $text['tag']      = __('Posts Tagged "%s"', 'mbc'); // text for a tag page
+  $text['author']   = __('Articles Posted by %s', 'mbc'); // text for an author page
+  $text['404']      = __('Error 404', 'mbc'); // text for the 404 page
+  $text['page']     = __('Page %s', 'mbc'); // text 'Page N'
+  $text['cpage']    = __('Comment Page %s', 'mbc'); // text 'Comment Page N'
 
   $wrap_before    = '<ul class="reset-list">'; // the opening wrapper tag
   $wrap_after     = '</ul>'; // the closing wrapper tag
@@ -20,8 +20,8 @@ function cbv_breadcrumbs() {
   $show_on_home   = 1; // 1 - show breadcrumbs on the homepage, 0 - don't show
   $show_current   = 1; // 1 - show current page title, 0 - don't show
   $show_home_link_on_blog = 1;
-  $before         = '<li class="delim"><a href="javascript:void(0)">'; // tag before the current crumb
-  $after          = '</a></li>'; // tag after the current crumb
+  $before         = '<li class="active"><span>'; // tag before the current crumb
+  $after          = '</span></li>'; // tag after the current crumb
   /* === END OF OPTIONS === */
 
   global $post;
@@ -165,18 +165,7 @@ function cbv_breadcrumbs() {
         if ($show_current) echo $sep . $before . sprintf($text['tag'], single_tag_title('', false)) . $after;
       }
 
-    }elseif ( is_tax('brand') ) {
-
-      $post_type = get_post_type_object(get_post_type());
-      $term = get_queried_object();
-      echo $sep. $before .'<a href="'.home_url('our-fleets').'">Our Fleets</a>'. $after. $sep.$before.$term->name. $after ;
-
-    }elseif ( is_tax('car_type') ) {
-      $post_type = get_post_type_object(get_post_type());
-      $term = get_queried_object();
-      echo $sep. $before .'<a href="'.home_url('our-fleets').'">Our Fleets</a>'. $after. $sep.$before.$term->name. $after ;
-
-    } elseif ( is_author() ) {
+    }elseif ( is_author() ) {
       global $author;
       $author = get_userdata($author);
       if ( get_query_var('paged') ) {

@@ -106,64 +106,59 @@ if($news):
               if( !empty($news['subtitle']) ) printf('<h3 class="mbc-sec-entry-hdr-title fl-h3">%s</h3>', $news['subtitle']); 
             ?>
           </div>
-          <div class="news-grids-cntlr">
-            <ul class="reset-list">
-              <li>
-                <div class="news-grid-item">
-                  <div class="news-grid-img-cntlr has-inline-bg">
-                    <a class="overlay-link" href="#"></a>
-                    <div class="inline-bg" style="background-image: url(<?php echo THEME_URI; ?>/assets/images/news-grid-1.jpg);"></div>
-                    <img src="<?php echo THEME_URI; ?>/assets/images/news-grid-1.jpg" alt="">
+          <?php 
+          $newsIDs = $news['select_news'];
+          if( !empty($newsIDs) ){
+            $query = new WP_Query(array(
+              'post_type' => 'post',
+              'posts_per_page'=> count($newsIDs),
+              'post__in' => $newsIDs,
+              'orderby' => 'rand'
+
+            ));
+          }else{
+            $query = new WP_Query(array(
+              'post_type' => 'post',
+              'posts_per_page'=> 3,
+              'orderby' => 'rand'
+
+            ));
+          }
+          if($query->have_posts()){ 
+          ?>
+        <div class="news-grids-cntlr">
+          <ul class="reset-list">
+            <?php 
+                while($query->have_posts()): $query->the_post(); 
+                global $post;
+                $imgID = get_post_thumbnail_id(get_the_ID());
+                $imgsrc = !empty($imgID)? cbv_get_image_src($imgID): news_placeholder();
+                $imgtag = !empty($imgID)? cbv_get_image_tag($imgID): news_placeholder('tag');
+            ?>
+            <li>
+              <div class="news-grid-item">
+                <div class="news-grid-img-cntlr has-inline-bg">
+                  <a class="overlay-link" href="<?php the_permalink(); ?>"></a>
+                    <div class="inline-bg" style="background-image: url(<?php echo $imgsrc; ?>);"></div>
+                    <?php echo $imgtag; ?>
+                </div>
+                <div class="news-grid-des">
+                  <div class="news-grid-des-title">
+                    <h5 class="news-grid-title fl-h5 mHc"><a href="<?php the_permalink(); ?>"><?php the_title(); ?>, <?php echo get_the_date('F Y'); ?></a></h5>
                   </div>
-                  <div class="news-grid-des">
-                    <div class="news-grid-des-title">
-                      <h3 class="news-grid-title fl-h5 mHc"><a href="#">Name of News Article, July 2021</a></h3>
-                    </div>
-                    <div class="news-grid-btn">
-                      <a href="#">Read more</a>
-                    </div>
+                  <div class="news-grid-btn">
+                    <a href="<?php the_permalink(); ?>">Read more</a>
                   </div>
                 </div>
-              </li>
-              <li>
-                <div class="news-grid-item">
-                  <div class="news-grid-img-cntlr has-inline-bg">
-                    <a class="overlay-link" href="#"></a>
-                    <div class="inline-bg" style="background-image: url(<?php echo THEME_URI; ?>/assets/images/news-grid-2.jpg);"></div>
-                    <img src="<?php echo THEME_URI; ?>/assets/images/news-grid-2.jpg" alt="">
-                  </div>
-                  <div class="news-grid-des">
-                    <div class="news-grid-des-title">
-                      <h3 class="news-grid-title fl-h5 mHc"><a href="#">Name of News Article, July 2021</a></h3>
-                    </div>
-                    <div class="news-grid-btn">
-                      <a href="#">Read more</a>
-                    </div>
-                  </div>
-                </div>
-              </li>
-              <li>
-                <div class="news-grid-item">
-                  <div class="news-grid-img-cntlr has-inline-bg">
-                    <a class="overlay-link" href="#"></a>
-                    <div class="inline-bg" style="background-image: url(<?php echo THEME_URI; ?>/assets/images/news-grid-3.jpg);"></div>
-                    <img src="<?php echo THEME_URI; ?>/assets/images/news-grid-3.jpg" alt="">
-                  </div>
-                  <div class="news-grid-des">
-                    <div class="news-grid-des-title">
-                      <h3 class="news-grid-title fl-h5 mHc"><a href="#">Name of News Article, July 2021</a></h3>
-                    </div>
-                    <div class="news-grid-btn">
-                      <a href="#">Read more</a>
-                    </div>
-                  </div>
-                </div>
-              </li>
-            </ul>
-          </div>
-          <div class="news-grids-btn">
-            <a class="mbc-transparent-btn" href="#">find out more</a>
-          </div>
+              </div>
+            </li>
+            <?php endwhile; ?>
+          </ul>
+        </div>
+        <div class="news-grids-btn">
+          <a class="mbc-transparent-btn" href="<?php echo get_the_permalink(get_option( 'page_for_posts' )); ?>">VIEW ALL</a>
+        </div>
+        <?php } wp_reset_postdata(); ?>
         </div>
       </div>
     </div>

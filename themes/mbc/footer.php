@@ -150,6 +150,59 @@
   </div>
 </footer>
 </div>
+
+  <div class="modal fade show" id="mbc-mdl-btn" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true" style="padding-right:0;">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-body">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <i></i>
+          </button>
+          <div class="modal-form-cntlr">
+            <div class="contact-form-title-cntlr">
+              <h4 class="contact-form-sub-title fl-h4">contact</h4>
+              <h3 class="contact-form-title fl-h3">Get in touch</h3>
+            </div> 
+            <div class="contact-form-wrp clearfix">
+              <div class="wpforms-container">
+                <div class="wpforms-form needs-validation novalidate">
+                  <div class="wpforms-field-container">
+                    <div class="wpforms-field XsNameField">
+                      <input type="text" name="name" placeholder="First Name" required="">
+                      <label id="wpforms-222-field_1-error" class="wpforms-error" for="wpforms-222-field_1">Check this field!</label>
+                    </div>
+                    <div class="wpforms-field NameField">
+                      <input type="text" name="text" placeholder="Last Name" required="">
+                      <label id="wpforms-222-field_1-error" class="wpforms-error" for="wpforms-222-field_1">Check this field!</label>
+                    </div>
+                    <div class="wpforms-field">
+                      <input type="email" name="email" placeholder="Your Email" required="">
+                      <label id="wpforms-222-field_1-error" class="wpforms-error" for="wpforms-222-field_1">Check this field!</label>
+                    </div>
+                    <div class="wpforms-field">
+                      <input type="text" name="text" placeholder="Contact Number" required="">
+                      <label id="wpforms-222-field_1-error" class="wpforms-error" for="wpforms-222-field_1">Check this field!</label>
+                    </div>
+                    <div class="wpforms-field FullWidthField">
+                      <input type="text" name="text" placeholder="Position applying for" required="">
+                      <label id="wpforms-222-field_1-error" class="wpforms-error" for="wpforms-222-field_1">Check this field!</label>
+                    </div>
+                    <div class="wpforms-field wpforms-field-textarea">
+                      <textarea name="message" placeholder="Write your message here"></textarea>
+                    </div>
+                  </div>
+                  <div class="wpforms-submit-container">
+                    <button type="submit" name="submit" class="wpforms-submit">contact us</button>
+                  </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>  
+        </div>
+      </div>
+    </div>
+  </div>
 <?php wp_footer(); ?>
 </body>
 </html>

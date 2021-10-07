@@ -39,7 +39,7 @@
 }
 .input-field-row input[type="text"],
 .input-field-row input[type="email"],
-.input-field-row input[type="telephone"]{
+.input-field-row input[type="tel"]{
 	width: 100%;
 	height: 62px;
 	padding-left: 18px;
@@ -141,26 +141,26 @@
 }
 
 
-.input-field-row input[type="telephone"]::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+.input-field-row input[type="tel"]::-webkit-input-placeholder { /* Chrome/Opera/Safari */
   color: #CBCBCB;
   opacity: 1;
 }
-.input-field-row input[type="telephone"]::-moz-placeholder { /* Firefox 19+ */
+.input-field-row input[type="tel"]::-moz-placeholder { /* Firefox 19+ */
   color: #CBCBCB;
   opacity: 1;
 }
-.input-field-row input[type="telephone"]:-ms-input-placeholder { /* IE 10+ */
+.input-field-row input[type="tel"]:-ms-input-placeholder { /* IE 10+ */
   color: #CBCBCB;
   opacity: 1;
 }
-.input-field-row input[type="telephone"]:-moz-placeholder { /* Firefox 18- */
+.input-field-row input[type="tel"]:-moz-placeholder { /* Firefox 18- */
   color: #CBCBCB;
   opacity: 1;
 }
 
 .input-field-row input[type="text"]:focus,
 .input-field-row input[type="email"]:focus,
-.input-field-row input[type="telephone"]:focus{
+.input-field-row input[type="tel"]:focus{
 	border-color: #7E7676;
 }
 

@@ -2,6 +2,10 @@
 /*Template Name: Services*/
 get_header(); 
 $thisID = get_the_ID();
+$customtitle = get_field('custom_title', $thisID);
+$page_title = !empty($customtitle)? $customtitle: get_the_title($thisID);
+$intro = get_field('intro', $thisID);
+$introtitle = !empty($intro['title'])?$intro['title']:$page_title;
 ?>
 <?php get_template_part('templates/page', 'banner'); ?>
   <section class="breadcrumb-sec">
@@ -11,88 +15,22 @@ $thisID = get_the_ID();
           <div class="breadcrumb-sec-inr">
             <ul class="reset-list clearfix">
               <li class="home"><a href="<?php echo esc_url(home_url('/')); ?>"><span>Home</span></a></li>
-              <li class="active"><span>industrial and infrastructure</span></li>
+              <li class="active"><span><?php echo $page_title; ?></span></li>
             </ul>
           </div>
         </div>
       </div>
     </div>
   </section>
-<?php
-  $args = array( 
-    'post_type' => 'career', 
-    'posts_per_page' => 4, 
-    'orderby' => 'title',
-    'order' => 'desc'  
-  );
-?>
 <section class="mbc-service-sec">
   <div class="container">
     <div class="row">
       <div class="col-md-12">
         <div class="mbc-service-sec-inr">
           <div class="sec-entry-hdr">
-            <h2 class="mbc-sec-entry-hdr-title fl-h4">our services</h2>
+            <h2 class="mbc-sec-entry-hdr-title fl-h4"><?php echo $introtitle; ?></h2>
           </div>
-          <div class="mbc-service-grds">
-            <ul class="reset-list clearfix">
-              <li>
-                <div class="mbc-service-grd-item">
-                  <a href="#" class="overlay-link"></a>
-                  <div class="mbc-service-grd-item-img-ctlr mHc">
-                    <div class="mbc-service-grd-item-img inline-bg" style="background:url(<?php echo THEME_URI; ?>/assets/images/mbc-service-landing-img-01.jpg)">
-                      <img src="<?php echo THEME_URI; ?>/assets/images/mbc-service-landing-img-01.jpg">
-                    </div>
-                  </div>
-                  <div class="mbc-service-grd-item-des mHc1">
-                    <h3 class="mbc-service-grd-des-title fl-h5"><a href="#"><span>1.</span> Civil Construction & Maintenance</a></h3>
-                  </div>
-                </div>
-              </li>
-              <li>
-                <div class="mbc-service-grd-item">
-                  <a href="#" class="overlay-link"></a>
-                  <div class="mbc-service-grd-item-img-ctlr mHc">
-                    <div class="mbc-service-grd-item-img inline-bg" style="background:url(<?php echo THEME_URI; ?>/assets/images/mbc-service-landing-img-02.jpg)">
-                      <img src="<?php echo THEME_URI; ?>/assets/images/mbc-service-landing-img-02.jpg">
-                    </div>
-                  </div>
-                  <div class="mbc-service-grd-item-des mHc1">
-                    <h3 class="mbc-service-grd-des-title fl-h5"><a href="#"><span>2.</span> Concrete</a></h3>
-                  </div>
-                </div>
-              </li>
-              <li>
-                <div class="mbc-service-grd-item">
-                  <a href="#" class="overlay-link"></a>
-                  <div class="mbc-service-grd-item-img-ctlr mHc">
-                    <div class="mbc-service-grd-item-img inline-bg" style="background:url(<?php echo THEME_URI; ?>/assets/images/mbc-service-landing-img-03.jpg)">
-                      <img src="<?php echo THEME_URI; ?>/assets/images/mbc-service-landing-img-03.jpg">
-                    </div>
-                  </div>
-                  <div class="mbc-service-grd-item-des mHc1">
-                    <h3 class="mbc-service-grd-des-title fl-h5"><a href="#"><span>3.</span> Infrastructure services</a></h3>
-                  </div>
-                </div>
-              </li>
-              <li>
-                <div class="mbc-service-grd-item">
-                  <a href="#" class="overlay-link"></a>
-                  <div class="mbc-service-grd-item-img-ctlr mHc">
-                    <div class="mbc-service-grd-item-img inline-bg" style="background:url(<?php echo THEME_URI; ?>/assets/images/mbc-service-landing-img-04.jpg)">
-                      <img src="<?php echo THEME_URI; ?>/assets/images/mbc-service-landing-img-04.jpg">
-                    </div>
-                  </div>
-                  <div class="mbc-service-grd-item-des mHc1">
-                    <h3 class="mbc-service-grd-des-title fl-h5"><a href="#"><span>4.</span> Vacuum Excavation </a></h3>
-                  </div>
-                </div>
-              </li>
-            </ul>
-          </div>
-          <div class="mbc-service-btn">
-            <a class="mbc-transparent-btn" href="#">find out more</a>
-          </div>
+          <?php echo do_shortcode('[ajax_services]'); ?>
         </div>
       </div>
     </div>

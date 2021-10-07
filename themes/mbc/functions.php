@@ -165,8 +165,8 @@ add_filter( 'wpcf7_autop_or_not', '__return_false' );
 
 function custom_post_type_query($query) {
     if (!is_admin() && $query->is_main_query()){
-        if(is_tax('brand')){
-          $query->set('posts_per_page', 8);
+        if( get_post_type() == 'case-study'){
+          $query->set('posts_per_page', 9);
 
         }
     }

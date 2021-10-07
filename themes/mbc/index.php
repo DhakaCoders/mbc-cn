@@ -23,7 +23,7 @@ $banner = !empty($imgID)?cbv_get_image_src($imgID):banner_placeholder();
   </section>
 <?php get_template_part('templates/breadcrumbs'); ?>
 <?php 
-$intro = get_field('intro', $thisID);
+$intro = get_field('Intro', $thisID);
 $introtitle = !empty($intro['title'])?$intro['title']:$page_title;
 ?>
   <section class="news-grid-sec">
@@ -41,7 +41,7 @@ $introtitle = !empty($intro['title'])?$intro['title']:$page_title;
                   while(have_posts()): the_post(); 
                   global $post;
                   $imgID = get_post_thumbnail_id(get_the_ID());
-                  $imgsrc = !empty($imgID)? cbv_get_image_src($imgID): news_placeholder('tag');
+                  $imgsrc = !empty($imgID)? cbv_get_image_src($imgID): news_placeholder();
                   $imgtag = !empty($imgID)? cbv_get_image_tag($imgID): news_placeholder('tag');
               ?>
               <li>
@@ -53,7 +53,7 @@ $introtitle = !empty($intro['title'])?$intro['title']:$page_title;
                   </div>
                   <div class="news-grid-des">
                     <div class="news-grid-des-title">
-                      <h3 class="news-grid-title fl-h5 mHc"><a href="<?php the_permalink(); ?>"><?php the_title(); ?>,<?php echo get_the_date('F Y'); ?></a></h3>
+                      <h3 class="news-grid-title fl-h5 mHc"><a href="<?php the_permalink(); ?>"><?php the_title(); ?>, <?php echo get_the_date('F Y'); ?></a></h3>
                     </div>
                     <div class="news-grid-btn">
                       <a href="<?php the_permalink(); ?>">Read more</a>
@@ -75,16 +75,18 @@ $introtitle = !empty($intro['title'])?$intro['title']:$page_title;
             <div class="fl-pagination-ctlr">
                 <?php
                   $big = 999999999; // need an unlikely integer
-                  $wp_query->query_vars['paged'] > 1 ? $current = $wp_query->query_vars['paged'] : $current = 1;
-
+                  $wp_query->query_vars['paged'] > 1 ? $current = $wp_query->query_vars['paged']:$current = 1;
                   echo paginate_links( array(
-                    'base'      => str_replace( $big, '%#%', esc_url( get_pagenum_link( $big ) ) ),
-                    'type'      => 'list',
-                    'prev_text' => __(''),
-                    'next_text' => __(''),
-                    'format'    => '?paged=%#%',
-                    'current'   => $current,
-                    'total'     => $wp_query->max_num_pages
+                  'base'      => str_replace( $big, '%#%', esc_url( get_pagenum_link( $big ) ) ),
+                  'type'      => 'list',
+                  'prev_next' => true,
+                  'prev_text' => __('<'),
+                  'next_text' => __('>'),
+                  'format'    => '?paged=%#%',
+                  'current'   => $current,
+                  'total'     => $wp_query->max_num_pages,
+                  'end_size'  => 2,
+                  'mid_size'  => 2,
                   ) );
                 ?>
             </div>

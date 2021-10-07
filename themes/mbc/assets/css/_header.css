@@ -173,6 +173,7 @@ nav.main-nav > ul > li > a{
 	position: relative;
 	padding-bottom: 58px;
 	color: #716A6A;
+	text-transform: uppercase;
 }
 nav.main-nav > ul > li.menu-item-has-children ul.sub-menu li:last-child{
 	border-bottom: 0;

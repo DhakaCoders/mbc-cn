@@ -225,13 +225,13 @@ function news_placeholder($format = 'src'){
   return '';
 
 }
-function cabin_placeholder($format = 'src'){
+function services_placeholder($format = 'src'){
   $placehoder = get_field('placeholder', 'options');
   if( !empty($placehoder) ){
       if( $format == 'src' ){
-        $placeholder = !empty($placehoder['cabin'])? cbv_get_image_src($placehoder['cabin']):'';
+        $placeholder = !empty($placehoder['services'])? cbv_get_image_src($placehoder['services']):'';
       }else{
-        $placeholder = !empty($placehoder['cabin'])? cbv_get_image_tag($placehoder['cabin']):'';
+        $placeholder = !empty($placehoder['services'])? cbv_get_image_tag($placehoder['services']):'';
       }
       return $placeholder;
   }
@@ -245,6 +245,19 @@ function career_placeholder($format = 'src'){
         $placeholder = !empty($placehoder['career'])? cbv_get_image_src($placehoder['career']):'';
       }else{
         $placeholder = !empty($placehoder['career'])? cbv_get_image_tag($placehoder['career']):'';
+      }
+      return $placeholder;
+  }
+  return '';
+
+}
+function case_placeholder($format = 'src'){
+  $placehoder = get_field('placeholder', 'options');
+  if( !empty($placehoder) ){
+      if( $format == 'src' ){
+        $placeholder = !empty($placehoder['case_studies'])? cbv_get_image_src($placehoder['case_studies']):'';
+      }else{
+        $placeholder = !empty($placehoder['case_studies'])? cbv_get_image_tag($placehoder['case_studies']):'';
       }
       return $placeholder;
   }
